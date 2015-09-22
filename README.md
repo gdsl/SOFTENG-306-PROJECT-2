@@ -2,7 +2,7 @@ Santa Simulator for SE306 project 2.
 Android game created using Unity.  
   
 Build Instructions:  
-- Create an empty folder
+- Create an empty folder called SantaStealth
 - git init
 - git remote add origin https://github.com/gdsl/SOFTENG-306-PROJECT-2
 - git pull origin master
