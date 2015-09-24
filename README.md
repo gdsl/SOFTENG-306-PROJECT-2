@@ -1,4 +1,6 @@
-Santa Simulator for SE306 project 2.  
+# Silent Night
+
+Santa Simulation Game for SE306 project 2.  
 Android game created using Unity.  
   
 Build Instructions:  
