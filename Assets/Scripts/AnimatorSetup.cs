@@ -15,7 +15,7 @@ public class AnimatorSetup
     // Response time to convert angle to angular speed
     public float angleResponseTime = 0.6f;
 
-    private AnimatorSetup anim;
+    private Animator anim;
 
     /**
         Public constructor which can be called be scripts which want to use the helper script
