@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (santa.GetComponent<Rigidbody> ().position.y > 0) {
+		if (santa.GetComponent<Rigidbody> ().position.y > 0.2) {
 			IncreaseSuspicion();
 		}
 	}
