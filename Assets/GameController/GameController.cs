@@ -18,10 +18,17 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		CheckSantaSuspicion ();
+	}
+
+
+	void CheckSantaSuspicion() {
 		if (santa.GetComponent<Rigidbody> ().position.y > 0.2) {
 			IncreaseSuspicion();
 		}
 	}
+
 
 	void IncreaseSuspicion() {
 		suspicionSlider.value = suspicionSlider.value + 1;
