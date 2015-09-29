@@ -13,8 +13,8 @@ public class SceneController : MonoBehaviour {
 	   
 	}
 
-    public void moveScene()
+    public void moveScene(int scene)
     { 
-            Application.LoadLevel(1);
+            Application.LoadLevel(scene);
     }
 }
