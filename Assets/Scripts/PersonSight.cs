@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using SilentNight.Person;
 using System.Collections;
 
 /*
@@ -24,6 +25,8 @@ public class PersonSight : MonoBehaviour {
     private NavMeshAgent nav;
     private SphereCollider col;
 
+    private PersonType personType;
+
     // Reference to Santa
     private GameObject santa;
     // Reference to Santa's state to know which state Santa is currently in. MIGHT NOT BE NEEDED
@@ -42,6 +45,8 @@ public class PersonSight : MonoBehaviour {
         nav = GetComponent<NavMeshAgent>();
         col = GetComponent<SphereCollider>();
 
+        personType = GetComponent<PersonType>();
+
         // Get reference to Santa
         santa = GameObject.FindWithTag("Santa");
         santaAnim = santa.GetComponent<Animator>();
@@ -49,7 +54,7 @@ public class PersonSight : MonoBehaviour {
 	
 	// Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
 	void Update () {
-        // Set the animator parameter "SantaInSight" to correct value
+        // Set the animator parameter "SantaInSight" to whether if santa is currently in sight.
         anim.SetBool("SantaInSight", santaInSight);
 	}
 
@@ -60,9 +65,20 @@ public class PersonSight : MonoBehaviour {
         3. Nothing is preventing the person from seeing Santa
     */
 
-    // Satisfies if the colliding game object is Santa
+    // Satisfies if the colliding game object is Santa.
+    // Called automatically when colliders touching the trigger
     void OnTriggerStay(Collider other)
     {
+        // Doesn't need to check if colliding 
+        if (personType.currentState == PersonState.SLEEPING || personType.currentState == PersonState.SLEEPWALKING)
+        {
+            // Check the distance between two game objects. If it's too nearby, wake up person
+            //santa.transform
+            santaInSight = false;
+            return;
+        }
+
+        // Check if the colliding object is santa
         if (other.gameObject == santa)
         {
             // Satisfies first condition. Must check if it satisfies other condition
