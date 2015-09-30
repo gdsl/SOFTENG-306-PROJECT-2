@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using SilentNight.Person;
-using System.Collections;
 
 /*
-    Script which controls person's FOV in the game and reacts to what it sees
+    Script which controls person's FOV in the game and reacts to what it sees. Can be used for any type of person
     Dependency:
     1. GameController (Santa)
     2. Animation (Animator Controller). To control animations of character
@@ -25,8 +23,6 @@ public class PersonSight : MonoBehaviour {
     private NavMeshAgent nav;
     private SphereCollider col;
 
-    private PersonType personType;
-
     // Reference to Santa
     private GameObject santa;
     // Reference to Santa's state to know which state Santa is currently in. MIGHT NOT BE NEEDED
@@ -44,8 +40,6 @@ public class PersonSight : MonoBehaviour {
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
         col = GetComponent<SphereCollider>();
-
-        personType = GetComponent<PersonType>();
 
         // Get reference to Santa
         santa = GameObject.FindWithTag("Santa");
@@ -69,15 +63,6 @@ public class PersonSight : MonoBehaviour {
     // Called automatically when colliders touching the trigger
     void OnTriggerStay(Collider other)
     {
-        // Doesn't need to check if colliding 
-        if (personType.currentState == PersonState.SLEEPING || personType.currentState == PersonState.SLEEPWALKING)
-        {
-            // Check the distance between two game objects. If it's too nearby, wake up person
-            //santa.transform
-            santaInSight = false;
-            return;
-        }
-
         // Check if the colliding object is santa
         if (other.gameObject == santa)
         {

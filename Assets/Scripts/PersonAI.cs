@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 /**
     Script which controls the Person behaviour. "Brain" script. Responsible for getting input from other scripts and acting.
@@ -18,8 +17,6 @@ public class PersonAI : MonoBehaviour
 {
 
     // Set speeds for different movement types
-    public float sleepWalkingSpeed = 1f;
-    public float randomMovementSpeed = 3f;
     public float patrolSpeed = 3f;
     public float suspicionSpeed = 5f;
 
@@ -30,7 +27,6 @@ public class PersonAI : MonoBehaviour
     public Transform[] patrolWayPoints;
 
     // Reference to several scripts
-    private PersonSight personSight;
     private NavMeshAgent nav;
     private Transform santa;
     private GameController gameController;
@@ -41,7 +37,6 @@ public class PersonAI : MonoBehaviour
     // initialize variables with awake function
     void Awake()
     {
-        personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Santa").transform;
         gameController = GetComponent<GameController>();
