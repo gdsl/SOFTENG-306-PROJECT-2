@@ -12,6 +12,7 @@ public class PersonAnimation : MonoBehaviour {
     // Reference to santa transform. Might not be needed
     private Transform santaTransform;
     private PersonSight personSight;
+    private Suspicion suspicion;
 
     // Needed to guide person's movement
     private NavMeshAgent nav;
@@ -26,6 +27,7 @@ public class PersonAnimation : MonoBehaviour {
     {
         santaTransform = GameObject.FindGameObjectWithTag("Santa").transform;
         personSight = GetComponent<PersonSight>();
+        suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
@@ -64,7 +66,17 @@ public class PersonAnimation : MonoBehaviour {
         float speed = 0f;
         float angle = 0f;
 
-        if (personSight.santaInSight)
+        if (suspicion.suspicion)
+        {
+            speed = 0f;
+            angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
+        }
+        else if (suspicion.suspicionCheck)
+        {
+            speed = 0f;
+            angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
+        }
+        else if (personSight.santaInSight)
         {
             // If santa is in sight, we want person to stop.
             speed = 0f;

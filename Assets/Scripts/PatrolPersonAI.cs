@@ -21,19 +21,23 @@ public class PatrolPersonAI : MonoBehaviour
     public float suspicionCheckWaitTime = 7f;
 
     public Transform[] patrolWayPoints;
+    public Transform[] suspicionWayPoints;
 
     // Reference to several scripts
     private PersonSight personSight;
+    private Suspicion suspicion;
     private NavMeshAgent nav;
     private Transform santa;
     private GameController gameController;
     private float patrolTimer;
     private float suspicionTimer;
-    private int wayPointIndex;
+    private int patrolWayPointIndex;
+    private int suspicionWayPointIndex;
 
     // initialize variables with awake function
     void Awake()
     {
+        suspicion = GetComponent<Suspicion>();
         personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Santa").transform;
@@ -55,8 +59,15 @@ public class PatrolPersonAI : MonoBehaviour
         //{
         //    // TODO. Condition should be replaced with GameController trigger action
         //}
-
-        if (personSight.santaInSight)
+        if (suspicion.suspicion || suspicion.suspicionCheck)
+        {
+            // do nothing
+        }
+        else if (suspicion.suspicionCheckProgress)
+        {
+            Suspicion();
+        }
+        else if (personSight.santaInSight)
         {
             // Santa is in sight. Point at santa
             Pointing();
@@ -66,6 +77,43 @@ public class PatrolPersonAI : MonoBehaviour
             // Santa is not in sight. Just patrol area
             Patrolling();
         }
+    }
+
+    void Suspicion()
+    {
+        // Set speed for NavMeshAgent
+        nav.speed = suspicionSpeed;
+
+        if (nav.remainingDistance < nav.stoppingDistance)
+        {
+            suspicionTimer += Time.deltaTime;
+
+            if (suspicionTimer >= suspicionCheckWaitTime)
+            {
+                // It has reached its destination
+                if (suspicionWayPointIndex == suspicionWayPoints.Length - 1)
+                {
+                    suspicionWayPointIndex = 0;
+                    suspicion.suspicionCheckProgress = false;
+                }
+                else
+                {
+                    suspicionWayPointIndex++;
+                }
+
+                suspicionTimer = 0f;
+            }
+        }
+        else
+        {
+            suspicionTimer = 0f;
+        }
+
+        // Set the destination to the suspicionWayPoint
+        nav.destination = suspicionWayPoints[suspicionWayPointIndex].position;
+
+        // Resume movement if it has been stopped
+        nav.Resume();
     }
 
     void Pointing()
@@ -85,13 +133,13 @@ public class PatrolPersonAI : MonoBehaviour
 
             if (patrolTimer >= patrolWaitTime)
             {
-                if (wayPointIndex == patrolWayPoints.Length - 1)
+                if (patrolWayPointIndex == patrolWayPoints.Length - 1)
                 {
-                    wayPointIndex = 0;
+                    patrolWayPointIndex = 0;
                 }
                 else
                 {
-                    wayPointIndex++;
+                    patrolWayPointIndex++;
                 }
 
                 patrolTimer = 0f;
@@ -103,7 +151,7 @@ public class PatrolPersonAI : MonoBehaviour
         }
 
         // Set the destination to the patrolWayPoint
-        nav.destination = patrolWayPoints[wayPointIndex].position;
+        nav.destination = patrolWayPoints[patrolWayPointIndex].position;
 
         // Resume movement if it has been stopped
         nav.Resume();
