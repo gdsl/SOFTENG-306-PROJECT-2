@@ -59,11 +59,7 @@ public class PatrolPersonAI : MonoBehaviour
         //{
         //    // TODO. Condition should be replaced with GameController trigger action
         //}
-        if (suspicion.suspicion || suspicion.suspicionCheck)
-        {
-            // do nothing
-        }
-        else if (suspicion.suspicionCheckProgress)
+        if (suspicion.suspicionCheck)
         {
             Suspicion();
         }
@@ -94,7 +90,8 @@ public class PatrolPersonAI : MonoBehaviour
                 if (suspicionWayPointIndex == suspicionWayPoints.Length - 1)
                 {
                     suspicionWayPointIndex = 0;
-                    suspicion.suspicionCheckProgress = false;
+                    suspicion.suspicionCheck = false;
+                    suspicion.look = true;
                 }
                 else
                 {

@@ -66,12 +66,7 @@ public class PersonAnimation : MonoBehaviour {
         float speed = 0f;
         float angle = 0f;
 
-        if (suspicion.suspicion)
-        {
-            speed = 0f;
-            angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
-        }
-        else if (suspicion.suspicionCheck)
+        if (suspicion.look)
         {
             speed = 0f;
             angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
