@@ -5,7 +5,6 @@ public class CameraController : MonoBehaviour {
 
     public GameObject santa;
     private Vector3 offset;
-
 	// Use this for initialization
 	void Start () {
         offset = transform.position - santa.transform.position;

@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
 //	public GameObject animal; //could change to a list? not sure if it works with Unity associations
 //	public GameObject human; //could change to a list? not sure if it works with Unity associations
 //	public GameObject room;
+    public int cookieCount; //number of cookie count the player get
+    public GameObject cookie;
 	public Slider suspicionSlider;
 
 	// Use this for initialization
@@ -26,4 +28,9 @@ public class GameController : MonoBehaviour {
 	void IncreaseSuspicion() {
 		suspicionSlider.value = suspicionSlider.value + 1;
 	}
+
+    void IncreaseCookieCount()
+    {
+        cookieCount = cookieCount + 1;
+    }
 }
