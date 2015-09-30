@@ -727,9 +727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ea39eec57d45c4f92c806de6a58e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  santa: {fileID: 1593974952}
-  cameraController: {fileID: 0}
-  suspicionSlider: {fileID: 0}
 --- !u!4 &1154904266
 Transform:
   m_ObjectHideFlags: 0
@@ -741,7 +738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!1001 &1201410206
 Prefab:
   m_ObjectHideFlags: 0
@@ -828,10 +825,6 @@ Prefab:
     - target: {fileID: 22470944, guid: 3858320aaac4fb944b70244e43706326, type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423442, guid: 3858320aaac4fb944b70244e43706326, type: 2}
-      propertyPath: m_MaxValue
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3858320aaac4fb944b70244e43706326, type: 2}
