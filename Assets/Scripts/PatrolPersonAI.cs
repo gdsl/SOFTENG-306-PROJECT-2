@@ -9,7 +9,7 @@
     2. Pointing (Santa found)
 */
 
-public class PersonAI : MonoBehaviour
+public class PatrolPersonAI : MonoBehaviour
 {
 
     // Set speeds for different movement types
@@ -34,7 +34,7 @@ public class PersonAI : MonoBehaviour
     // initialize variables with awake function
     void Awake()
     {
-        personSight = GetComponent<personSight>();
+        personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Santa").transform;
         gameController = GetComponent<GameController>();
