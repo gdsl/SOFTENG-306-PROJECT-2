@@ -104,6 +104,9 @@ public class PatrolPersonAI : MonoBehaviour
 
         // Set the destination to the patrolWayPoint
         nav.destination = patrolWayPoints[wayPointIndex].position;
+
+        // Resume movement if it has been stopped
+        nav.Resume();
     }
 
 }

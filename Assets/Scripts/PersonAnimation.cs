@@ -77,7 +77,7 @@ public class PersonAnimation : MonoBehaviour {
             // Santa is not in sight. The speed should be based on nav mesh agent's desired velocity.
             // Achieved by projection in order to project the desired velocity vector on to the person's forward vector
             speed = Vector3.Project(nav.desiredVelocity, transform.forward).magnitude;
-
+            
             // angle between forward and the desired velocity
             angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
 
