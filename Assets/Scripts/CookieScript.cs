@@ -1,26 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CookieScript : MonoBehaviour {
-    private bool isPickedUp=false;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (isPickedUp)
-        {
-            Destroy(gameObject);
-        }
-	}
-
+public class CookieScript : Items {
+    //when the player collider with cookie trigger this event
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject == this.getPlayer()) //make sure collide is with palyer
         {
-            isPickedUp = true;
+            this.setPickedUp();//set cookie to pickup
+            this.getPlayerInventory().IncreaseCookieCount();//increase cookie count
         }
     }
 }
