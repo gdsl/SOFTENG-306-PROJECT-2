@@ -19,6 +19,7 @@ public class DoorAnimation : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         // If the triggering gameobject is the player...
         if (other.gameObject == player)
         {
@@ -29,15 +30,13 @@ public class DoorAnimation : MonoBehaviour {
                 if (playerInventory.hasKey(id)){
                     // ... increase the count of triggering objects.
                     count++;
-                    isLocked = false;
                 }
             }
             else
 	        {
                 // If the door doesn't require a key, increase the count of triggering objects.
                 count++;
-                isLocked = false;
-            }
+                            }
         }
     }
 
@@ -54,8 +53,11 @@ public class DoorAnimation : MonoBehaviour {
     {
         // When player leave the door region the 
         if (other.gameObject == player)
+        {
+            Debug.Log(other.name);
             // decrease the count of triggering objects.
             count = Mathf.Max(0, count - 1);
+        }
     }
 
 }
