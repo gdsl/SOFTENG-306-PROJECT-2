@@ -17,10 +17,10 @@ public class DoorAnimation : MonoBehaviour {
         playerInventory = player.GetComponent<PlayerInventory>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision col)
     {
         // If the triggering gameobject is the player...
-        if (other.gameObject == player)
+        if (col.gameObject == player)
         {
             // ... if this door requires a key...
             if (isLocked)
