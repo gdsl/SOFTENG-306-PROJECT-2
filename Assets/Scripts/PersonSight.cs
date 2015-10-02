@@ -42,7 +42,7 @@ public class PersonSight : MonoBehaviour {
         col = GetComponent<SphereCollider>();
 
         // Get reference to Santa
-        santa = GameObject.FindWithTag("Santa");
+        santa = GameObject.FindWithTag("Player");
         santaAnim = santa.GetComponent<Animator>();
     }
 	

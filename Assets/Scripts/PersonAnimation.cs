@@ -25,7 +25,7 @@ public class PersonAnimation : MonoBehaviour {
 
     void Awake()
     {
-        santaTransform = GameObject.FindGameObjectWithTag("Santa").transform;
+        santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
         personSight = GetComponent<PersonSight>();
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
