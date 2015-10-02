@@ -6,7 +6,7 @@ public class TextScript : MonoBehaviour
 {
     float blinkDurationSecs = 1f;
     float blinkProgress = 0f;
-    float blinkStep = 0.01f;
+    float blinkStep = 0.015f;
     //Color txtColor = Color.black;
     public Text blinkingText;
     // Use this for initialization

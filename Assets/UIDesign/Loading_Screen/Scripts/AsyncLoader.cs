@@ -1,45 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AsyncLoader : MonoBehaviour {
+    
+    public Image progressBar;
+    public Text text;
 
-
-    public Texture2D emptyProgressBar; // Set this in inspector.
-    public Texture2D fullProgressBar; // Set this in inspector.
-
-    private AsyncOperation async = null; // When assigned, load is in progress.
-
-    // Use this for initialization
-    void Start () {
-        Application.LoadLevel(3);
-    }
-	
-	// Update is called once per frame
-	void Update () {    }
-
-    /*
-
-    private void SyncLoadLevel(int level)
+    private int loadProgress = 0;
+ 
+     // Use this for initialization
+     void Start()
     {
-        async = Application.LoadLevelAsync(level);
-        Load();
+        StartCoroutine(DisplayLoadingScreen(3));
+    }
+     
+     // Update is called once per frame
+    void Update()
+    {
+
     }
 
-    IEnumerator Load()
+    IEnumerator DisplayLoadingScreen(int level)
     {
-        yield return async;
-    }
+        progressBar.transform.localScale = new Vector3(loadProgress, progressBar.transform.localScale.y);
 
-    void OnGUI()
-    {
-        if (async != null)
+        text.GetComponent<Text>().text = "Loading Progress " + loadProgress + "%";
+
+        AsyncOperation async = Application.LoadLevelAsync(level);
+
+        while (!async.isDone)
         {
-            GUI.DrawTexture(new Rect(0, 0, 100, 50), emptyProgressBar);
-            GUI.DrawTexture(new Rect(0, 0, 100 * async.progress, 50), fullProgressBar);
-            GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-            GUI.Label(new Rect(0, 0, 100, 50), string.Format("{0:N0}%", async.progress * 100f));
+            loadProgress = (int)(async.progress * 100);
+            text.GetComponent<Text>().text = "Loading Progress " + loadProgress + "%";
+            progressBar.transform.localScale = new Vector3(async.progress, progressBar.transform.localScale.y);
+            yield return null;
         }
+        
     }
-    */
-
 }
