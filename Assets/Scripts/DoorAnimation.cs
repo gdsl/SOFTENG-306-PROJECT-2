@@ -47,6 +47,7 @@ public class DoorAnimation : MonoBehaviour {
         // Set the open parameter.
         animator.SetBool(Animator.StringToHash("Open"), count > 0);
 
+
     }
 
     void OnCollisionExit(Collision other)
