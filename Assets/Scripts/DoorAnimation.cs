@@ -17,7 +17,7 @@ public class DoorAnimation : MonoBehaviour {
         playerInventory = player.GetComponent<PlayerInventory>();
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         // If the triggering gameobject is the player...
         if (other.gameObject == player)
@@ -50,7 +50,7 @@ public class DoorAnimation : MonoBehaviour {
 
     }
 
-    void OnCollisionExit(Collision other)
+    void OnTriggerExit(Collider other)
     {
         // When player leave the door region the 
         if (other.gameObject == player)
