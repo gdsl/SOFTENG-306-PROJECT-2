@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SuspicionController : MonoBehaviour {
 	public GameObject santa;
 	public Slider suspicionSlider;
+	public GameObject failScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,9 @@ public class SuspicionController : MonoBehaviour {
 
 	void IncreaseSuspicion() {
 		suspicionSlider.value = suspicionSlider.value + 1;
+		if (suspicionSlider.value == suspicionSlider.maxValue) {
+			failScreen.SetActive(true);
+		}
 	}
 
 }
