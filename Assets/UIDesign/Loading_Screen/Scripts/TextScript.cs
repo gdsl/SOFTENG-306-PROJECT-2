@@ -20,7 +20,7 @@ public class TextScript : MonoBehaviour
     {
         if ((blinkProgress > 1) || (blinkProgress < 0))
         {
-            blinkStep *= -2f;
+            blinkStep *= -1f;
         }
         blinkProgress += blinkStep;
         blinkingText.color = Color.Lerp(Color.black, Color.white, blinkProgress);// or whatever color you choose
