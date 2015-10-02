@@ -13,7 +13,6 @@ public class DoorAnimation : MonoBehaviour {
     {
         // Setting up the references.
         animator = GetComponent<Animator>();
-        
         player = GameObject.FindGameObjectWithTag("Player");
         playerInventory = player.GetComponent<PlayerInventory>();
     }
@@ -50,7 +49,7 @@ public class DoorAnimation : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        // If the leaving gameobject is the player or an enemy and the collider is a capsule collider...
+        // When player leave the door region the 
         if (other.gameObject == player)
             // decrease the count of triggering objects.
             count = Mathf.Max(0, count - 1);
