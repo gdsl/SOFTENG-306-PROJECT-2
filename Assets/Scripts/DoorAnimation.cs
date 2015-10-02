@@ -19,7 +19,6 @@ public class DoorAnimation : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         // If the triggering gameobject is the player...
         if (other.gameObject == player)
         {
