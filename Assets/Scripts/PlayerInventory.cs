@@ -33,4 +33,14 @@ public class PlayerInventory : MonoBehaviour {
     {
         keyInventory.Add(id, true);
     }
+
+    public bool hasKey(int id)
+    {
+        bool haskey=false;
+        if (keyInventory.ContainsKey(id)&&keyInventory[id]==true)
+        {
+            haskey = true;
+        }
+        return haskey;
+    }
 }
