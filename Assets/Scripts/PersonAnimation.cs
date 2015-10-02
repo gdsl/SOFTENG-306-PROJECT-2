@@ -12,6 +12,7 @@ public class PersonAnimation : MonoBehaviour {
     // Reference to santa transform. Might not be needed
     private Transform santaTransform;
     private PersonSight personSight;
+    private Suspicion suspicion;
 
     // Needed to guide person's movement
     private NavMeshAgent nav;
@@ -26,6 +27,7 @@ public class PersonAnimation : MonoBehaviour {
     {
         santaTransform = GameObject.FindGameObjectWithTag("Santa").transform;
         personSight = GetComponent<PersonSight>();
+        suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
@@ -64,7 +66,12 @@ public class PersonAnimation : MonoBehaviour {
         float speed = 0f;
         float angle = 0f;
 
-        if (personSight.santaInSight)
+        if (suspicion.look)
+        {
+            speed = 0f;
+            angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
+        }
+        else if (personSight.santaInSight)
         {
             // If santa is in sight, we want person to stop.
             speed = 0f;
@@ -77,7 +84,7 @@ public class PersonAnimation : MonoBehaviour {
             // Santa is not in sight. The speed should be based on nav mesh agent's desired velocity.
             // Achieved by projection in order to project the desired velocity vector on to the person's forward vector
             speed = Vector3.Project(nav.desiredVelocity, transform.forward).magnitude;
-
+            
             // angle between forward and the desired velocity
             angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);
 
