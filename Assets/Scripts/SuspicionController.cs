@@ -22,4 +22,8 @@ public class SuspicionController : MonoBehaviour {
 		suspicionSlider.value = suspicionSlider.value + 1;
 	}
 
+	public void IncreaseSuspicionByAmount(int amount) {
+		suspicionSlider.value = suspicionSlider.value + amount;
+	}
+
 }
