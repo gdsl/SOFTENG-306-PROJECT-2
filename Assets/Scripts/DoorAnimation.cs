@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class DoorAnimation : MonoBehaviour {
-    private bool isLocked=true;
+    public bool isLocked=true;
     private Animator animator;
     private GameObject player;                      // Reference to the player.
     private PlayerInventory playerInventory;        // Reference to the player's inventory.
-    private int id = 1; //id of the door
+    public int id; //id of the door
     private int count;
 
     void Awake()
