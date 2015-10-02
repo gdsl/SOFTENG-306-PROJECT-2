@@ -40,7 +40,7 @@ public class PatrolPersonAI : MonoBehaviour
         suspicion = GetComponent<Suspicion>();
         personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
-        santa = GameObject.FindGameObjectWithTag("Santa").transform;
+        santa = GameObject.FindGameObjectWithTag("Player").transform;
         gameController = GetComponent<GameController>();
     }
 
