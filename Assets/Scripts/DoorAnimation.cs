@@ -17,7 +17,7 @@ public class DoorAnimation : MonoBehaviour {
         playerInventory = player.GetComponent<PlayerInventory>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         // If the triggering gameobject is the player...
         if (other.gameObject == player)
@@ -29,12 +29,14 @@ public class DoorAnimation : MonoBehaviour {
                 if (playerInventory.hasKey(id)){
                     // ... increase the count of triggering objects.
                     count++;
+                    isLocked = false;
                 }
             }
             else
 	        {
                 // If the door doesn't require a key, increase the count of triggering objects.
                 count++;
+                isLocked = false;
             }
         }
     }
@@ -45,9 +47,10 @@ public class DoorAnimation : MonoBehaviour {
         // Set the open parameter.
         animator.SetBool(Animator.StringToHash("Open"), count > 0);
 
+
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
         // When player leave the door region the 
         if (other.gameObject == player)
