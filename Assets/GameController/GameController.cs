@@ -16,4 +16,8 @@ public class GameController : MonoBehaviour {
 
 	}
 
+	public void RestartLevel() {
+		failScreen.SetActive (false);
+		Application.LoadLevel(2);
+	}
 }

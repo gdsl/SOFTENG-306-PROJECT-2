@@ -26,4 +26,8 @@ public class SuspicionController : MonoBehaviour {
 		}
 	}
 
+	public void RestartLevel() {
+
+	}
+
 }
