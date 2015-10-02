@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class KeyScript : Items {
-    private int id=1;
+    public int id;
     //when the player collider with key trigger this event
     void OnTriggerEnter(Collider col)
     {
