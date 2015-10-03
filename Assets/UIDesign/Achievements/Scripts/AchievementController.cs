@@ -78,6 +78,7 @@ public class AchievementController : MonoBehaviour {
 
     public void setAchievement(int type)
     {
+        print("called achievement");
         achievement.RemoveAt(type);
         achievement.Insert(type, true);
 
@@ -100,7 +101,6 @@ public class AchievementController : MonoBehaviour {
         foreach (GameObject image in unlockedImage) {
             int count = type + 1;
             string name = count + " Unlocked";
-            print(image.name);
             if (image.name.Equals(name))
             {
                 image.SetActive(true);

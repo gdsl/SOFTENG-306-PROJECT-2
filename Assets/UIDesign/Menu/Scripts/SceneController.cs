@@ -3,11 +3,11 @@ using System.Collections;
 
 public class SceneController : MonoBehaviour {
 
-    public GameObject achievementScreen;
+    private GameObject achievementScreen;
 	// Use this for initialization
 	void Start () {
         achievementScreen = GameObject.FindGameObjectWithTag("AchievementScreen");
-        achievementScreen.SetActive(false);
+        if (achievementScreen != null) achievementScreen.SetActive(false);
     }
 	
 	// Update is called once per frame
