@@ -305,6 +305,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11442760, guid: 36cfd19c1b59eeb48a1edbbb0f6ebc58, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1063482725}
+    - target: {fileID: 11442760, guid: 36cfd19c1b59eeb48a1edbbb0f6ebc58, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: hideAchievement
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36cfd19c1b59eeb48a1edbbb0f6ebc58, type: 2}
   m_IsPrefabParent: 0
@@ -357,6 +365,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11456204, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22416962, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -440,6 +452,26 @@ Prefab:
     - target: {fileID: 22420056, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456204, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456204, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456204, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1063482725}
+    - target: {fileID: 11456204, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showAchievement
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456204, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dd1bab676207c44494221e0d922d131, type: 2}
