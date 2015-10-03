@@ -6,6 +6,11 @@ public class CookieScript : Items {
 
 	public Text cookieText;
 
+	// Use this for initialization
+	void Start () {
+		cookieText = GameObject.FindWithTag("CookieText").GetComponent<Text>() as Text;
+	}
+
     //when the player collider with cookie trigger this event
     void OnTriggerEnter(Collider col)
     {

@@ -24,16 +24,18 @@ public class LevelEnd : MonoBehaviour {
             Debug.Log("Delivered present to tree");
             //Application.LoadLevel("EndLevel");
 			CalculateScore();
-			successText.text += " - Score: " + score;
+			successText.text += "Score: " + score;
 			successScreen.SetActive(true);
 
         }
     }
 
 	void CalculateScore() {
-		int cookies = int.Parse(cookieText.text.Split(' ')[1]);
-		float time = float.Parse(timeText.text.Split(' ')[1]);
-		score = (int) (5000 - suspicionSlider.value + cookies * 500 + time);
+		int cookies = 0;
+		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
+		float time = 0;
+		float.TryParse(timeText.text.Split(' ')[1], out time);
+		score = (int) (5000 - suspicionSlider.value + cookies * 500 - time);
 
 		if (score > 3000) {
 			stars = 3;
