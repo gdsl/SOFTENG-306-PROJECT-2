@@ -14,26 +14,40 @@ public class SceneController : MonoBehaviour {
     public Image levelTwoStarThree;
     public Image levelTwoLock;
 
-    public Color starColor;
 
 	// Use this for initialization
 	void Start () {
-        starColor = Color.yellow;
+
+        //to be refractored later
+
+        Color starCompleteColor = Color.yellow;
+        Color starEmptyColor = Color.white;
+
         int levelOneStars = PlayerPrefs.GetInt("Level One Stars");
 
-        if(levelOneStars > 0)
+        levelTwoStarOne.enabled = false;
+        levelTwoStarTwo.enabled = false;
+        levelTwoStarThree.enabled = false;
+
+        if (levelOneStars > 0)
         {
-            levelOneStarOne.color = starColor;
+            levelOneStarOne.color = starCompleteColor;
             if(levelOneStars > 1)
             {
-                levelOneStarTwo.color = starColor;
+                levelOneStarTwo.color = starCompleteColor;
                 if(levelOneStars > 2)
                 {
-                    levelOneStarThree.color = starColor;
+                    levelOneStarThree.color = starCompleteColor;
                 }
             }
 
             levelTwoLock.enabled = false;
+            levelTwoStarOne.enabled = true;
+            levelTwoStarTwo.enabled = true;
+            levelTwoStarThree.enabled = true;
+            levelTwoStarOne.color = starEmptyColor;
+            levelTwoStarTwo.color = starEmptyColor;
+            levelTwoStarThree.color = starEmptyColor;
         }
 
 	}
