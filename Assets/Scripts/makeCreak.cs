@@ -31,7 +31,11 @@ public class MakeCreak : MonoBehaviour {
                 // Debugging purposes
                 SleepingScript script = enemy.GetComponent<SleepingScript>();
                 Suspicion suspicion = enemy.GetComponent<Suspicion>();
-                script.sleeping = false;
+                if (script != null)
+                {
+                    script.sleeping = false;
+
+                }
                 suspicion.suspicionCheck = true;
                 Debug.Log("Triggered");
 

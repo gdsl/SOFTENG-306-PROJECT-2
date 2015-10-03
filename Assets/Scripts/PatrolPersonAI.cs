@@ -40,7 +40,7 @@ public class PatrolPersonAI : MonoBehaviour
         suspicion = GetComponent<Suspicion>();
         personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
-        santa = GameObject.FindGameObjectWithTag("Santa").transform;
+        santa = GameObject.FindGameObjectWithTag("Player").transform;
         gameController = GetComponent<GameController>();
     }
 
@@ -80,7 +80,7 @@ public class PatrolPersonAI : MonoBehaviour
         // Set speed for NavMeshAgent
         nav.speed = suspicionSpeed;
 
-        if (nav.remainingDistance < nav.stoppingDistance)
+        if (nav.remainingDistance <= nav.stoppingDistance)
         {
             suspicionTimer += Time.deltaTime;
 
