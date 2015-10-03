@@ -29,6 +29,10 @@ public class PlayerInventory : MonoBehaviour {
         cookieCount = cookieCount + 1;
     }
 
+	public long getCookieCount() {
+		return cookieCount;
+	}
+
     public void gotKey(int id)
     {
         keyInventory.Add(id, true);

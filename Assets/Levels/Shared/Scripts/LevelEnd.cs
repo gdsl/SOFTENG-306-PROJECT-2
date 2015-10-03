@@ -4,6 +4,7 @@ using System.Collections;
 public class LevelEnd : MonoBehaviour {
 
     private GameObject player;
+	public GameObject successScreen;
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -13,8 +14,10 @@ public class LevelEnd : MonoBehaviour {
     {
         
         if (other.gameObject == player) {
-            Debug.Log("Delievereds");
-            Application.LoadLevel("EndLevel");
+            Debug.Log("Delivered present to tree");
+            //Application.LoadLevel("EndLevel");
+			successScreen.SetActive(true);
+
         }
     }
 }

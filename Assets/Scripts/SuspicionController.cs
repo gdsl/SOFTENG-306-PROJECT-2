@@ -14,7 +14,7 @@ public class SuspicionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (santa.GetComponent<Rigidbody> ().position.y > 0.2) {
+		if (santa.GetComponent<Rigidbody> ().velocity.magnitude > 0.2) {
 			IncreaseSuspicion();
 		}
 	}
@@ -24,10 +24,6 @@ public class SuspicionController : MonoBehaviour {
 		if (suspicionSlider.value == suspicionSlider.maxValue) {
 			failScreen.SetActive(true);
 		}
-	}
-
-	public void RestartLevel() {
-
 	}
 
 }
