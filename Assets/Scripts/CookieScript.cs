@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 
 public class CookieScript : Items {
 
-	public Text cookieText;
+	private Text cookieText;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,6 @@ public class CookieScript : Items {
         {
             this.setPickedUp();//set cookie to pickup
             this.getPlayerInventory().IncreaseCookieCount();//increase cookie count
-			cookieText.text = "Cookies: " + this.getPlayerInventory().getCookieCount();
         }
     }
 }
