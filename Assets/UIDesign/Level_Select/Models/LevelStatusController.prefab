@@ -1,14 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &164694
+--- !u!1 &110778
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 425002}
-  - 114: {fileID: 11467696}
+  - 4: {fileID: 428486}
+  - 114: {fileID: 11457124}
   m_Layer: 0
   m_Name: LevelStatusController
   m_TagString: Untagged
@@ -16,37 +16,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &425002
+--- !u!4 &428486
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164694}
+  m_GameObject: {fileID: 110778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 344.575104, y: 200.190094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11467696
+--- !u!114 &11457124
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164694}
+  m_GameObject: {fileID: 110778}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a67f6ed8bf70b424582643609f5034f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelOneStarOne: {fileID: 11471268, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelOneStarTwo: {fileID: 11445528, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelOneStarThree: {fileID: 11474010, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelOneLock: {fileID: 11459932, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelTwoStarOne: {fileID: 11471268, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelTwoStarTwo: {fileID: 11445528, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelTwoStarThree: {fileID: 11474010, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
-  levelTwoLock: {fileID: 11459932, guid: 3a3e160677673c24abe3e213109e7f39, type: 2}
+  levelOneStarOne: {fileID: 0}
+  levelOneStarTwo: {fileID: 0}
+  levelOneStarThree: {fileID: 0}
+  levelOneLock: {fileID: 0}
+  levelTwoStarOne: {fileID: 0}
+  levelTwoStarTwo: {fileID: 0}
+  levelTwoStarThree: {fileID: 0}
+  levelTwoLock: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -56,5 +56,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 164694}
+  m_RootGameObject: {fileID: 110778}
   m_IsPrefabParent: 1
