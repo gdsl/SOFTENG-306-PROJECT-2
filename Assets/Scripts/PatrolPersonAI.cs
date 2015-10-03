@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 /**
     Script which controls the Person behaviour. "Brain" script. Responsible for getting input from other scripts and acting.
 
@@ -67,6 +67,7 @@ public class PatrolPersonAI : MonoBehaviour
         {
             // Santa is in sight. Point at santa
             Pointing();
+			StartCoroutine (PersonSeen());
         }
         else
         {
@@ -74,6 +75,14 @@ public class PatrolPersonAI : MonoBehaviour
             Patrolling();
         }
     }
+
+	IEnumerator PersonSeen()
+	{
+		yield return new WaitForSeconds(3.0f);
+		SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
+		slider.IncreaseSuspicionByAmount(5000);
+	}
+
 
     void Suspicion()
     {

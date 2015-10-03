@@ -21,15 +21,15 @@ public class SuspicionController : MonoBehaviour {
 	}
 
 	void IncreaseSuspicion() {
-		suspicionSlider.value = suspicionSlider.value + 1;
-		if (suspicionSlider.value == suspicionSlider.maxValue) {
-			failText.text = "You have woken up everybody! \nCops are on their way";
-			failScreen.SetActive(true);
-		}
+		IncreaseSuspicionByAmount (1);
 	}
 
 	public void IncreaseSuspicionByAmount(float amount) {
 		suspicionSlider.value = suspicionSlider.value + amount;
+		if (suspicionSlider.value == suspicionSlider.maxValue) {
+			failText.text = "You have woken up everybody! \nCops are on their way";
+			failScreen.SetActive(true);
+		}
 	}
 
 }

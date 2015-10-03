@@ -21,7 +21,7 @@ public class MakeCreak : MonoBehaviour {
 		if (other.gameObject == player) {
             //raise the suspicion level
             SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
-			slider.IncreaseSuspicionByAmount(player.GetComponent<Rigidbody> ().velocity.magnitude);
+			slider.IncreaseSuspicionByAmount(player.GetComponent<Rigidbody>().velocity.magnitude*300);
             //notify all human game objects that a creaky floorboard has been stepped on
             //it is up to them to figure out if they heard the sound
             //data sent is the vector3 position of the floorboard stepped on

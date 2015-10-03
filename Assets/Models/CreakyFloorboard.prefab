@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3346214}
   - 23: {fileID: 2381254}
   - 65: {fileID: 6564298}
-  - 114: {fileID: 11401452}
+  - 114: {fileID: 11482482}
   m_Layer: 0
   m_Name: CreakyFloorboard
   m_TagString: Untagged
@@ -74,7 +74,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 1, z: 10}
   m_Center: {x: 0, y: .600000024, z: 0}
---- !u!114 &11401452
+--- !u!114 &11482482
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f9e16f775cc2b408abc62ff58ca9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

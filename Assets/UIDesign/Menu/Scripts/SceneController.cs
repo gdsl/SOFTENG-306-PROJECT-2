@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class SceneController : MonoBehaviour {
         achievementScreen = GameObject.FindGameObjectWithTag("AchievementScreen");
         if (achievementScreen != null) achievementScreen.SetActive(false);
     }
+
 	
 	// Update is called once per frame
 	void Update () {
