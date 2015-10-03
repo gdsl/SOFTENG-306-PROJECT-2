@@ -27,6 +27,11 @@ public class LevelEnd : MonoBehaviour {
 			successText.text += "Score: " + score;
 			successScreen.SetActive(true);
 
+
+            GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
+            AchievementController controller = achievementController.GetComponent<AchievementController>();
+            controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
+
             PlayerPrefs.SetInt("Level One Stars", stars);
 
         }

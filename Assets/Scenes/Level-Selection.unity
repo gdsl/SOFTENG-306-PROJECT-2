@@ -173,11 +173,19 @@ Prefab:
     - target: {fileID: 11480630, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1407378220}
+      objectReference: {fileID: 67226007}
     - target: {fileID: 11441466, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1407378220}
+      objectReference: {fileID: 67226007}
+    - target: {fileID: 11480630, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: moveScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441466, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: moveScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
   m_IsPrefabParent: 0
@@ -267,6 +275,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57b34f7f8025aa141a5fd121a1e3c1c7, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &67226007 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11449254, guid: 57b34f7f8025aa141a5fd121a1e3c1c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 67226006}
+  m_Script: {fileID: 11500000, guid: 5f7ca0a2f213ec24dbb91bf048672421, type: 3}
 --- !u!114 &492463984 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11473180, guid: 77d0cc491b13efd4c9a150c7d1ef10f9,
@@ -413,12 +427,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 60902689}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!114 &1407378220 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11452152, guid: 57b34f7f8025aa141a5fd121a1e3c1c7,
-    type: 2}
-  m_PrefabInternal: {fileID: 67226006}
-  m_Script: {fileID: 11500000, guid: 5f7ca0a2f213ec24dbb91bf048672421, type: 3}
 --- !u!1001 &1495649504
 Prefab:
   m_ObjectHideFlags: 0
