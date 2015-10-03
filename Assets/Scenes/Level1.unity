@@ -768,6 +768,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 468999403}
     m_Modifications:
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 424722, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -803,6 +807,34 @@ Prefab:
     - target: {fileID: 169964, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
       propertyPath: m_Name
       value: Cookies
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[1].x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[1].y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[1].z
+      value: 4.11000013
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[2].x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[2].y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[2].z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491044, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
+      propertyPath: locations.Array.data[0].x
+      value: -6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a72fd4604972ee44b0e873f307f3ab0, type: 2}
