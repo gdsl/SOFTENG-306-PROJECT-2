@@ -9,7 +9,7 @@ PlayerSettings:
   targetDevice: 2
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: UGSOFT
+  companyName: DefaultCompany
   productName: SilentNight
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -83,14 +83,14 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.UGSOFT.SilentNight
+  bundleIdentifier: com.Company.ProductName
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
-  productGUID: cb78dd16d8d7f654e957e31944521e4f
+  productGUID: 1ef946651b0ca2245af4d505a2bfc850
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -131,7 +131,7 @@ PlayerSettings:
   iOSLaunchScreenLandscape: {fileID: 0}
   iOSLaunchScreenBackgroundColor:
     serializedVersion: 2
-    rgba: 0
+    rgba: 3924156668
   iOSLaunchScreenFillPct: 100
   iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
@@ -149,11 +149,7 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - m_Icon: {fileID: 0}
-      m_Size: 128
+  m_BuildTargetIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
@@ -298,17 +294,8 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT
-    2: CROSS_PLATFORM_INPUT
-    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    7: MOBILE_INPUT
-    14: MOBILE_INPUT
-    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    17: MOBILE_INPUT
-    20: MOBILE_INPUT
-  metroPackageName: RollABall
+  scriptingDefineSymbols: {}
+  metroPackageName: SilentNight
   metroPackageLogo: 
   metroPackageLogo140: 
   metroPackageLogo180: 
@@ -319,7 +306,7 @@ PlayerSettings:
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: RollABall
+  metroApplicationDescription: SilentNight
   metroStoreTileLogo80: 
   metroStoreTileLogo: 
   metroStoreTileLogo140: 
@@ -433,44 +420,12 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
-  - Android::ScriptingBackend
-  - Metro::ScriptingBackend
-  - Standalone::ScriptingBackend
-  - WP8::ScriptingBackend
-  - WebGL::ScriptingBackend
-  - WebGL::audioCompressionFormat
-  - WebGL::exceptionSupport
-  - WebGL::memorySize
   - WebPlayer::ScriptingBackend
-  - iOS::Architecture
-  - iOS::ScriptingBackend
-  Android::ScriptingBackend: 0
-  Metro::ScriptingBackend: 2
-  Standalone::ScriptingBackend: 0
-  WP8::ScriptingBackend: 2
-  WebGL::ScriptingBackend: 1
-  WebGL::audioCompressionFormat: 4
-  WebGL::exceptionSupport: 1
-  WebGL::memorySize: 256
   WebPlayer::ScriptingBackend: 0
-  iOS::Architecture: 2
-  iOS::ScriptingBackend: 1
   boolPropertyNames:
-  - WebGL::analyzeBuildSize
-  - WebGL::dataCaching
-  - WebGL::useEmbeddedResources
   - XboxOne::enus
-  WebGL::analyzeBuildSize: 0
-  WebGL::dataCaching: 0
-  WebGL::useEmbeddedResources: 0
   XboxOne::enus: 1
-  stringPropertyNames:
-  - WebGL::emscriptenArgs
-  - WebGL::template
-  - additionalIl2CppArgs::additionalIl2CppArgs
-  WebGL::emscriptenArgs: 
-  WebGL::template: APPLICATION:Default
-  additionalIl2CppArgs::additionalIl2CppArgs: 
+  stringPropertyNames: []
   firstStreamedSceneWithResources: 0
   cloudProjectId: 
   projectName: 

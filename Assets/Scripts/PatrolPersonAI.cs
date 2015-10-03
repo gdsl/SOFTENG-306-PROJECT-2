@@ -80,7 +80,7 @@ public class PatrolPersonAI : MonoBehaviour
         // Set speed for NavMeshAgent
         nav.speed = suspicionSpeed;
 
-        if (nav.remainingDistance < nav.stoppingDistance)
+        if (nav.remainingDistance <= nav.stoppingDistance)
         {
             suspicionTimer += Time.deltaTime;
 

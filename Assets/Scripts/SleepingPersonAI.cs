@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SleepingPersonAI : MonoBehaviour {
+public class SleepingPersonAI : MonoBehaviour
+{
 
     public float speed = 2f;
     public float waitTime = 3f;
@@ -16,7 +17,7 @@ public class SleepingPersonAI : MonoBehaviour {
     private int wayPointIndex;
     private bool direction;
 
-	// Use this for initialization
+    // Use this for initialization
     void Awake()
     {
         // Setting up the reference
@@ -24,12 +25,13 @@ public class SleepingPersonAI : MonoBehaviour {
         personSight = GetComponent<PersonSight>();
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
-        santa = GameObject.FindGameObjectWithTag("Santa").transform;
+        santa = GameObject.FindGameObjectWithTag("Player").transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
-	    if (sleepingScript.sleeping)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (sleepingScript.sleeping)
         {
             Sleeping();
         }
@@ -41,7 +43,7 @@ public class SleepingPersonAI : MonoBehaviour {
         {
             Suspicion();
         }
-	}
+    }
 
     // Basically tells Nav Mesh Agent to stop at its spot
     void Sleeping()
@@ -60,12 +62,13 @@ public class SleepingPersonAI : MonoBehaviour {
         // Set speed for NavMeshAgent
         nav.speed = speed;
 
-        if (nav.remainingDistance < nav.stoppingDistance)
+        if (nav.remainingDistance <= nav.stoppingDistance)
         {
             timer += Time.deltaTime;
 
             if (timer >= waitTime)
             {
+
                 if (wayPointIndex == walkPoints.Length - 1)
                 {
                     suspicion.suspicionCheck = false;
@@ -80,12 +83,18 @@ public class SleepingPersonAI : MonoBehaviour {
                 // Sleeping Person is going to check for Santa. Increment to go to looking point
                 if (suspicion.suspicionCheck)
                 {
-                    wayPointIndex++;
+                    if (wayPointIndex < walkPoints.Length - 1)
+                    {
+                        wayPointIndex++;
+                    }
                 }
                 else
                 {
                     // Santa has finished checking for santa. Decrement to go back to bed
-                    wayPointIndex--;
+                    if (wayPointIndex != 0)
+                    {
+                        wayPointIndex--;
+                    }
                 }
 
                 timer = 0f;
