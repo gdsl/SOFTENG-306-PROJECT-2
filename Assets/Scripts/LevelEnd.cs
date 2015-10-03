@@ -27,6 +27,8 @@ public class LevelEnd : MonoBehaviour {
 			successText.text += "Score: " + score;
 			successScreen.SetActive(true);
 
+            PlayerPrefs.SetInt("Level One Stars", stars);
+
         }
     }
 
