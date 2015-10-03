@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class makeCreak : MonoBehaviour {
+public class MakeCreak : MonoBehaviour {
 
 	private GameObject player;
 	private GameObject[] enemies;
@@ -34,6 +34,7 @@ public class makeCreak : MonoBehaviour {
                     {
                         SleepingScript script = enemy.GetComponent<SleepingScript>();
                         script.sleeping = false;
+                        Debug.Log("Triggered");
                     }
                 }
             }
