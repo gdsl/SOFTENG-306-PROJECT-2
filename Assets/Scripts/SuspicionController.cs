@@ -6,6 +6,7 @@ public class SuspicionController : MonoBehaviour {
 	public GameObject santa;
 	public Slider suspicionSlider;
 	public GameObject failScreen;
+	public Text failText;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class SuspicionController : MonoBehaviour {
 	void IncreaseSuspicion() {
 		suspicionSlider.value = suspicionSlider.value + 1;
 		if (suspicionSlider.value == suspicionSlider.maxValue) {
+			failText.text = "You have woken up everybody! \nCops are on their way";
 			failScreen.SetActive(true);
 		}
 	}
