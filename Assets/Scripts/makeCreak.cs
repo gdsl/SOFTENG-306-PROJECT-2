@@ -28,15 +28,22 @@ public class MakeCreak : MonoBehaviour {
                 Vector2 enemyXY = new Vector2(enemy.transform.position.x, enemy.transform.position.y);
                 Vector2 difference = boardPosition - enemyXY;
 
-                if (Mathf.Abs(difference.x) <= 6.5)
-                {
-                    if (Mathf.Abs(difference.y) <= 6.5)
-                    {
-                        SleepingScript script = enemy.GetComponent<SleepingScript>();
-                        script.sleeping = false;
-                        Debug.Log("Triggered");
-                    }
-                }
+                // Debugging purposes
+                SleepingScript script = enemy.GetComponent<SleepingScript>();
+                Suspicion suspicion = enemy.GetComponent<Suspicion>();
+                script.sleeping = false;
+                suspicion.suspicionCheck = true;
+                Debug.Log("Triggered");
+
+                //if (Mathf.Abs(difference.x) <= 6.5)
+                //{
+                //    if (Mathf.Abs(difference.y) <= 6.5)
+                //    {
+                //        SleepingScript script = enemy.GetComponent<SleepingScript>();
+                //        script.sleeping = false;
+                //        Debug.Log("Triggered");
+                //    }
+                //}
             }
 		}
 	}
