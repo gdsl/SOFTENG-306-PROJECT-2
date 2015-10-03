@@ -32,7 +32,6 @@ public class MakeCreak : MonoBehaviour {
             {
                 if (collider.gameObject.tag == "Enemy")
                 {
-                    Debug.Log("Triggered");
                     SleepingScript script = collider.gameObject.GetComponent<SleepingScript>();
                     Suspicion suspicion = collider.gameObject.GetComponent<Suspicion>();
                     if (script != null)
