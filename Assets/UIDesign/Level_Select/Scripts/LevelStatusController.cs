@@ -17,7 +17,7 @@ public class LevelStatusController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //to be refractored later
-
+       
         Color starCompleteColor = Color.yellow;
         Color starEmptyColor = Color.white;
 
