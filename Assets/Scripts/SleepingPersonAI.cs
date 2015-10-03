@@ -24,7 +24,7 @@ public class SleepingPersonAI : MonoBehaviour {
         personSight = GetComponent<PersonSight>();
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
-        santa = GameObject.FindGameObjectWithTag("Santa").transform;
+        santa = GameObject.FindGameObjectWithTag("Player").transform;
     }
 	
 	// Update is called once per frame
@@ -98,7 +98,7 @@ public class SleepingPersonAI : MonoBehaviour {
 
         // Set the destination to the patrolWayPoint
         nav.destination = walkPoints[wayPointIndex].position;
-
+        Debug.Log(wayPointIndex);
         // Resume movement if it has been stopped
         nav.Resume();
     }
