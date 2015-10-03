@@ -15,7 +15,7 @@ public class MakeCreak : MonoBehaviour {
         boardPosition = new Vector2(transform.position.x, transform.position.y);
 	}
 
-	void OnTriggerStay(Collider other) {
+	void OnTriggerEnter(Collider other) {
 		if (other.gameObject == player) {
             //raise the suspicion level
             SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
@@ -34,7 +34,6 @@ public class MakeCreak : MonoBehaviour {
                 if (script != null)
                 {
                     script.sleeping = false;
-
                 }
                 suspicion.suspicionCheck = true;
                 Debug.Log("Triggered");
