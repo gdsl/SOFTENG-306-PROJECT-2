@@ -27,7 +27,10 @@ public class LevelEnd : MonoBehaviour {
             Debug.Log("Delivered present to tree");
             //Application.LoadLevel("EndLevel");
 			CalculateScore();
-			successText.text += "Score: " + score;
+
+            if (!successText.text.Contains("Score:"))
+                successText.text += "Score: " + score;
+
 			successScreen.SetActive(true);
 
 
