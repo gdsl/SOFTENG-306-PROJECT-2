@@ -26,7 +26,8 @@ public class DoorAnimation : MonoBehaviour {
             if (isLocked)
             {
                 // ... if the player has the key...
-                if (playerInventory.hasKey(id)){
+                if (playerInventory.hasKey(id))
+                {
                     // ... increase the count of triggering objects.
                     count++;
                     //play door unlocked audio
@@ -35,10 +36,15 @@ public class DoorAnimation : MonoBehaviour {
                 }
             }
             else
-	        {
+            {
                 // If the door doesn't require a key, increase the count of triggering objects.
                 count++;
-                            }
+            }
+        }
+        else if (other.gameObject.tag == "Enemy")
+        {
+            // If its people in the house they can open door
+            count++;
         }
     }
 
