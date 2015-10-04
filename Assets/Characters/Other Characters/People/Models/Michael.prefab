@@ -619,7 +619,7 @@ GameObject:
   - 114: {fileID: 11421274}
   m_Layer: 0
   m_Name: Michael
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2354,7 +2354,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.02995253, y: -5.32248745e-18, z: .719110548}
+  m_LocalPosition: {x: -4.73000002, y: 0, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466900}
@@ -2425,9 +2425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4c4e9bb6d870f458aa06926c94df2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suspicion: 0
+  look: 0
   suspicionCheck: 0
-  suspicionCheckProgress: 0
 --- !u!114 &11456938
 MonoBehaviour:
   m_ObjectHideFlags: 1
