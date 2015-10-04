@@ -44,7 +44,10 @@ public class DoorAnimation : MonoBehaviour {
         else if (other.gameObject.tag == "Enemy")
         {
             // If its people in the house they can open door
-            count++;
+            if (!isLocked)//Temporary fix for large collider opening doors
+            {
+                count++;
+            }
         }
     }
 
