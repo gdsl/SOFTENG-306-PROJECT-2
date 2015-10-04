@@ -26,8 +26,8 @@ GameObject:
   - 33: {fileID: 3356750}
   - 65: {fileID: 6554700}
   - 23: {fileID: 2365228}
-  - 122: {fileID: 12267548}
   - 114: {fileID: 11483938}
+  - 114: {fileID: 11402882}
   m_Layer: 0
   m_Name: KeyTemp
   m_TagString: Untagged
@@ -131,8 +131,19 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: -.5, y: 0, z: -.5}
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11402882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02691113f08c63f4d901b2d9161dc7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11483938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,17 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
---- !u!122 &12267548
-Halo:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138530}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4284148432
-  m_Size: .400000006
 --- !u!198 &19841018
 ParticleSystem:
   m_ObjectHideFlags: 1
