@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		failScreen.SetActive (false);
 		successScreen.SetActive (false);
+        //stop the menu music playing
+        MenuMusic menuMusic = MenuMusic.Instance;
+        Destroy(menuMusic.gameObject);
 	}
 	
 	// Update is called once per frame
