@@ -5,6 +5,8 @@ using System.Collections;
 public class HUDCanvas : MonoBehaviour {
 
 	public Text timeText;
+	public GameObject successScreen;
+	public GameObject failScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +15,8 @@ public class HUDCanvas : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString("0.00");
+		if (!failScreen.activeInHierarchy && !successScreen.activeInHierarchy) {
+			timeText.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.00");
+		}
 	}
 }
