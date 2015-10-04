@@ -19,25 +19,30 @@ public class AchievementController : MonoBehaviour {
         //display where the achievement data is save on your computer
         print("saved file directory: " + Application.persistentDataPath);
 
+        Setup();
+	}
+	
+    public void Setup()
+    {
         //find all achievement images and store them to use later on
         lockedImage = GameObject.FindGameObjectsWithTag("LockedAchievement");
         unlockedImage = GameObject.FindGameObjectsWithTag("UnlockedAchievement");
-        
+
         //create new achievement game data if not open existing one
         if (File.Exists(Application.persistentDataPath + "/achievement.gd"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/achievement.gd", FileMode.Open);
             achievement = (List<bool>)bf.Deserialize(file);
-               
+
             //change the UI corresponding to the existing achievement data
             foreach (GameObject image in lockedImage)
             {
                 //game object are named in "1 Locked", "2 Locked". split the string to get the value
-                
+
                 string[] nameArray = image.name.Split(' ');
-                int value = int.Parse(nameArray[0]) -1;
-                image.SetActive(!achievement[value]);  
+                int value = int.Parse(nameArray[0]) - 1;
+                image.SetActive(!achievement[value]);
 
             }
 
@@ -47,11 +52,12 @@ public class AchievementController : MonoBehaviour {
                 string[] nameArray = image.name.Split(' ');
                 int value = int.Parse(nameArray[0]) - 1;
                 image.SetActive(achievement[value]);
-               
+
             }
             file.Close();
         }
-        else {
+        else
+        {
             achievement = new List<bool>();
             achievement.Add(false);
             achievement.Add(false);
@@ -64,7 +70,7 @@ public class AchievementController : MonoBehaviour {
             foreach (GameObject image in lockedImage)
             {
                 //game object are named in "1 Locked", "2 Locked". split the string to get the value
-                image.SetActive(true);  
+                image.SetActive(true);
 
             }
 
@@ -73,8 +79,7 @@ public class AchievementController : MonoBehaviour {
                 image.SetActive(false);
             }
         }
-	}
-	
+    }
 
     public void setAchievement(int type)
     {
