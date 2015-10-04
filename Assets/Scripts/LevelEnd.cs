@@ -35,8 +35,10 @@ public class LevelEnd : MonoBehaviour {
             AchievementController controller = achievementController.GetComponent<AchievementController>();
             controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
 
-            PlayerPrefs.SetInt("Level One Stars", stars);
-
+            if (stars > PlayerPrefs.GetInt("Level One Stars"))
+            {
+                PlayerPrefs.SetInt("Level One Stars", stars);
+            }
         }
     }
 
