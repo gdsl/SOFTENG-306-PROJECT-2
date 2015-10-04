@@ -17,7 +17,7 @@ To run on Unity
 - In unity, go to scenes and open the SantaStealth scene
 - Should see all the GameObjects and stuff appear. Can use play button to test
 
-Install from APK
+Install from APK    
 1.Clone Repo   
 2.In Unity, go File -> Open Project   
 3.Select the folder the repository was downloaded to  
