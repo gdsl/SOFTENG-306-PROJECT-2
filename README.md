@@ -17,15 +17,12 @@ To run on Unity
 - In unity, go to scenes and open the SantaStealth scene
 - Should see all the GameObjects and stuff appear. Can use play button to test
 
-
-
 Install from APK
-1.Clone Repo
-2.In Unity, go File -> Open Project
-3.Select the folder the repository was downloaded to
-4.Edit -> Project Settings -> Player -> Publishing Settings
-5.File -> Build Settings
-6.Select 'Android' as the Platform
-7.Click 'Build'
-8.Save the .apk on a compatible Android device (must have Android SDK)
-9.Install .apk and run the app
+1.Clone Repo   
+2.In Unity, go File -> Open Project   
+3.Select the folder the repository was downloaded to  
+4.File -> Build Settings   
+5.Select 'Android' as the Platform   
+6.Click 'Build'   
+7.Save the .apk on a compatible Android device (must have Android SDK)
+8.Install .apk and run the app
