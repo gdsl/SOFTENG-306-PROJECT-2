@@ -538,7 +538,12 @@ Prefab:
       propertyPath: m_Name
       value: DoorParent (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11447748, guid: b4a21a95bf16c89439bed845ef154ac6, type: 2}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 13609672, guid: b4a21a95bf16c89439bed845ef154ac6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b4a21a95bf16c89439bed845ef154ac6, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &91660779 stripped
@@ -4434,6 +4439,22 @@ Transform:
   - {fileID: 1562036745}
   m_Father: {fileID: 1992094361}
   m_RootOrder: 2
+--- !u!1 &1437610095 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 160958, guid: b4a21a95bf16c89439bed845ef154ac6, type: 2}
+  m_PrefabInternal: {fileID: 91660778}
+--- !u!65 &1437610098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437610095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .454554319, y: 1.41251969, z: 2.1428113}
+  m_Center: {x: -.140443444, y: .206260085, z: -.571405649}
 --- !u!1 &1444006971
 GameObject:
   m_ObjectHideFlags: 0
