@@ -16,6 +16,9 @@ public class CookieScript : Items {
     {
         if (col.gameObject == this.getPlayer()) //make sure collide is with palyer
         {
+            //play eating audio 
+            AudioSource eatAudio = GameObject.FindGameObjectWithTag("EatCookieAudio").GetComponent<AudioSource>();
+            eatAudio.Play();
             this.setPickedUp();//set cookie to pickup
             this.getPlayerInventory().IncreaseCookieCount();//increase cookie count
         }
