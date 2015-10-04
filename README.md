@@ -24,5 +24,5 @@ Install from APK
 4.File -> Build Settings   
 5.Select 'Android' as the Platform   
 6.Click 'Build'   
-7.Save the .apk on a compatible Android device (must have Android SDK)    
-8.Install .apk and run the app
+7.Save the .apk on a compatible Android device (must have Android SDK)     
+8.Install .apk and run the app   
