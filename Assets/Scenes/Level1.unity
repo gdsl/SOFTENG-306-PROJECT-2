@@ -74,7 +74,7 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .5
+    agentRadius: .100000001
     agentHeight: 2
     agentSlope: 45
     agentClimb: .400000006
@@ -82,7 +82,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .166666672
+    cellSize: .0333333351
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: a4af38f3b04170c4e8bb35ec579b4e1e, type: 2}
 --- !u!4 &40160597 stripped
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68274189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: -6}
+  m_LocalPosition: {x: 2.82999992, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1225456792}
@@ -1459,7 +1459,7 @@ Prefab:
       objectReference: {fileID: 2115628018}
     - target: {fileID: 22470944, guid: 3858320aaac4fb944b70244e43706326, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3858320aaac4fb944b70244e43706326, type: 2}
