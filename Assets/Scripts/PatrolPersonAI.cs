@@ -59,15 +59,15 @@ public class PatrolPersonAI : MonoBehaviour
         //{
         //    // TODO. Condition should be replaced with GameController trigger action
         //}
-        if (suspicion.suspicionCheck)
-        {
-            Suspicion();
-        }
-        else if (personSight.santaInSight)
+
+        if (personSight.santaInSight)
         {
             // Santa is in sight. Point at santa
             Pointing();
 			StartCoroutine (PersonSeen());
+        } else if (suspicion.suspicionCheck)
+        {
+            Suspicion();
         }
         else
         {
