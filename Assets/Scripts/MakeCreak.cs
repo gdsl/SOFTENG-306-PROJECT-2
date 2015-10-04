@@ -19,6 +19,9 @@ public class MakeCreak : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject == player) {
+            //play the creaky floorboard audio
+            AudioSource creakyAudio = GameObject.FindGameObjectWithTag("CreakyAudio").GetComponent<AudioSource>();
+            creakyAudio.Play();
             //raise the suspicion level
             SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
 			slider.IncreaseSuspicionByAmount(player.GetComponent<Rigidbody>().velocity.magnitude*300);

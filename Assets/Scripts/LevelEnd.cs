@@ -21,6 +21,9 @@ public class LevelEnd : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player) {
+            //play success audio
+            AudioSource winAudio = GameObject.FindGameObjectWithTag("WinGameAudio").GetComponent<AudioSource>();
+            winAudio.Play();
             Debug.Log("Delivered present to tree");
             //Application.LoadLevel("EndLevel");
 			CalculateScore();

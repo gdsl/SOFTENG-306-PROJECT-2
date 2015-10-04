@@ -29,6 +29,9 @@ public class DoorAnimation : MonoBehaviour {
                 if (playerInventory.hasKey(id)){
                     // ... increase the count of triggering objects.
                     count++;
+                    //play door unlocked audio
+                    AudioSource unlockAudio = GameObject.FindGameObjectWithTag("UnlockDoorAudio").GetComponent<AudioSource>();
+                    unlockAudio.Play();
                 }
             }
             else
