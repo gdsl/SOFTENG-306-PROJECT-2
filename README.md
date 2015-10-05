@@ -7,14 +7,14 @@ Build Instructions:
 - Create an empty folder called SantaStealth
 - git init
 - git remote add origin https://github.com/gdsl/SOFTENG-306-PROJECT-2
-- git pull origin master
-- git checkout nightly (to start working on nightly)
+- git fetch
+- git checkout master/nightly (or "git checkout PROTOTYPE" for prototype version)
   
 To run on Unity
 - open existing project
 - navigate to the git folder, and select this folder
 - Unity should recognise it as a project
-- In unity, go to scenes and open the SantaStealth scene
+- In unity, go to Scenes folder and open the MenuScene
 - Should see all the GameObjects and stuff appear. Can use play button to test
 
 Install from APK    
@@ -25,4 +25,10 @@ Install from APK
 5.Select 'Android' as the Platform   
 6.Click 'Build'   
 7.Save the .apk on a compatible Android device (must have Android SDK)    
-8.Install .apk and run the app
+8.Install .apk and run the app  
+  
+USB Debugging
+- ensure Build Settings is targeted to Android (see above)
+- attach phone via USB cable
+- enable phone USB debugging mode
+- File -> build and run
