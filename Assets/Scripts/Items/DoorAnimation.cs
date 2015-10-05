@@ -44,7 +44,10 @@ public class DoorAnimation : MonoBehaviour {
         else if (other.gameObject.tag == "Enemy")
         {
             // If its people in the house they can open door
-            count++;
+            if (other is CapsuleCollider)//Temporary fix for large collider opening doors
+            {
+                count++;
+            }
         }
     }
 
@@ -59,7 +62,7 @@ public class DoorAnimation : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         // When player leave the door region the 
-        if (other.gameObject == player)
+        if (other.gameObject == player || (other.gameObject.tag == "Enemy" && other is CapsuleCollider))
         {
             Debug.Log(other.name);
             // decrease the count of triggering objects.

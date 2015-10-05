@@ -9,7 +9,7 @@ public class LightController : MonoBehaviour {
 	// Use this for initialization
     void Awake() {
         lights = this.gameObject.GetComponent<Light>();
-        lights.intensity = 0;
+        lights.intensity = 0.1f;
     }
 
 	void OnTriggerEnter (Collider col) {
@@ -33,12 +33,12 @@ public class LightController : MonoBehaviour {
 	void Update () {
         if (count > 0)
         {
-            if (lights.intensity < 1.2f) {
-                lights.intensity += 0.02f;
+            if (lights.intensity < 1.5f) {
+                lights.intensity += 0.1f;
             }
         }
         else {
-            if (lights.intensity >= 0)
+            if (lights.intensity >= 0.1f)
             {
                 lights.intensity -= 0.01f;
             }
