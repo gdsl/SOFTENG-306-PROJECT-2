@@ -45,7 +45,7 @@ public class LevelEnd : MonoBehaviour {
         }
     }
 
-	void CalculateScore() {
+	public void CalculateScore() {
 		int cookies = 0;
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
@@ -60,4 +60,14 @@ public class LevelEnd : MonoBehaviour {
 			stars = 1; 
 		}
 	}
+
+    public int getStar()
+    {
+        return stars;
+    }
+
+    public int getScore()
+    {
+        return score;
+    }
 }
