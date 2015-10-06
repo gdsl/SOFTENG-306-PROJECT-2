@@ -20,24 +20,24 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (Input.GetKeyDown(KeyCode.Escape)) { Application.LoadLevel(0); }
 	}
 
 	public void RestartLevel() {
-		successScreen.SetActive (false);
-		failScreen.SetActive (false);
+	//	successScreen.SetActive (false);
+	//	failScreen.SetActive (false);
 		Application.LoadLevel(2);
 	}
 
 	public void GoToNextLevel() {
-		successScreen.SetActive (false);
-		failScreen.SetActive (false);
+	//	successScreen.SetActive (false);
+	//	failScreen.SetActive (false);
 		Application.LoadLevel(1);
 	}
 
 	public void GoBackToHome() {
-		successScreen.SetActive (false);
-		failScreen.SetActive (false);
+	//	successScreen.SetActive (false);
+	//	failScreen.SetActive (false);
 		Application.LoadLevel(0);
 	}
 

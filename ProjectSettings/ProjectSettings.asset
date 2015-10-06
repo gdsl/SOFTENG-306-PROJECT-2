@@ -5,12 +5,12 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: UGSOFT
-  productName: SOFTENG-306-PROJECT-2
+  productName: Silent Night
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -443,6 +443,7 @@ PlayerSettings:
   - WebGL::memorySize
   - WebPlayer::ScriptingBackend
   - iOS::Architecture
+  - iOS::EnableIncrementalBuildSupportForIl2cpp
   - iOS::ScriptingBackend
   Android::ScriptingBackend: 0
   Metro::ScriptingBackend: 2
@@ -454,6 +455,7 @@ PlayerSettings:
   WebGL::memorySize: 256
   WebPlayer::ScriptingBackend: 0
   iOS::Architecture: 2
+  iOS::EnableIncrementalBuildSupportForIl2cpp: 0
   iOS::ScriptingBackend: 1
   boolPropertyNames:
   - WebGL::analyzeBuildSize

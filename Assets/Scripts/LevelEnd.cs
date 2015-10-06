@@ -27,7 +27,10 @@ public class LevelEnd : MonoBehaviour {
             Debug.Log("Delivered present to tree");
             //Application.LoadLevel("EndLevel");
 			CalculateScore();
-			successText.text += "Score: " + score;
+
+            if (!successText.text.Contains("Score:"))
+                successText.text += "Score: " + score;
+
 			successScreen.SetActive(true);
 
 
@@ -42,7 +45,7 @@ public class LevelEnd : MonoBehaviour {
         }
     }
 
-	void CalculateScore() {
+	public void CalculateScore() {
 		int cookies = 0;
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
@@ -57,4 +60,14 @@ public class LevelEnd : MonoBehaviour {
 			stars = 1; 
 		}
 	}
+
+    public int getStar()
+    {
+        return stars;
+    }
+
+    public int getScore()
+    {
+        return score;
+    }
 }

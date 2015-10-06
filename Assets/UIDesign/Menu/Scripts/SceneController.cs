@@ -7,11 +7,17 @@ public class SceneController : MonoBehaviour {
     private GameObject achievementScreen;
 	// Use this for initialization
 	void Start () {
+        GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
+
         achievementScreen = GameObject.FindGameObjectWithTag("AchievementScreen");
-        
-        
         if (achievementScreen != null)
         {
+            if (achievementController != null)
+            {
+                AchievementController controller = achievementController.GetComponent<AchievementController>();
+                controller.Setup();
+            }
+
             achievementScreen.SetActive(false);
             RectTransform rt = achievementScreen.GetComponent<RectTransform>();
             rt.anchorMin = new Vector2(0.5f, 0.5f);
@@ -21,12 +27,7 @@ public class SceneController : MonoBehaviour {
             rt.localPosition = new Vector3(0, 0, 0);
         }
 
-        GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
-        if (achievementController != null)
-        {
-            AchievementController controller = achievementController.GetComponent<AchievementController>();
-            controller.Setup();
-        }
+        
     }
 
     void OnLevelWasLoaded(int level)
@@ -45,7 +46,7 @@ public class SceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	   
+		if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
 	}
 
     public void moveScene(int scene)
