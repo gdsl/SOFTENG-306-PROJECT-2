@@ -16,9 +16,9 @@ public class PlayerInventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Cookie count: " + cookieCount);//log count for cookie
+        //Debug.Log("Cookie count: " + cookieCount);//log count for cookie
         foreach(KeyValuePair<int,bool> key in keyInventory){
-            Debug.Log("Key id : " + key.Key+"; Key got : "+key.Value);//log key id and has
+            //Debug.Log("Key id : " + key.Key+"; Key got : "+key.Value);//log key id and has
         }
         
 	}
