@@ -4,7 +4,8 @@ using System.Collections;
 using UnityEngine.UI;
 using NUnit.Framework;
 
-public class TestCookie {
+public class TestCookie
+{
 
     /**
      * Test to see when a cookie count increase is increase by 1
