@@ -21,6 +21,8 @@ public class RandomMovementPersonAI : MonoBehaviour {
     private float suspicionTimer;
     private int suspicionWayPointIndex;
 
+    private Vector3 startingPosition;
+
     // Use this for initialization
     void Awake()
     {
@@ -28,6 +30,7 @@ public class RandomMovementPersonAI : MonoBehaviour {
         personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Player").transform;
+        startingPosition = transform.position;
     }
 	
 	// Update is called once per frame
@@ -45,7 +48,7 @@ public class RandomMovementPersonAI : MonoBehaviour {
         }
         else
         {
-            // Santa is not in sight. Just patrol area
+            // Santa is not in sight. Just randomly move area
             RandomMove();
         }
     }
@@ -99,6 +102,7 @@ public class RandomMovementPersonAI : MonoBehaviour {
         // set speed of character
         nav.speed = randomMovementSpeed;
 
+        // initially enters loop
         if (nav.remainingDistance <= nav.stoppingDistance)
         {
             // reached destination
@@ -107,7 +111,7 @@ public class RandomMovementPersonAI : MonoBehaviour {
             if (randomMovementTimer >= randomMovementWaitTime)
             {
                 // generate new path
-                Vector3 dest = generatePath();
+                Vector3 dest = generateGoal();
                 nav.destination = dest;
 
                 randomMovementTimer = 0f;
@@ -116,21 +120,21 @@ public class RandomMovementPersonAI : MonoBehaviour {
         else
         {
             randomMovementTimer = 0f;
-            Vector3 dest = generatePath();
-            nav.destination = dest;
         }
-        Debug.Log(nav.destination);
+
         nav.Resume();
     }
 
 
     /**
-        Finds random position around walk radius
+        Finds random position around walk radius.
+        http://answers.unity3d.com/questions/475066/how-to-get-a-random-point-on-navmesh.html
     */
-    private Vector3 generatePath()
+    private Vector3 generateGoal()
     {
         Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
-        randomDirection += transform.position;
+        randomDirection += startingPosition;
+
         NavMeshHit hit;
 
         NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1);
