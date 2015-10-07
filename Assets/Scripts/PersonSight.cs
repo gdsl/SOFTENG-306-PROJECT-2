@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /*
     Script which controls person's FOV in the game and reacts to what it sees. Can be used for any type of person
@@ -50,7 +51,11 @@ public class PersonSight : MonoBehaviour {
 	void Update () {
         // Set the animator parameter "SantaInSight" to whether if santa is currently in sight.
         anim.SetBool("SantaInSight", santaInSight);
-	}
+
+        // Call update to suspicion meter if santa is seen
+        if (santaInSight)
+            StartCoroutine(PersonSeen());
+    }
 
     /*
         For santaInSight to be true, it must satisfy THREE conditions.
@@ -110,5 +115,13 @@ public class PersonSight : MonoBehaviour {
         {
             santaInSight = false;
         }
+    }
+
+    // Person seen. Trigger suspicion meter update
+    IEnumerator PersonSeen()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
+        slider.IncreaseSuspicionByAmount(5000);
     }
 }

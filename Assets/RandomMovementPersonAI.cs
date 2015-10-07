@@ -40,7 +40,6 @@ public class RandomMovementPersonAI : MonoBehaviour {
         {
             // Santa is in sight. Point at santa
             Pointing();
-            //StartCoroutine(PersonSeen());
         }
         else if (suspicion.suspicionCheck)
         {

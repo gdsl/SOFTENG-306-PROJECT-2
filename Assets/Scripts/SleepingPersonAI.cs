@@ -38,8 +38,6 @@ public class SleepingPersonAI : MonoBehaviour
         else if (personSight.santaInSight)
         {
             Pointing();
-            StartCoroutine(PersonSeen());
-
         }
         else
         {
@@ -112,12 +110,5 @@ public class SleepingPersonAI : MonoBehaviour
 
         // Resume movement if it has been stopped
         nav.Resume();
-    }
-
-    IEnumerator PersonSeen()
-    {
-        yield return new WaitForSeconds(3.0f);
-        SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
-        slider.IncreaseSuspicionByAmount(5000);
     }
 }
