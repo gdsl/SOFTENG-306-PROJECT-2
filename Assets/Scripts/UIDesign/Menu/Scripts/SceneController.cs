@@ -64,6 +64,9 @@ public class SceneController : MonoBehaviour {
         achievementScreen.SetActive(false);
     }
 
+	public void GoToSettings()
+	{
 
+	}
 
 }
