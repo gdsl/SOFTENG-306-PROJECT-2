@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -70,14 +71,17 @@ public class AchievementController : MonoBehaviour {
                 //game object are named in "1 Locked", "2 Locked". split the string to get the value
                 string[] nameArray = image.name.Split(' ');
                 int value = int.Parse(nameArray[0]) - 1;
-
+				Image iconHolder = image.transform.parent.transform.Find ("IconHolder").GetComponent<Image>();
 				int result = PlayerPrefs.GetInt(achievement[value]);
 				if (result == unlocked) {
 					image.SetActive(true);
+					iconHolder.color = new Color(255,0,0);
 				} else if (result == locked) {
 					image.SetActive(false);
+					iconHolder.color = new Color(255,255,255);
 				} else if (result == 0) {
 					PlayerPrefs.SetInt(achievement[value],locked);
+					iconHolder.color = new Color(255,255,255);
 					image.SetActive(false);
 				}
 
