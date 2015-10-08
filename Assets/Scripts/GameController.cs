@@ -11,8 +11,12 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		ResumeGame ();
 		failScreen.SetActive (false);
 		successScreen.SetActive (false);
+		Text hintText = GameObject.FindGameObjectWithTag("HintText").GetComponent<Text>();
+		hintText.gameObject.SetActive(false);
+
         //stop the menu music playing
         MenuMusic menuMusic = MenuMusic.Instance;
         Destroy(menuMusic.gameObject);
@@ -27,25 +31,25 @@ public class GameController : MonoBehaviour {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
 		Application.LoadLevel(2);
-		ResumeGame ();
+	//	ResumeGame ();
 	}
 
 	public void GoToNextLevel() {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
 		Application.LoadLevel(1);
-		ResumeGame ();
+	//	ResumeGame ();
 	}
 
 	public void GoBackToHome() {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
 		Application.LoadLevel(0);
-		ResumeGame ();
+	//	ResumeGame ();
 	}
 
 	public void PauseGame() {
-		Debug.LogError ("paused");
+	//	Debug.LogError ("paused");
 		if (Time.timeScale == 1) {
 			Time.timeScale = 0;
 		} else {

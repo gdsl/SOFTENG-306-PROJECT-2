@@ -35,7 +35,7 @@ public class SuspicionController : MonoBehaviour {
 				GameController gameControllerScript = gameController.GetComponent<GameController>();
 				gameControllerScript.StopGame();
 
-				failText.text = "You have woken up everybody! \nCops are on their way";
+			//	failText.text = "You have woken up everybody! \nCops are on their way";
 				failScreen.SetActive(true);
 			}
 		}

@@ -58,7 +58,11 @@ public class LevelEnd : MonoBehaviour {
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
 		float.TryParse(timeText.text.Split(' ')[1], out time);
-		score = (int) (5000 - suspicionSlider.value + cookies * 500 - time);
+		score = (int) (2500 - 0.5*suspicionSlider.value + cookies * 500 + 2500 - 30*time);
+
+		if (score < 0) {
+			score = 0;
+		}
 
 		if (score > 3000) {
 			stars = 3;
