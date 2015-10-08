@@ -8,14 +8,14 @@ public class Items : MonoBehaviour {
 
     void Awake()
     {
-        // Setting up the references.
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerInventory = player.GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Setting up the references.
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerInventory = player.GetComponent<PlayerInventory>();
         if (isPickedUp)
         {
             Destroy(gameObject);

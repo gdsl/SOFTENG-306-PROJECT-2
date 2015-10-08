@@ -13,12 +13,12 @@ public class DoorAnimation : MonoBehaviour {
     {
         // Setting up the references.
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerInventory = player.GetComponent<PlayerInventory>();
     }
 
     void OnTriggerEnter(Collider other)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerInventory = player.GetComponent<PlayerInventory>();
         // If the triggering gameobject is the player...
         if (other.gameObject == player)
         {
