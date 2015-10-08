@@ -4,15 +4,11 @@ using UnityEngine.UI;
 
 public class LevelStatusController : MonoBehaviour {
 
-    public Image levelOneStarOne;
-    public Image levelOneStarTwo;
-    public Image levelOneStarThree;
-    public Image levelOneLock;
+    public Image[] levelOneStars;
+    public RawImage lockOne;
 
-    public Image levelTwoStarOne;
-    public Image levelTwoStarTwo;
-    public Image levelTwoStarThree;
-    public Image levelTwoLock;
+    public Image[] levelTwoStars;
+    public RawImage lockTwo;
 
     // Use this for initialization
     void Start () {
@@ -21,31 +17,23 @@ public class LevelStatusController : MonoBehaviour {
         Color starCompleteColor = Color.yellow;
         Color starEmptyColor = Color.white;
 
-        int levelOneStars = PlayerPrefs.GetInt("Level One Stars");
+        int levelOneStarsInt = PlayerPrefs.GetInt("Level One Stars");
 
-        levelTwoStarOne.enabled = false;
-        levelTwoStarTwo.enabled = false;
-        levelTwoStarThree.enabled = false;
+        levelTwoStars[0].enabled = false;
+        levelTwoStars[1].enabled = false;
+        levelTwoStars[2].enabled = false;
 
-        if (levelOneStars > 0)
+        if (levelOneStarsInt > 0)
         {
-            levelOneStarOne.color = starCompleteColor;
-            if (levelOneStars > 1)
+            levelOneStars[0].color = starCompleteColor;
+            if (levelOneStarsInt > 1)
             {
-                levelOneStarTwo.color = starCompleteColor;
-                if (levelOneStars > 2)
+                levelOneStars[1].color = starCompleteColor;
+                if (levelOneStarsInt > 2)
                 {
-                    levelOneStarThree.color = starCompleteColor;
+                    levelOneStars[2].color = starCompleteColor;
                 }
             }
-
-            levelTwoLock.enabled = false;
-            levelTwoStarOne.enabled = true;
-            levelTwoStarTwo.enabled = true;
-            levelTwoStarThree.enabled = true;
-            levelTwoStarOne.color = starEmptyColor;
-            levelTwoStarTwo.color = starEmptyColor;
-            levelTwoStarThree.color = starEmptyColor;
         }
     }
 	

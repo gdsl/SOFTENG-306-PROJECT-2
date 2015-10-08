@@ -22,32 +22,40 @@ public class LeaderboardController : MonoBehaviour {
     public Text score4;
     public Text score5;
 
+    public GameObject loading;
+
     // Use this for initialization
     void Start () {
         url = "https://microsoft-apiapp77eee8f5a1b34710aa0e56c4970c119d.azurewebsites.net/api/Score";
         leaderboard.SetActive(false);
+        loading.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        loading.transform.FindChild("LoadingCircle").transform.Rotate(new Vector3(0, 0, -45) * Time.deltaTime);
 	}
 
     public void ShowLeaderboard()
     {
         leaderboard.SetActive(true);
+        loading.SetActive(true);
         WWW www = new WWW(url);
         StartCoroutine(WaitForRequest(www));
+
     }
 
     public void HideLeaderboard()
     {
         leaderboard.SetActive(false);
+        loading.SetActive(false);
     }
 
     IEnumerator WaitForRequest(WWW www)
     {
         yield return www;
+
+        loading.SetActive(false);
 
         // check for errors
         if (www.error == null)
