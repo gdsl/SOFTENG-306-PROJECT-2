@@ -12,7 +12,7 @@ public class AsyncLoader : MonoBehaviour {
      // Use this for initialization
      void Start()
     {
-        StartCoroutine(DisplayLoadingScreen(3));
+        StartCoroutine(DisplayLoadingScreen(4));
     }
      
      // Update is called once per frame

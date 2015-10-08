@@ -186,7 +186,13 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: moveScene
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11480630, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11457818, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
+    - {fileID: 11453788, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 77d0cc491b13efd4c9a150c7d1ef10f9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &67226006
