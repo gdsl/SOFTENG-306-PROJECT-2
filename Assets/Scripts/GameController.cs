@@ -27,18 +27,40 @@ public class GameController : MonoBehaviour {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
 		Application.LoadLevel(2);
+		ResumeGame ();
 	}
 
 	public void GoToNextLevel() {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
 		Application.LoadLevel(1);
+		ResumeGame ();
 	}
 
 	public void GoBackToHome() {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
 		Application.LoadLevel(0);
+		ResumeGame ();
 	}
+
+	public void PauseGame() {
+		Debug.LogError ("paused");
+		if (Time.timeScale == 1) {
+			Time.timeScale = 0;
+		} else {
+			Time.timeScale = 1;
+		}
+	}
+
+	public void ResumeGame() {
+		Time.timeScale = 1;
+	}
+
+	
+	public void StopGame() {
+		Time.timeScale = 0;
+	}
+	
 
 }

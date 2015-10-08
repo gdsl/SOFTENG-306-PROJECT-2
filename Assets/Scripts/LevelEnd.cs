@@ -25,6 +25,9 @@ public class LevelEnd : MonoBehaviour {
             AudioSource winAudio = GameObject.FindGameObjectWithTag("WinGameAudio").GetComponent<AudioSource>();
             winAudio.Play();
             Debug.Log("Delivered present to tree");
+
+
+
             //Application.LoadLevel("EndLevel");
 			CalculateScore();
 
@@ -37,6 +40,11 @@ public class LevelEnd : MonoBehaviour {
             GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
             AchievementController controller = achievementController.GetComponent<AchievementController>();
             controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
+
+			GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+			GameController gameControllerScript = gameController.GetComponent<GameController>();
+			gameControllerScript.StopGame();
+
 
             if (stars > PlayerPrefs.GetInt("Level One Stars"))
             {

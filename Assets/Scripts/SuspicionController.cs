@@ -6,6 +6,7 @@ public class SuspicionController : MonoBehaviour {
 	public GameObject santa;
 	public Slider suspicionSlider;
 	public GameObject failScreen;
+	public GameObject successScreen;
 	public Text failText;
 
 	// Use this for initialization
@@ -27,9 +28,16 @@ public class SuspicionController : MonoBehaviour {
 
 	public void IncreaseSuspicionByAmount(float amount) {
 		suspicionSlider.value = suspicionSlider.value + amount;
-		if (suspicionSlider.value == suspicionSlider.maxValue) {
-			failText.text = "You have woken up everybody! \nCops are on their way";
-			failScreen.SetActive(true);
+		if (suspicionSlider.value >= suspicionSlider.maxValue) {
+
+			if (!successScreen.active) {
+				GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+				GameController gameControllerScript = gameController.GetComponent<GameController>();
+				gameControllerScript.StopGame();
+
+				failText.text = "You have woken up everybody! \nCops are on their way";
+				failScreen.SetActive(true);
+			}
 		}
 	}
 

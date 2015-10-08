@@ -78,7 +78,7 @@ public class PatrolPersonAI : MonoBehaviour
 
 	IEnumerator PersonSeen()
 	{
-		yield return new WaitForSeconds(3.0f);
+		yield return new WaitForSeconds(2.0f);
 		SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
 		slider.IncreaseSuspicionByAmount(5000);
 	}
