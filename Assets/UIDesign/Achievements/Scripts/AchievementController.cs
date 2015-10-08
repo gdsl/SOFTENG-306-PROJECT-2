@@ -15,6 +15,7 @@ public class AchievementController : MonoBehaviour {
     public const string FIRST_LEVEL_COMPLETE = "FIRST_LEVEL_COMPLETE";
     public const string TEN_COOKIES = "TEN_COOKIES";
     public const string STAY_BELOW = "STAY_BELOW";
+	public const string PLACE_HOLDER = "PLACE_HOLDER";
     public const int locked = 1;
     public const int unlocked = 2;
     // Use this for initialization
@@ -32,6 +33,9 @@ public class AchievementController : MonoBehaviour {
         achievement.Add(FIRST_LEVEL_COMPLETE);
         achievement.Add(TEN_COOKIES);
         achievement.Add(STAY_BELOW);
+		achievement.Add (PLACE_HOLDER);
+		achievement.Add (PLACE_HOLDER);
+		achievement.Add (PLACE_HOLDER);
 
         //find all achievement images and store them to use later on
         lockedImage = GameObject.FindGameObjectsWithTag("LockedAchievement");
@@ -47,12 +51,15 @@ public class AchievementController : MonoBehaviour {
                 string[] nameArray = image.name.Split(' ');
                 int value = int.Parse(nameArray[0]) - 1;
 
-                if (PlayerPrefs.GetInt(achievement[value]) == locked) {
+				int result = PlayerPrefs.GetInt(achievement[value]);
+                if (result == locked) {
                     image.SetActive(true);
-                } else
-                {
-                    image.SetActive(false);
-                }
+				} else if (result == unlocked) {
+					image.SetActive(false);
+				} else if (result == 0) {
+					PlayerPrefs.SetInt(achievement[value],locked);
+					image.SetActive(true);
+                } 
 
                 
 
@@ -63,14 +70,16 @@ public class AchievementController : MonoBehaviour {
                 //game object are named in "1 Locked", "2 Locked". split the string to get the value
                 string[] nameArray = image.name.Split(' ');
                 int value = int.Parse(nameArray[0]) - 1;
-                if (PlayerPrefs.GetInt(achievement[value]) == unlocked)
-                {
-                   image.SetActive(true);
-                }
-                else
-                {
-                    image.SetActive(false);
-                }
+
+				int result = PlayerPrefs.GetInt(achievement[value]);
+				if (result == unlocked) {
+					image.SetActive(true);
+				} else if (result == locked) {
+					image.SetActive(false);
+				} else if (result == 0) {
+					PlayerPrefs.SetInt(achievement[value],locked);
+					image.SetActive(false);
+				}
 
             }
 
@@ -79,6 +88,7 @@ public class AchievementController : MonoBehaviour {
             PlayerPrefs.SetInt(FIRST_LEVEL_COMPLETE, locked);
             PlayerPrefs.SetInt(TEN_COOKIES, locked);
             PlayerPrefs.SetInt(STAY_BELOW, locked);
+			PlayerPrefs.SetInt(PLACE_HOLDER, locked);
             PlayerPrefs.Save();
 
             foreach (GameObject image in lockedImage)
