@@ -813,8 +813,9 @@ GameObject:
   - 114: {fileID: 11459456}
   - 114: {fileID: 11406364}
   - 114: {fileID: 11427636}
+  - 114: {fileID: 11443800}
   m_Layer: 0
-  m_Name: ThirdPersonController 1
+  m_Name: ThirdPersonControllerNetwork
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1357,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179114}
-  m_LocalRotation: {x: .532675207, y: .0703404546, z: .836132765, w: -.110415146}
+  m_LocalRotation: {x: .532675147, y: .0703404471, z: .836132646, w: -.110415131}
   m_LocalPosition: {x: 2.22714643e-05, y: -6.1504652e-05, z: .0260270257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2436,7 +2437,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff1eb3cd418ec6478bf9d1d5bf470a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isoCamera: {fileID: 0}
+--- !u!114 &11443800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f22b904ad3cb940a8cda9f534e2e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 465022}
+  lerpRate: 15
 --- !u!114 &11447030
 MonoBehaviour:
   m_ObjectHideFlags: 1
