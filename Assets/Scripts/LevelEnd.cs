@@ -45,11 +45,7 @@ public class LevelEnd : MonoBehaviour {
 			GameController gameControllerScript = gameController.GetComponent<GameController>();
 			gameControllerScript.StopGame();
 
-
-            if (stars > PlayerPrefs.GetInt("Level One Stars"))
-            {
-                PlayerPrefs.SetInt("Level One Stars", stars);
-            }
+            updateLevelInfo();
         }
     }
 
@@ -81,5 +77,23 @@ public class LevelEnd : MonoBehaviour {
     public int getScore()
     {
         return score;
+    }
+
+    public void updateLevelInfo()
+    {
+
+        if (stars > PlayerPrefs.GetInt("Level One Stars"))
+        {
+            PlayerPrefs.SetInt("Level One Stars", stars);
+        }
+
+        if (score > PlayerPrefs.GetInt("Level One Score"))
+        {
+            PlayerPrefs.SetInt("Level One Score", score);
+        }
+
+        GameObject scoreUploadController = GameObject.FindGameObjectWithTag("ScoreUploadController");
+        ScoreUploadController controller = scoreUploadController.GetComponent<ScoreUploadController>();
+        controller.setScore(score);
     }
 }
