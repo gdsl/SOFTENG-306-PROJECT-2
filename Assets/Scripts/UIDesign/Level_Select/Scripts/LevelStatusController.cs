@@ -10,10 +10,23 @@ public class LevelStatusController : MonoBehaviour {
     public Image[] levelTwoStars;
     public RawImage lockTwo;
 
+    public Image[] levelThreeStars;
+    public RawImage lockThree;
+
+    public Text levelOneHighScore;
+    public Text levelTwoHighScore;
+    public Text levelThreeHighScore;
+
     // Use this for initialization
     void Start () {
         //to be refractored later
 
+        doSetup();
+
+    }
+
+    private void doSetup()
+    {
         Color starCompleteColor = Color.yellow;
         Color starEmptyColor = Color.white;
 
@@ -35,6 +48,9 @@ public class LevelStatusController : MonoBehaviour {
                 }
             }
         }
+
+        levelOneHighScore.text = PlayerPrefs.GetInt("Level One Score") + "";
+
     }
 	
 	// Update is called once per frame

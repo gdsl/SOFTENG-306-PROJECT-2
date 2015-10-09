@@ -605,6 +605,10 @@ Prefab:
       propertyPath: lockTwo
       value: 
       objectReference: {fileID: 2047801804}
+    - target: {fileID: 11457124, guid: a7ec07cc91f72404980c54eafb8a1c1d, type: 2}
+      propertyPath: levelOneHighScore
+      value: 
+      objectReference: {fileID: 1782217177}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7ec07cc91f72404980c54eafb8a1c1d, type: 2}
   m_IsPrefabParent: 0
@@ -828,6 +832,12 @@ Prefab:
 --- !u!114 &1674393614 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11463662, guid: b4a597b5b5e74584bb52b4f0785ab148,
+    type: 2}
+  m_PrefabInternal: {fileID: 897819741}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1782217177 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11439044, guid: b4a597b5b5e74584bb52b4f0785ab148,
     type: 2}
   m_PrefabInternal: {fileID: 897819741}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
