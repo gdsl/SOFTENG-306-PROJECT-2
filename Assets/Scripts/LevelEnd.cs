@@ -25,6 +25,9 @@ public class LevelEnd : MonoBehaviour {
             AudioSource winAudio = GameObject.FindGameObjectWithTag("WinGameAudio").GetComponent<AudioSource>();
             winAudio.Play();
             Debug.Log("Delivered present to tree");
+
+
+
             //Application.LoadLevel("EndLevel");
 			CalculateScore();
 
@@ -38,6 +41,11 @@ public class LevelEnd : MonoBehaviour {
             AchievementController controller = achievementController.GetComponent<AchievementController>();
             controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
 
+			GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+			GameController gameControllerScript = gameController.GetComponent<GameController>();
+			gameControllerScript.StopGame();
+
+
             if (stars > PlayerPrefs.GetInt("Level One Stars"))
             {
                 PlayerPrefs.SetInt("Level One Stars", stars);
@@ -50,7 +58,11 @@ public class LevelEnd : MonoBehaviour {
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
 		float.TryParse(timeText.text.Split(' ')[1], out time);
-		score = (int) (5000 - suspicionSlider.value + cookies * 500 - time);
+		score = (int) (2500 - 0.5*suspicionSlider.value + cookies * 500 + 2500 - 30*time);
+
+		if (score < 0) {
+			score = 0;
+		}
 
 		if (score > 3000) {
 			stars = 3;
