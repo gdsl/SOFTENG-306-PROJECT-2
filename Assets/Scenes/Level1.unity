@@ -1667,15 +1667,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 117096, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 178928, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100274, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
@@ -1962,14 +1962,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11468618, guid: 3858320aaac4fb944b70244e43706326, type: 2}
-      propertyPath: successScreen
-      value: 
-      objectReference: {fileID: 1969995725}
-    - target: {fileID: 11468618, guid: 3858320aaac4fb944b70244e43706326, type: 2}
-      propertyPath: failScreen
-      value: 
-      objectReference: {fileID: 1729831448}
     - target: {fileID: 11472540, guid: 3858320aaac4fb944b70244e43706326, type: 2}
       propertyPath: santa
       value: 
@@ -1986,6 +1978,14 @@ Prefab:
       propertyPath: failText
       value: 
       objectReference: {fileID: 2115628018}
+    - target: {fileID: 11468618, guid: 3858320aaac4fb944b70244e43706326, type: 2}
+      propertyPath: successScreen
+      value: 
+      objectReference: {fileID: 1969995725}
+    - target: {fileID: 11468618, guid: 3858320aaac4fb944b70244e43706326, type: 2}
+      propertyPath: failScreen
+      value: 
+      objectReference: {fileID: 1729831448}
     - target: {fileID: 22470944, guid: 3858320aaac4fb944b70244e43706326, type: 2}
       propertyPath: m_AnchorMax.y
       value: 1

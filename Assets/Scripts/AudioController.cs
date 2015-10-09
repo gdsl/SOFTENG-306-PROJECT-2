@@ -22,11 +22,13 @@ public class AudioController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		highSuspicionAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/100;
-		keyAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/100;
-		cookieAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/100;
-		unlockDoorAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/100;
-		winGameAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/100;
-		creakyFloorAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/100;
+		//high suspicion is music?
+		highSuspicionAudio.volume = (float)PlayerPrefs.GetInt("musicVolume")/1000;
+
+		keyAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/1000;
+		cookieAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/1000;
+		unlockDoorAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/1000;
+		winGameAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/1000;
+		creakyFloorAudio.volume = (float)PlayerPrefs.GetInt("soundEffectsVolume")/1000;
 	}
 }

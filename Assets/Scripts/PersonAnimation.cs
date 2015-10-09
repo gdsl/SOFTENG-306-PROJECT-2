@@ -55,7 +55,7 @@ public class PersonAnimation : MonoBehaviour {
     void OnAnimatorMove()
     {
         // Set the NavMeshAgent's velocity to the change in position since the LAST frame, by the time it took for the last frame
-		if (Time.timeScale != 0) {
+		if (Time.deltaTime != 0) {
 			nav.velocity = anim.deltaPosition / Time.deltaTime;
 			transform.rotation = anim.rootRotation;
 		}
