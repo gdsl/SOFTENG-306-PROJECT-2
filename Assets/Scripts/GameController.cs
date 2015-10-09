@@ -19,7 +19,10 @@ public class GameController : MonoBehaviour {
 
         //stop the menu music playing
         MenuMusic menuMusic = MenuMusic.Instance;
-        Destroy(menuMusic.gameObject);
+        if(menuMusic != null)
+        {
+            Destroy(menuMusic.gameObject);
+        }        
 	}
 	
 	// Update is called once per frame
