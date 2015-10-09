@@ -75,7 +75,14 @@ public class PatrolPersonAI : MonoBehaviour
         }
     }
 
-    void Suspicion()
+	IEnumerator PersonSeen()
+	{
+		yield return new WaitForSeconds(2.0f);
+		SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
+		slider.IncreaseSuspicionByAmount(5000);
+	}
+
+	void Suspicion()
     {
         // Set speed for NavMeshAgent
         nav.speed = suspicionSpeed;

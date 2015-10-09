@@ -11,14 +11,14 @@ public class GuiUpdate : MonoBehaviour {
         //show cookie count
         PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         cookieText.text = "Cookies: " + playerInventory.getCookieCount();
-        if (playerInventory.hasKey(1))
-        {
-            keyText.text = "Key: Have Key";
-        }
-        else
-        {
-            keyText.text = "Key: Need Key";
-        }
+//        if (playerInventory.hasKey(1))
+//        {
+//            keyText.text = "Key: Have Key";
+//        }
+//        else
+//        {
+//            keyText.text = "Key: Need Key";
+//        }
 
 	}
 }
