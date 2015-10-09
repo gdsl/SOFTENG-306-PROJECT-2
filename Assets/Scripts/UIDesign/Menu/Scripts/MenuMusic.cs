@@ -22,12 +22,13 @@ public class MenuMusic : MonoBehaviour {
 
 	void Start() 
 	{
-		PlayerPrefs.SetInt("musicVolume", 500);
-		PlayerPrefs.SetInt ("soundEffectsVolume", 500);
+//		PlayerPrefs.SetInt("musicVolume", 500);
+//		PlayerPrefs.SetInt ("soundEffectsVolume", 500);
 	}
 
 	void Update()
 	{
-		audioSource.volume = (float)PlayerPrefs.GetInt("musicVolume")/100;
+		audioSource.volume = (float)PlayerPrefs.GetInt("musicVolume")/1000;
+	//	Debug.Log ("music volume: " + audioSource.volume);
 	}
 }
