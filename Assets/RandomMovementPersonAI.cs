@@ -1,77 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
-/**
-    Script which controls the Person behaviour. "Brain" script. Responsible for getting input from other scripts and acting.
 
-    Patrol Person may be in two states.
+public class RandomMovementPersonAI : MonoBehaviour {
 
-    1. Patrolling
-    2. Pointing (Santa found)
-*/
+    public float walkRadius = 5f;
+    public float randomMovementSpeed = 7f;
+    public float randomMovementWaitTime = 1f;
 
-public class PatrolPersonAI : MonoBehaviour
-{
-
-    // Set speeds for different movement types
-    public float patrolSpeed = 3f;
     public float suspicionSpeed = 5f;
-
-    // There will be wait times associated with certain movements
-    public float patrolWaitTime = 5f;
     public float suspicionCheckWaitTime = 7f;
 
-    public Transform[] patrolWayPoints;
     public Transform[] suspicionWayPoints;
 
-    // Reference to several scripts
     private PersonSight personSight;
     private Suspicion suspicion;
     private NavMeshAgent nav;
     private Transform santa;
-    private GameController gameController;
-    private float patrolTimer;
+
+    private float randomMovementTimer;
     private float suspicionTimer;
-    private int patrolWayPointIndex;
     private int suspicionWayPointIndex;
 
-    // initialize variables with awake function
+    private Vector3 startingPosition;
+
+    // Use this for initialization
     void Awake()
     {
         suspicion = GetComponent<Suspicion>();
         personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Player").transform;
-        gameController = GetComponent<GameController>();
+        startingPosition = transform.position;
     }
-
-    /**
-        Method called at each frame. Will call each of the below functions depending on current person "state"
-        State checking has priority levels. Ordered from highest precedence to lowest
-        1. Pointing
-        2. Patrolling
-    */
-
-    void Update()
+	
+	// Update is called once per frame
+	void Update ()
     {
-        // When game controller triggers event for suspicion
-
-        //if (true)
-        //{
-        //    // TODO. Condition should be replaced with GameController trigger action
-        //}
-
         if (personSight.santaInSight)
         {
             // Santa is in sight. Point at santa
             Pointing();
-        } else if (suspicion.suspicionCheck)
+        }
+        else if (suspicion.suspicionCheck)
         {
             Suspicion();
         }
         else
         {
-            // Santa is not in sight. Just patrol area
-            Patrolling();
+            // Santa is not in sight. Just randomly move area
+            RandomMove();
         }
     }
 
@@ -119,39 +96,48 @@ public class PatrolPersonAI : MonoBehaviour
         nav.Stop();
     }
 
-    void Patrolling()
+    void RandomMove()
     {
-        // Set speed for NavMeshAgent
-        nav.speed = patrolSpeed;
+        // set speed of character
+        nav.speed = randomMovementSpeed;
 
-        if (nav.remainingDistance < nav.stoppingDistance)
+        // initially enters loop
+        if (nav.remainingDistance <= nav.stoppingDistance)
         {
-            patrolTimer += Time.deltaTime;
+            // reached destination
+            randomMovementTimer += Time.deltaTime;
 
-            if (patrolTimer >= patrolWaitTime)
+            if (randomMovementTimer >= randomMovementWaitTime)
             {
-                if (patrolWayPointIndex == patrolWayPoints.Length - 1)
-                {
-                    patrolWayPointIndex = 0;
-                }
-                else
-                {
-                    patrolWayPointIndex++;
-                }
+                // generate new path
+                Vector3 dest = generateGoal();
+                nav.destination = dest;
 
-                patrolTimer = 0f;
+                randomMovementTimer = 0f;
             }
         }
         else
         {
-            patrolTimer = 0f;
+            randomMovementTimer = 0f;
         }
 
-        // Set the destination to the patrolWayPoint
-        nav.destination = patrolWayPoints[patrolWayPointIndex].position;
-
-        // Resume movement if it has been stopped
         nav.Resume();
     }
 
+
+    /**
+        Finds random position around walk radius.
+        http://answers.unity3d.com/questions/475066/how-to-get-a-random-point-on-navmesh.html
+    */
+    private Vector3 generateGoal()
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * walkRadius;
+        randomDirection += startingPosition;
+
+        NavMeshHit hit;
+
+        NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1);
+
+        return hit.position;
+    }
 }
