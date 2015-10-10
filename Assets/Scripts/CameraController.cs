@@ -47,7 +47,8 @@ public class CameraController : MonoBehaviour {
                         // Add transform to transparent object map and update transparency
                         transparentObjects.Add(hitTransform, rend.material.color);
 
-                        rend.material.shader = Shader.Find("Transparent/Diffuse");
+                        // Custom Shader imported which writes to Z value
+                        rend.material.shader = Shader.Find("Transparent/Diffuse ZWrite");
                         Color tempColor = rend.material.color;
                         tempColor.a = 0.3f;
                         rend.material.color = tempColor;
