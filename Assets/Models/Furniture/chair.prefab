@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 419364}
   - 33: {fileID: 3388080}
   - 23: {fileID: 2396722}
+  - 65: {fileID: 6522150}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -60,6 +61,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173748}
   m_Mesh: {fileID: 4300000, guid: 83a8ea92913740449a4ad6c6c19c7d92, type: 3}
+--- !u!65 &6522150
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .399999976, y: .480492622, z: .952422082}
+  m_Center: {x: 0, y: .000343263237, z: .476211041}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
