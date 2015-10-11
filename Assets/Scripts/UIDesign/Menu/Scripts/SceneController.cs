@@ -7,6 +7,9 @@ public class SceneController : MonoBehaviour {
     private GameObject achievementScreen;
 	// Use this for initialization
 	void Start () {
+
+        Time.timeScale = 1.0F;
+
         GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
 
         achievementScreen = GameObject.FindGameObjectWithTag("AchievementScreen");
