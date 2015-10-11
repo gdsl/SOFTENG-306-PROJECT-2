@@ -5,9 +5,9 @@ using UnityEngine.Networking;
 public class playerMovementSync : NetworkBehaviour {
 
     [SyncVar] //server automatically apply to all client
-    private Vector3 pos;
+    private Vector3 pos; //position of movement
 
-    [SerializeField]Transform myTransform;
+    [SerializeField]Transform myTransform; //the current transform of object script attached to
     [SerializeField]float lerpRate = 15;
 
     void FixedUpdate()

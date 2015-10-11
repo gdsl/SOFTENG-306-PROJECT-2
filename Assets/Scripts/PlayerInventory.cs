@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class PlayerInventory : MonoBehaviour {
     private Dictionary<int, bool> keyInventory = new Dictionary<int, bool>();
     private long cookieCount;
+    public Text cookieText;
 
 	// Use this for initialization
 	void Start () {

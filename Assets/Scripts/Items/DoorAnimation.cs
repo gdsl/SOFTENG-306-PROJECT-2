@@ -17,11 +17,10 @@ public class DoorAnimation : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerInventory = player.GetComponent<PlayerInventory>();
         // If the triggering gameobject is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.tag == "Player")//only check if tag is player
         {
+            playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             // ... if this door requires a key...
             if (isLocked)
             {
@@ -62,7 +61,7 @@ public class DoorAnimation : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         // When player leave the door region the 
-        if (other.gameObject == player || (other.gameObject.tag == "Enemy" && other is CapsuleCollider))
+        if (other.gameObject.tag == "Player" || (other.gameObject.tag == "Enemy" && other is CapsuleCollider))
         {
             Debug.Log(other.name);
             // decrease the count of triggering objects.
