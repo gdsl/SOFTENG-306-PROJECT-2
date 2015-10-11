@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Class to represent the player's inventory
 /// </summary>
-public class PlayerInventory : MonoBehaviour {
+public class PlayerInventory : NetworkBehaviour{
     private Dictionary<int, bool> keyInventory = new Dictionary<int, bool>();
     private long cookieCount;
     public Text cookieText;
@@ -13,6 +15,7 @@ public class PlayerInventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cookieCount = 0;
+        cookieText = GameObject.Find("CookieText").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -28,6 +31,7 @@ public class PlayerInventory : MonoBehaviour {
     public void IncreaseCookieCount()
     {
         cookieCount = cookieCount + 1;
+        setCookie();
     }
 
 	public long getCookieCount() {
@@ -47,5 +51,14 @@ public class PlayerInventory : MonoBehaviour {
             haskey = true;
         }
         return haskey;
+    }
+
+    void setCookie()
+    {
+        if (isLocalPlayer)//only update at player who got cookies
+        {
+            //show cookie count on gui
+            cookieText.text = "Cookies: " + cookieCount;
+        }
     }
 }

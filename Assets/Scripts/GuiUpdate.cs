@@ -20,20 +20,5 @@ public class GuiUpdate : MonoBehaviour {
 
 	}
 
-    void setCookie()
-    {
-        //show cookie count
-        PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-        cookieText.text = "Cookies: " + playerInventory.getCookieCount();
-    }
 
-    /**
-     * When cookie number change
-     * 
-     */
-    void OnCookieChanged(int cookie)
-    {
-        health = hlth;
-        SetHealthText();
-    }
 }
