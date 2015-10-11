@@ -540,10 +540,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11439458, guid: 62c677c438b28d243a436d9caf2043ed, type: 2}
-      propertyPath: cookieText
-      value: 
-      objectReference: {fileID: 1991807184}
     - target: {fileID: 11485944, guid: 62c677c438b28d243a436d9caf2043ed, type: 2}
       propertyPath: suspicionSlider
       value: 
@@ -556,6 +552,14 @@ Prefab:
       propertyPath: successScreen
       value: 
       objectReference: {fileID: 1840627110}
+    - target: {fileID: 11485944, guid: 62c677c438b28d243a436d9caf2043ed, type: 2}
+      propertyPath: moonlight
+      value: 
+      objectReference: {fileID: 875843970}
+    - target: {fileID: 11439458, guid: 62c677c438b28d243a436d9caf2043ed, type: 2}
+      propertyPath: cookieText
+      value: 
+      objectReference: {fileID: 1991807184}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c677c438b28d243a436d9caf2043ed, type: 2}
   m_IsPrefabParent: 0
@@ -1266,6 +1270,11 @@ Prefab:
 --- !u!4 &875843969 stripped
 Transform:
   m_PrefabParentObject: {fileID: 495894, guid: 7d45ca00ddfe60645b0960b116216e5a, type: 2}
+  m_PrefabInternal: {fileID: 875843968}
+--- !u!108 &875843970 stripped
+Light:
+  m_PrefabParentObject: {fileID: 10844854, guid: 7d45ca00ddfe60645b0960b116216e5a,
+    type: 2}
   m_PrefabInternal: {fileID: 875843968}
 --- !u!1001 &895040045
 Prefab:
@@ -5498,15 +5507,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 117096, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 178928, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100274, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c36fb7a70813ceb44bc1ffd764b9fbc0, type: 2}
