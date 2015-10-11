@@ -32,8 +32,8 @@ public class AchievementController : MonoBehaviour {
     public void Setup()
     {
         achievement.Add(FIRST_LEVEL_COMPLETE);
-        achievement.Add(TEN_COOKIES);
         achievement.Add(STAY_BELOW);
+        achievement.Add(TEN_COOKIES);
 		achievement.Add (PLACE_HOLDER);
 		achievement.Add (PLACE_HOLDER);
 		achievement.Add (PLACE_HOLDER);
