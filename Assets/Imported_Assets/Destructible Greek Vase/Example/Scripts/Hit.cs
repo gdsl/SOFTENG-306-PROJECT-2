@@ -20,5 +20,8 @@ public class Hit : MonoBehaviour {
 		}
 		Destroy(gameObject);
 
+        // Alert enemies
+        AlertEnemy alert = GetComponent<AlertEnemy>();
+        alert.Alert();
 	}
 }
