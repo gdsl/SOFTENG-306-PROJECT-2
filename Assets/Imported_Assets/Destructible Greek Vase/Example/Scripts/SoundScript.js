@@ -1,6 +1,8 @@
 #pragma strict
 
 var impact : AudioClip;
-	function OnCollisionEnter () {
-		GetComponent.<AudioSource>().PlayOneShot(impact, 1f);
-	}
+function OnCollisionEnter (collision: Collision) {
+    if (collision.relativeVelocity.magnitude > 2) {
+        GetComponent.<AudioSource>().PlayOneShot(impact, 1f);
+    }
+    }

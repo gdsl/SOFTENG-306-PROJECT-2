@@ -5,15 +5,16 @@ public class Hit : MonoBehaviour {
 
 	public GameObject DestroyedObject;
 
-
+    // Updated so that it breaks on contact
 	
-	void OnCollisionEnter( Collision collision ) {
-		if( collision.impactForceSum.magnitude > 8f) {
-		DestroyIt();
+	void OnCollisionEnter( Collision collision )
+    {
+		if( collision.relativeVelocity.magnitude > 2f) {
+		    DestroyIt();
 		}
 	}
 	
-		void DestroyIt(){
+	void DestroyIt(){
 		if(DestroyedObject) {
 			Instantiate(DestroyedObject, transform.position, transform.rotation);
 		}
