@@ -11,8 +11,9 @@ public class AchievementController : MonoBehaviour {
     private List<string> achievement = new List<string>();
     private GameObject[] lockedImage;
     private GameObject[] unlockedImage;
-    
+
     //constant for different achievements
+    public const string COOKIE_COUNT = "COOKIE_COUNT";
     public const string FIRST_LEVEL_COMPLETE = "FIRST_LEVEL_COMPLETE";
     public const string TEN_COOKIES = "TEN_COOKIES";
     public const string STAY_BELOW = "STAY_BELOW";
@@ -108,64 +109,10 @@ public class AchievementController : MonoBehaviour {
             }
         }
 
-        
-        /*
-        //create new achievement game data if not open existing one
-        if (File.Exists(Application.persistentDataPath + "/achievement.gd"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/achievement.gd", FileMode.Open);
-            achievement = (List<bool>)bf.Deserialize(file);
-
-            //change the UI corresponding to the existing achievement data
-            foreach (GameObject image in lockedImage)
-            {
-                //game object are named in "1 Locked", "2 Locked". split the string to get the value
-
-                string[] nameArray = image.name.Split(' ');
-                int value = int.Parse(nameArray[0]) - 1;
-                image.SetActive(!achievement[value]);
-
-            }
-
-            foreach (GameObject image in unlockedImage)
-            {
-                //game object are named in "1 Locked", "2 Locked". split the string to get the value
-                string[] nameArray = image.name.Split(' ');
-                int value = int.Parse(nameArray[0]) - 1;
-                image.SetActive(achievement[value]);
-
-            }
-            file.Close();
-        }
-        else
-        {
-            achievement = new List<bool>();
-            achievement.Add(false);
-            achievement.Add(false);
-            achievement.Add(false);
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Create(Application.persistentDataPath + "/achievement.gd");
-            bf.Serialize(file, achievement);
-            file.Close();
-
-            foreach (GameObject image in lockedImage)
-            {
-                //game object are named in "1 Locked", "2 Locked". split the string to get the value
-                image.SetActive(true);
-
-            }
-
-            foreach (GameObject image in unlockedImage)
-            {
-                image.SetActive(false);
-            }
-        } */
     }
 
     public void setAchievement(string type)
     {
-        print("called achievement");
         PlayerPrefs.SetInt(type, unlocked);
 
 
