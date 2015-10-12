@@ -14,6 +14,12 @@ public class MeshCombine : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        foreach (Transform child in transform)
+            child.position += transform.position;
+
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+
         // Find all children meshes
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
         CombineInstance[] combine = new CombineInstance[meshFilters.Length];
