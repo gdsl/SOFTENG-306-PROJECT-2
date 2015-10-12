@@ -2,7 +2,7 @@
 using System.Collections;
 
 /**
-    Combines children meshes together
+    Combines children meshes together. Must be placed onto empty parent game object
 */
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -14,6 +14,8 @@ public class MeshCombine : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+
+        // http://forum.unity3d.com/threads/combinemeshes-example-flawed.33209/
         foreach (Transform child in transform)
             child.position += transform.position;
 
@@ -36,6 +38,16 @@ public class MeshCombine : MonoBehaviour {
         transform.GetComponent<MeshFilter>().mesh = new Mesh();
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine, commonMaterial);
         transform.gameObject.active = true;
+
+        // Set bound of box collider attached to game object
+        BoxCollider collider = GetComponent<BoxCollider>();
+        if (collider)
+        {
+            // set position of collider
+            collider.center = GetComponent<MeshFilter>().mesh.bounds.center;
+            // set bounds of collider
+            collider.size = GetComponent<MeshFilter>().mesh.bounds.size;
+        }
 	}
 	
 }
