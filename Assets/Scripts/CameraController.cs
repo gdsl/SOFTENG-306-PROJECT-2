@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour {
                         // Custom Shader imported which writes to Z value
                         rend.material.shader = Shader.Find("Transparent/Diffuse ZWrite");
                         Color tempColor = rend.material.color;
-                        tempColor.a = 0.3f;
+                        tempColor.a = 0.5f;
                         rend.material.color = tempColor;
                     }
                 }
