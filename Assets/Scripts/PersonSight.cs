@@ -93,10 +93,10 @@ public class PersonSight : MonoBehaviour {
                 // Check if there is obstruction between santa and person which will hide santa
                 RaycastHit hit;
 
-                // View of ray cast from 1 unit above ground (transform.position + transform.up)
+                // View of ray cast ground level transform.position
                 // Direction vector of ray cast is always normalized (0-1)
                 // Ray cast distance being the radius of the collider
-                if (Physics.Raycast(transform.position + transform.up, direction.normalized, out hit, col.radius))
+                if (Physics.Raycast(transform.position, direction.normalized, out hit, col.radius))
                 {
                     if (hit.collider.gameObject == santa)
                     {

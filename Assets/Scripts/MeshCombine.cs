@@ -39,15 +39,13 @@ public class MeshCombine : MonoBehaviour {
         transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine, commonMaterial);
         transform.gameObject.active = true;
 
-        // Set bound of box collider attached to game object
-        BoxCollider collider = GetComponent<BoxCollider>();
+        // Set bound of mesh collider attached to game object
+        MeshCollider collider = GetComponent<MeshCollider>();
         if (collider)
         {
-            // set position of collider
-            collider.center = GetComponent<MeshFilter>().mesh.bounds.center;
-            // set bounds of collider
-            collider.size = GetComponent<MeshFilter>().mesh.bounds.size;
+            // set mesh for collider
+            collider.sharedMesh = transform.GetComponent<MeshFilter>().mesh;
         }
-	}
+    }
 	
 }
