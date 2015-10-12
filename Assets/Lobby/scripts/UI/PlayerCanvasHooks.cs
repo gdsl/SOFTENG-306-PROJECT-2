@@ -52,7 +52,7 @@ public class PlayerCanvasHooks : MonoBehaviour
 
 	public void SetColor(Color color)
 	{
-		colorButton.GetComponent<Image>().color = color;
+//		colorButton.GetComponent<Image>().color = color;
 	}
 
 	public void SetReady(bool ready)

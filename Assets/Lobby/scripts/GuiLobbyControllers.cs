@@ -121,8 +121,8 @@ public class OfflineCanvasControl : CanvasControl
 		hooks.OnStartClientHook = OnGUIStartClient;
 		hooks.OnStartMMHook = OnGUIStartMatchMaker;
 
-		EventSystem.current.firstSelectedGameObject = hooks.firstButton.gameObject;
-		EventSystem.current.SetSelectedGameObject(hooks.firstButton.gameObject);
+	//	EventSystem.current.firstSelectedGameObject = hooks.firstButton.gameObject;
+	//	EventSystem.current.SetSelectedGameObject(hooks.firstButton.gameObject);
 	}
 
 	public override void OnLevelWasLoaded()
@@ -134,8 +134,8 @@ public class OfflineCanvasControl : CanvasControl
 		if (hooks == null)
 			return;
 
-		EventSystem.current.firstSelectedGameObject = hooks.firstButton.gameObject;
-		EventSystem.current.SetSelectedGameObject(hooks.firstButton.gameObject);
+	//	EventSystem.current.firstSelectedGameObject = hooks.firstButton.gameObject;
+	//	EventSystem.current.SetSelectedGameObject(hooks.firstButton.gameObject);
 	}
 
 	public void OnGUIStartHost()

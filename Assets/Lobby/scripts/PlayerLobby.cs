@@ -34,7 +34,7 @@ public class PlayerLobby : NetworkLobbyPlayer
 		hooks.SetColor(cc.myColor);
 		hooks.SetReady(lobbyPlayer.readyToBegin);
 
-		EventSystem.current.SetSelectedGameObject(hooks.colorButton.gameObject);
+		//EventSystem.current.SetSelectedGameObject(hooks.colorButton.gameObject);
 	}
 
 	public override void OnClientExitLobby()
