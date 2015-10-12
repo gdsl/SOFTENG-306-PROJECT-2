@@ -8,9 +8,7 @@ public class GuiUpdate : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        //show cookie count
-        PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-        cookieText.text = "Cookies: " + playerInventory.getCookieCount();
+        
 //        if (playerInventory.hasKey(1))
 //        {
 //            keyText.text = "Key: Have Key";
@@ -21,4 +19,6 @@ public class GuiUpdate : MonoBehaviour {
 //        }
 
 	}
+
+
 }

@@ -33,7 +33,7 @@ public class LightController : MonoBehaviour {
 	void Update () {
         if (count > 0)
         {
-            if (lights.intensity < 0.3f) {
+            if (lights.intensity < 0.5f) {
                 lights.intensity += 0.02f;
             }
         }

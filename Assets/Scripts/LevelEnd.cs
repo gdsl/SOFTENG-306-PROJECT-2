@@ -39,6 +39,11 @@ public class LevelEnd : MonoBehaviour {
 
             GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
             AchievementController controller = achievementController.GetComponent<AchievementController>();
+            if (suspicionSlider.value <= suspicionSlider.maxValue/2)
+            {
+                controller.setAchievement(AchievementController.STAY_BELOW);
+            }
+
             controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
 
 			GameObject gameController = GameObject.FindGameObjectWithTag("GameController");

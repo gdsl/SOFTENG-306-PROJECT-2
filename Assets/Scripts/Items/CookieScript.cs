@@ -14,13 +14,13 @@ public class CookieScript : Items {
     //when the player collider with cookie trigger this event
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject == this.getPlayer()) //make sure collide is with palyer
+        if (col.gameObject.tag=="Player") //make sure collide is with palyer
         {
             //play eating audio 
             AudioSource eatAudio = GameObject.FindGameObjectWithTag("EatCookieAudio").GetComponent<AudioSource>();
             eatAudio.Play();
             this.setPickedUp();//set cookie to pickup
-            this.getPlayerInventory().IncreaseCookieCount();//increase cookie count
+            col.gameObject.GetComponent<PlayerInventory>().IncreaseCookieCount();
         }
     }
 }
