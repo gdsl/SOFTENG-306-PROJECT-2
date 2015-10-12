@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System;
 
 /// <summary>
 /// Class to represent the player's inventory
@@ -55,10 +56,14 @@ public class PlayerInventory : NetworkBehaviour{
 
     void setCookie()
     {
-        if (isLocalPlayer)//only update at player who got cookies
-        {
-            //show cookie count on gui
-            cookieText.text = "Cookies: " + cookieCount;
-        }
+		try {
+	        if (isLocalPlayer)//only update at player who got cookies
+	        {
+	            //show cookie count on gui
+	            cookieText.text = "Cookies: " + cookieCount;
+	        }
+		}catch (NullReferenceException ex) {
+			cookieText.text = "Cookies: " + cookieCount;
+		}
     }
 }
