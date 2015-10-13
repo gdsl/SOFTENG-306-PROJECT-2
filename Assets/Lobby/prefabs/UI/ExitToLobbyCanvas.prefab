@@ -64,6 +64,7 @@ GameObject:
   - 114: {fileID: 11460674}
   - 114: {fileID: 11489924}
   - 114: {fileID: 11468042}
+  - 222: {fileID: 22263338}
   m_Layer: 5
   m_Name: ExitToLobbyCanvas
   m_TagString: Untagged
@@ -270,6 +271,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143632}
+--- !u!222 &22263338
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194720}
 --- !u!222 &22265242
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -370,7 +377,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1a9a28d08b8b1b4cb3f14a3049c542a,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194720}
