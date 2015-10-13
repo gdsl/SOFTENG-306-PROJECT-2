@@ -13,6 +13,8 @@ public class SleepingPersonAI : MonoBehaviour
     private Suspicion suspicion;
     private NavMeshAgent nav;
     private Transform santa;
+    private FOV2DEyes fovEyesScript;
+    private FOV2DVisionCone fovConeScript;
     private float timer;
     private int wayPointIndex;
     private bool direction;
@@ -26,6 +28,9 @@ public class SleepingPersonAI : MonoBehaviour
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Player").transform;
+        fovEyesScript = GetComponent<FOV2DEyes>();
+        fovConeScript = GetComponent<FOV2DVisionCone>();
+
     }
 
     // Update is called once per frame
@@ -33,14 +38,26 @@ public class SleepingPersonAI : MonoBehaviour
     {
         if (sleepingScript.sleeping)
         {
+            fovEyesScript.enabled = false;
+            fovConeScript.enabled = false;
             Sleeping();
         }
         else if (personSight.santaInSight)
         {
+            if (fovEyesScript.enabled == false)
+            {
+                fovEyesScript.enabled = false;
+                fovConeScript.enabled = false;
+            }
             Pointing();
         }
         else
         {
+            if (fovEyesScript.enabled == false)
+            {
+                fovEyesScript.enabled = false;
+                fovConeScript.enabled = false;
+            }
             Suspicion();
         }
     }
