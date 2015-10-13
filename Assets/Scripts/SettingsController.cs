@@ -18,7 +18,7 @@ public class SettingsController : MonoBehaviour {
 		}
 		musicVolumeSlider.value = PlayerPrefs.GetInt("musicVolume");
 		soundEffectsVolumeSlider.value = PlayerPrefs.GetInt("soundEffectsVolume");
-		brightnessSlider.value = PlayerPrefs.GetInt("brightness");
+		brightnessSlider.value = (float)(PlayerPrefs.GetInt("brightness") / 100.00);
 		nameInput.text = PlayerPrefs.GetString ("Name");
         confirmationPanel.SetActive(false);
 	}
@@ -37,7 +37,7 @@ public class SettingsController : MonoBehaviour {
 	}
 
 	public void BrightnessChanged() {
-		PlayerPrefs.SetInt ("brightness", (int)brightnessSlider.value);
+		PlayerPrefs.SetInt ("brightness", (int)(100*brightnessSlider.value));
 	}
 
 	public void NameTextChanged() {
