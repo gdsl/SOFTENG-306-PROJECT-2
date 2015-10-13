@@ -10,7 +10,7 @@ public class TestKey {
     [Test]
     public void getKey()
     {
-        PlayerInventory pi = new PlayerInventory();
+        PlayerInventorySingle pi = new PlayerInventorySingle();
         pi.gotKey(1);
         Assert.That(pi.hasKey(1));//check after getting key inventory updates
     }
@@ -21,7 +21,7 @@ public class TestKey {
     [Test]
     public void checkNoKey()
     {
-        PlayerInventory pi = new PlayerInventory();
+        PlayerInventorySingle pi = new PlayerInventorySingle();
         Assert.That(pi.hasKey(2) == false);//check dont have key will say inventory dont have
     }
 }

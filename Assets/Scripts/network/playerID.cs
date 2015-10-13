@@ -13,7 +13,7 @@ public class playerID : NetworkBehaviour {
     private string playerUniqueIdentity;
     private NetworkInstanceId playerNetID;
     private Transform myTransform;
-    private string playerObjName = "ThirdPersonControllerNetwork"; //variable for the player name
+    private string playerObjName = "QueryChanNetwork"; //variable for the player name
     public override void OnStartLocalPlayer()
     {
         GetNetIdentity();
