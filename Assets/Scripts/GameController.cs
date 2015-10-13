@@ -11,12 +11,20 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		if (!PlayerPrefs.HasKey("musicVolume") || !PlayerPrefs.HasKey("soundEffectsVolume")
+		    || !PlayerPrefs.HasKey("brightness")) {
+			PlayerPrefs.SetInt ("musicVolume", 500);
+			PlayerPrefs.SetInt ("soundEffectsVolume", 500);
+			PlayerPrefs.SetInt ("brightness", 150);
+		}
+
 		ResumeGame ();
 		failScreen.SetActive (false);
 		successScreen.SetActive (false);
 		Text hintText = GameObject.FindGameObjectWithTag("HintText").GetComponent<Text>();
 		hintText.gameObject.SetActive(false);
-		moonlight.intensity = PlayerPrefs.GetInt ("brightness");
+		moonlight.intensity = (float)(PlayerPrefs.GetInt ("brightness") / 100.00);
 
         //stop the menu music playing
         MenuMusic menuMusic = MenuMusic.Instance;
