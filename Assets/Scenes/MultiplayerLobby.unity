@@ -202,7 +202,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 156372, guid: c01bd19ad84a51e439a479f654b1923c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475862, guid: c01bd19ad84a51e439a479f654b1923c, type: 2}
+      propertyPath: m_NetworkPort
+      value: 7777
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c01bd19ad84a51e439a479f654b1923c, type: 2}
@@ -223,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &896607553
 MonoBehaviour:
   m_ObjectHideFlags: 0
