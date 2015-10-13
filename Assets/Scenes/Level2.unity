@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .0333333351
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 0d6a84e032f5f894097eee50ea667211, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1001 &53522331
 Prefab:
   m_ObjectHideFlags: 0
@@ -324,7 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
 --- !u!114 &264288357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,13 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
 --- !u!114 &264288358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,9 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
 --- !u!4 &264288359
 Transform:
   m_ObjectHideFlags: 0
@@ -717,6 +704,7 @@ Transform:
   m_Children:
   - {fileID: 932872914}
   - {fileID: 1496213737}
+  - {fileID: 1011438872}
   m_Father: {fileID: 1992094361}
   m_RootOrder: 4
 --- !u!1001 &501983756
@@ -1699,6 +1687,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1173355238}
   m_RootOrder: 4
+--- !u!1001 &1011438871
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 468999403}
+    m_Modifications:
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[0].x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[0].y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[0].z
+      value: 16.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[1].x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[1].y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[1].z
+      value: 16.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[2].x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[2].y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476312, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+      propertyPath: fixedPositions.Array.data[2].z
+      value: 16.75
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1011438872 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 401680, guid: f108cfdec27497c4ab3bc7de00065093, type: 2}
+  m_PrefabInternal: {fileID: 1011438871}
 --- !u!1001 &1039264036
 Prefab:
   m_ObjectHideFlags: 0
@@ -2807,11 +2881,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1519417893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,16 +2892,6 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!223 &1519417894
 Canvas:
   m_ObjectHideFlags: 0
