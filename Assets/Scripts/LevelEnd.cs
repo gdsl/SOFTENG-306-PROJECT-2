@@ -50,6 +50,13 @@ public class LevelEnd : MonoBehaviour {
 			GameController gameControllerScript = gameController.GetComponent<GameController>();
 			gameControllerScript.StopGame();
 
+            int cookies = 0;
+            int.TryParse(cookieText.text.Split(' ')[1], out cookies);
+            int currentCookie = PlayerPrefs.GetInt(AchievementController.COOKIE_COUNT);
+            int totalCookies = currentCookie + cookies;
+            if (totalCookies >= 10) controller.setAchievement(AchievementController.TEN_COOKIES);
+            PlayerPrefs.SetInt(AchievementController.COOKIE_COUNT, totalCookies);
+          
             updateLevelInfo();
         }
     }
