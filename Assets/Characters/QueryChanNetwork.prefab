@@ -541,11 +541,11 @@ GameObject:
   - 136: {fileID: 13693128}
   - 114: {fileID: 11494866}
   - 114: {fileID: 11436798}
-  - 114: {fileID: 11429008}
   - 114: {fileID: 11401060}
   - 114: {fileID: 11463282}
   - 114: {fileID: 11486026}
   - 114: {fileID: 11465290}
+  - 114: {fileID: 11466982}
   m_Layer: 0
   m_Name: QueryChanNetwork
   m_TagString: Player
@@ -3887,20 +3887,8 @@ MonoBehaviour:
     i13: 88
     i14: 83
     i15: 77
-  m_ServerOnly: 1
-  m_LocalPlayerAuthority: 0
---- !u!114 &11429008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43c396d96c47f3e448bdcc8c628996d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cookieText: {fileID: 0}
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &11436798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3942,6 +3930,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bff1eb3cd418ec6478bf9d1d5bf470a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11466982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e6909ecf9aadd4c90902790f4d8cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11486026

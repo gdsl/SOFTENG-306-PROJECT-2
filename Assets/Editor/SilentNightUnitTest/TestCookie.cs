@@ -13,7 +13,11 @@ public class TestCookie
     [Test]
     public void getCookie()
     {
-        PlayerInventory pi = new PlayerInventory();
+        GameObject gb = new GameObject("CookieText");
+        UnityEngine.UI.Text st = gb.AddComponent<UnityEngine.UI.Text>();
+        st.text = "Cookie:";
+        PlayerInventorySingle pi = new PlayerInventorySingle();
+        pi.reset();
         pi.IncreaseCookieCount(); //check increase initially willl get 1 cookies
         Assert.That(pi.getCookieCount() == 1);
         pi.IncreaseCookieCount(); //check increase again will +1 and not reset
