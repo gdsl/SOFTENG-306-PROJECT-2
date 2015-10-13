@@ -12,7 +12,7 @@ public class AsyncLoader : MonoBehaviour {
      // Use this for initialization
      void Start()
     {
-        StartCoroutine(DisplayLoadingScreen(4));
+        StartCoroutine(DisplayLoadingScreen(PlayerPrefs.GetInt("To Be Loaded")));
     }
      
      // Update is called once per frame
