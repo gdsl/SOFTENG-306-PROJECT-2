@@ -5,13 +5,13 @@ using UnityEngine.UI;
 public class LevelStatusController : MonoBehaviour {
 
     public Image[] levelOneStars;
-    public RawImage lockOne;
+    public GameObject lockOne;
 
     public Image[] levelTwoStars;
-    public RawImage lockTwo;
+    public GameObject lockTwo;
 
     public Image[] levelThreeStars;
-    public RawImage lockThree;
+    public GameObject lockThree;
 
     public Text levelOneHighScore;
     public Text levelTwoHighScore;
@@ -62,6 +62,10 @@ public class LevelStatusController : MonoBehaviour {
 
     private void setPageLevelTwo() {
         
+        if(PlayerPrefs.GetInt("Level One Score") > 0 )
+        {
+            lockTwo.SetActive(false);
+        }
 
         int levelTwoStarsInt = PlayerPrefs.GetInt("Level Two Stars");
 
@@ -85,6 +89,10 @@ public class LevelStatusController : MonoBehaviour {
 
     private void setPageLevelThree() {
 
+        if (PlayerPrefs.GetInt("Level Two Score") > 0)
+        {
+            lockThree.SetActive(false);
+        }
 
         levelThreeHighScore.text = PlayerPrefs.GetInt("Level Three Score") + "";
     }
