@@ -22,6 +22,8 @@ public class LeaderboardController : MonoBehaviour {
     public Text score4;
     public Text score5;
 
+    public Text levelName;
+
     public GameObject loading;
 
     // Use this for initialization
@@ -36,11 +38,27 @@ public class LeaderboardController : MonoBehaviour {
         loading.transform.FindChild("LoadingCircle").transform.Rotate(new Vector3(0, 0, -45) * Time.deltaTime);
 	}
 
-    public void ShowLeaderboard()
+    public void ShowLeaderboard(int level)
     {
+        levelName.text = "Level " + level;
+        name1.text = "";
+        score1.text = "";
+
+        name2.text = "";
+        score2.text = "";
+
+        name3.text = "";
+        score3.text = "";
+
+        name4.text = "";
+        score4.text = "";
+
+        name5.text = "";
+        score5.text = "";
+
         leaderboard.SetActive(true);
         loading.SetActive(true);
-        WWW www = new WWW(url);
+        WWW www = new WWW(url + "/" + level);
         StartCoroutine(WaitForRequest(www));
 
     }
