@@ -39,12 +39,24 @@ public class LevelEnd : MonoBehaviour {
 
             GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
             AchievementController controller = achievementController.GetComponent<AchievementController>();
+            if (suspicionSlider.value <= suspicionSlider.maxValue/2)
+            {
+                controller.setAchievement(AchievementController.STAY_BELOW);
+            }
+
             controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
 
 			GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
 			GameController gameControllerScript = gameController.GetComponent<GameController>();
 			gameControllerScript.StopGame();
 
+            int cookies = 0;
+            int.TryParse(cookieText.text.Split(' ')[1], out cookies);
+            int currentCookie = PlayerPrefs.GetInt(AchievementController.COOKIE_COUNT);
+            int totalCookies = currentCookie + cookies;
+            if (totalCookies >= 10) controller.setAchievement(AchievementController.TEN_COOKIES);
+            PlayerPrefs.SetInt(AchievementController.COOKIE_COUNT, totalCookies);
+          
             updateLevelInfo();
         }
     }

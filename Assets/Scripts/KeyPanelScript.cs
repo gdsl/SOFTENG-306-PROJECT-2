@@ -5,7 +5,7 @@ using System.Collections;
 public class KeyPanelScript : MonoBehaviour {
 
 	public Sprite redKey;
-	public Sprite orangeKey;
+	public Sprite yellowKey;
 	public Image image1;
 	public Image image2;
 	public Image image3;
@@ -32,7 +32,7 @@ public class KeyPanelScript : MonoBehaviour {
 			image1.sprite = redKey;
 		} else if (id == 2) {
 			image2.color = Color.white;
-			image2.sprite = orangeKey;
+			image2.sprite = yellowKey;
 		}
 	}
 }

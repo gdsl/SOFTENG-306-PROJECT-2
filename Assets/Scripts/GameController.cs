@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 	public Slider suspicionSlider;
 	public GameObject failScreen;
 	public GameObject successScreen;
-
+	public Light moonlight;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
 		successScreen.SetActive (false);
 		Text hintText = GameObject.FindGameObjectWithTag("HintText").GetComponent<Text>();
 		hintText.gameObject.SetActive(false);
+		moonlight.intensity = PlayerPrefs.GetInt ("brightness");
 
         //stop the menu music playing
         MenuMusic menuMusic = MenuMusic.Instance;

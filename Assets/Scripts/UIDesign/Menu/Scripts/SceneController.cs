@@ -7,6 +7,9 @@ public class SceneController : MonoBehaviour {
     private GameObject achievementScreen;
 	// Use this for initialization
 	void Start () {
+
+        Time.timeScale = 1.0F;
+
         GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
 
         achievementScreen = GameObject.FindGameObjectWithTag("AchievementScreen");
@@ -49,9 +52,15 @@ public class SceneController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
 	}
 
+    public void moveToGame(int gameLevel)
+    {
+        PlayerPrefs.SetInt("To Be Loaded", gameLevel);
+        moveScene(3);
+    }
+
     public void moveScene(int scene)
-    { 
-            Application.LoadLevel(scene);
+    {
+        Application.LoadLevel(scene);
     }
 
     public void showAchievement()
