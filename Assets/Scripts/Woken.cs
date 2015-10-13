@@ -5,7 +5,6 @@ public class Woken : MonoBehaviour
 {
 
     // Number of degrees, centred on the forward position, player can see.Default value of 110 degrees
-    public float fieldOfViewAngle = 110f;
     public bool woken;
 
     // Size of the game object's mesh
@@ -16,7 +15,7 @@ public class Woken : MonoBehaviour
     // Reference animator for this animator controller
     private Animator anim;
     private NavMeshAgent nav;
-    private CapsuleCollider col;
+    private SphereCollider col;
 
     // Reference to Santa
     private GameObject santa;
@@ -35,7 +34,7 @@ public class Woken : MonoBehaviour
         gameController = GetComponent<GameController>();
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
-        col = GetComponent<CapsuleCollider>();
+        col = GetComponent<SphereCollider>();
 
         // Get reference to Santa
         santa = GameObject.FindWithTag("Player");
