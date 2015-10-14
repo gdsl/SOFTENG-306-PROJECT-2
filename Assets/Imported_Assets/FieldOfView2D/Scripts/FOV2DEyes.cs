@@ -20,6 +20,19 @@ public class FOV2DEyes : MonoBehaviour
 	
 	void Update()
 	{
+        // Get fov and fovMaxDistance values
+        PersonSight personSight = GetComponent<PersonSight>();
+        if (personSight)
+        {
+            fovAngle = (int)personSight.fieldOfViewAngle;
+        }
+
+        SphereCollider collider = GetComponent<SphereCollider>();
+        if (collider)
+        {
+            fovMaxDistance = collider.radius;
+        }
+
 		CastRays();
 	}
 	
