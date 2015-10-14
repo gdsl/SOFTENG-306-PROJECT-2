@@ -14,9 +14,9 @@ public class GameController : MonoBehaviour {
 
 		if (!PlayerPrefs.HasKey("musicVolume") || !PlayerPrefs.HasKey("soundEffectsVolume")
 		    || !PlayerPrefs.HasKey("brightness")) {
-			PlayerPrefs.SetInt ("musicVolume", 500);
-			PlayerPrefs.SetInt ("soundEffectsVolume", 500);
-			PlayerPrefs.SetInt ("brightness", 150);
+			PlayerPrefs.SetInt ("musicVolume", 1000);
+			PlayerPrefs.SetInt ("soundEffectsVolume", 1000);
+			PlayerPrefs.SetInt ("brightness", 100);
 		}
 
 		ResumeGame ();

@@ -48,9 +48,9 @@ public class SettingsController : MonoBehaviour {
     {
         string name = PlayerPrefs.GetString("Name");
         PlayerPrefs.DeleteAll();
-        musicVolumeSlider.value = musicVolumeSlider.maxValue/2;
-        soundEffectsVolumeSlider.value = soundEffectsVolumeSlider.maxValue / 2;
-		brightnessSlider.value = brightnessSlider.maxValue / 2;
+        musicVolumeSlider.value = musicVolumeSlider.maxValue;
+        soundEffectsVolumeSlider.value = soundEffectsVolumeSlider.maxValue;
+		brightnessSlider.value = brightnessSlider.maxValue;
         PlayerPrefs.SetString("Name", name);
     }
 

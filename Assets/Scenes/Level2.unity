@@ -5406,6 +5406,10 @@ Prefab:
       propertyPath: m_Name
       value: Gui (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11462630, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
+      propertyPath: santa
+      value: 
+      objectReference: {fileID: 1391308803}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
   m_IsPrefabParent: 0
@@ -8592,10 +8596,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589002111}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1593974952 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 131466, guid: e354feafebdbb37449e449ed020dcbb2, type: 2}
-  m_PrefabInternal: {fileID: 501983756}
 --- !u!1 &1606574948
 GameObject:
   m_ObjectHideFlags: 0
@@ -10394,7 +10394,7 @@ Prefab:
     - target: {fileID: 11472540, guid: 3858320aaac4fb944b70244e43706326, type: 2}
       propertyPath: santa
       value: 
-      objectReference: {fileID: 1593974952}
+      objectReference: {fileID: 1391308803}
     - target: {fileID: 11472540, guid: 3858320aaac4fb944b70244e43706326, type: 2}
       propertyPath: failScreen
       value: 
