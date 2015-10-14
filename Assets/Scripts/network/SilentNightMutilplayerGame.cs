@@ -65,5 +65,6 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     private void generateCookie()
     {
         cookie=cookieGenerator.GetComponent<CookieGenerator>().generateCookie();
+        NetworkServer.Spawn(cookie);
     }
 }
