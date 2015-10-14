@@ -10,7 +10,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     private int counter = 1000;//temporary variable to emulate timer
     static public SilentNightMutilplayerGame multiplayerGameController;
     public GameObject cookieGenerator;
-    public GameObject cookie=null;
+    private GameObject cookie=null;
 	// Initialise when first created
     void Awake()
     {
