@@ -17,6 +17,7 @@ public class NetworkHUDCanvas : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
         int rtt = 0;
+        
         if (NetworkClient.allClients.Count > 0)
         {
             for (int i = 0; i < NetworkClient.allClients.Count; i++) {
@@ -27,6 +28,10 @@ public class NetworkHUDCanvas : NetworkBehaviour {
                     continue;
                 }
                 byte error;
+                if (c.hostId == -1)
+                {
+                    continue;
+                }
                 rtt = NetworkTransport.GetCurrentRtt(c.hostId, c.connectionId, out error) / 2;
             }
         }
