@@ -9,7 +9,6 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
 {
     [SyncVar]
     bool isGameOver = false; //variable to flag if the game is over or not
-    private int counter = 1000;//temporary variable to emulate timer
     static public SilentNightMutilplayerGame multiplayerGameController;
     public GameObject cookieGenerator;
     private GameObject cookie = null;

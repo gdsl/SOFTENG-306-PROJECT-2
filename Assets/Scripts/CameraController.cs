@@ -12,9 +12,14 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	}
+
+    public void InitialiseCamera()
+    {
         offset = transform.position - santa.transform.position;
         transparentObjects = new Dictionary<Transform, Color>();
-	}
+    }
+
 
     void LateUpdate() {
         transform.position = santa.transform.position + offset;
