@@ -9,7 +9,7 @@ public class MakeCreak : MonoBehaviour {
     private Vector2 boardPosition;
 
     void Awake() {
-		//player = GameObject.FindGameObjectWithTag("Player");
+		player = GameObject.FindGameObjectWithTag("Player");
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
         boardPosition = new Vector2(transform.position.x, transform.position.y);
 	}
