@@ -564,7 +564,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9e748a4de002c8a4aa5c5dc4b7a8dee1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -720,6 +720,7 @@ MonoBehaviour:
   failScreen: {fileID: 0}
   successScreen: {fileID: 0}
   moonlight: {fileID: 0}
+  pauseOverlay: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
