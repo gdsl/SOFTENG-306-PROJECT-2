@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 417372}
   - 114: {fileID: 11417368}
+  - 114: {fileID: 11495038}
   m_Layer: 0
   m_Name: SilentNightGame
   m_TagString: Untagged
@@ -39,6 +40,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf2c3039d6e94f48b87277194b71245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cookieGenerator: {fileID: 0}
+--- !u!114 &11495038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 42
+    i1: 170
+    i2: 150
+    i3: 102
+    i4: 205
+    i5: 108
+    i6: 201
+    i7: 52
+    i8: 251
+    i9: 233
+    i10: 172
+    i11: 86
+    i12: 85
+    i13: 69
+    i14: 125
+    i15: 79
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
