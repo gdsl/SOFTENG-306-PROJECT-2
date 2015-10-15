@@ -9,6 +9,8 @@ public class SleepWalkerAI : MonoBehaviour {
 
     private Woken woken;
     private NavMeshAgent nav;
+    private GameObject touchObject;
+
 
     private float randomMovementTimer;
 
@@ -17,7 +19,8 @@ public class SleepWalkerAI : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
-        woken = GetComponent<Woken>();
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
         nav = GetComponent<NavMeshAgent>();
         startingPosition = transform.position;
     }

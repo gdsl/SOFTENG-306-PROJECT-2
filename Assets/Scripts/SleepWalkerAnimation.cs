@@ -13,6 +13,9 @@ public class SleepWalkerAnimation : MonoBehaviour
     // Reference to woken script
     private Woken woken;
 
+    private GameObject touchObject;
+
+
     // Needed to guide person's movement
     private NavMeshAgent nav;
 
@@ -24,8 +27,10 @@ public class SleepWalkerAnimation : MonoBehaviour
 
     void Awake()
     {
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+
         santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        woken = GetComponent<Woken>();
+        woken = touchObject.GetComponent<Woken>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 

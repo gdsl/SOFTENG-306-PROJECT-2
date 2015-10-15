@@ -10,12 +10,14 @@ public class Woken : MonoBehaviour
     // Size of the game object's mesh
     //public Vector3 size;
 
+    private GameObject parentObject;
+
     // Access to GameController script. This keeps track of the global last known location of Santa
     private GameController gameController;
     // Reference animator for this animator controller
     private Animator anim;
     private NavMeshAgent nav;
-    private SphereCollider col;
+    private BoxCollider col;
 
     // Reference to Santa
     private GameObject santa;
@@ -31,25 +33,34 @@ public class Woken : MonoBehaviour
         // initially false
         woken = false;
 
-        gameController = GetComponent<GameController>();
-        anim = GetComponent<Animator>();
-        nav = GetComponent<NavMeshAgent>();
-        col = GetComponent<SphereCollider>();
+        parentObject = this.transform.parent.gameObject;
+        gameController = parentObject.GetComponent<GameController>();
+        anim = parentObject.GetComponent<Animator>();
+        nav = parentObject.GetComponent<NavMeshAgent>();
+        col = GetComponent<BoxCollider>();
 
         // Get reference to Santa
         santa = GameObject.FindWithTag("Player");
         santaAnim = santa.GetComponent<Animator>();
+
+        Debug.Log("my parent is " + parentObject.ToString());
+
     }
 
     // Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
     void Update()
     {
-        // Set the animator parameter "SantaInSight" to whether if santa is currently in sight.
-        anim.SetBool("Woken", woken);
+
 
         // Call update to suspicion meter if santa is seen
         if (woken)
+        {
+            // Set the animator parameter "SantaInSight" to whether if santa is currently in sight.
+            anim.SetBool("Woken", woken);
+
             StartCoroutine(PersonSeen());
+
+        }
     }
 
     // Satisfies if the colliding game object is Santa.
@@ -58,11 +69,15 @@ public class Woken : MonoBehaviour
     {
         // Check if the colliding object is santa
         if (other.gameObject == santa)
-        {
-            // Satisfies first condition. Must check if it satisfies other condition
-            // Initially default santaInSight to false
-            woken = true;
-        }
+            {
+                // Satisfies first condition. Must check if it satisfies other condition
+                // Initially default santaInSight to false
+                Debug.Log("woken is true");
+
+                woken = true;
+            }
+        
+
     }
 
     // When santa leaves person's radius

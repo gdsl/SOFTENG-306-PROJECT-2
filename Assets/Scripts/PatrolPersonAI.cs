@@ -26,9 +26,13 @@ public class PatrolPersonAI : MonoBehaviour
     // Reference to several scripts
     private PersonSight personSight;
     private Suspicion suspicion;
+    private Woken woken;
     private NavMeshAgent nav;
     private Transform santa;
     private GameController gameController;
+
+    private GameObject touchObject;
+
     private float patrolTimer;
     private float suspicionTimer;
     private int patrolWayPointIndex;
@@ -37,8 +41,10 @@ public class PatrolPersonAI : MonoBehaviour
     // initialize variables with awake function
     void Awake()
     {
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
         suspicion = GetComponent<Suspicion>();
         personSight = GetComponent<PersonSight>();
+        woken = touchObject.GetComponent<Woken>();
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Player").transform;
         gameController = GetComponent<GameController>();
@@ -60,7 +66,12 @@ public class PatrolPersonAI : MonoBehaviour
         //    // TODO. Condition should be replaced with GameController trigger action
         //}
 
-        if (personSight.santaInSight)
+
+        if (woken.woken)
+        {
+            // Santa is in sight. Point at santa
+            Woken();
+        } else if (personSight.santaInSight)
         {
             // Santa is in sight. Point at santa
             Pointing();
@@ -121,6 +132,12 @@ public class PatrolPersonAI : MonoBehaviour
     }
 
     void Pointing()
+    {
+        // Stop the character where it is
+        nav.Stop();
+    }
+
+    void Woken()
     {
         // Stop the character where it is
         nav.Stop();
