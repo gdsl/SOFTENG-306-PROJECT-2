@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	public GameObject failScreen;
 	public GameObject successScreen;
 	public Light moonlight;
+	public GameObject pauseOverlay;
 
 	// Use this for initialization
 	void Start () {
@@ -57,7 +58,7 @@ public class GameController : MonoBehaviour {
 	public void GoToNextLevel() {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
-		Application.LoadLevel(1);
+		Application.LoadLevel(2);
 	//	ResumeGame ();
 	}
 
@@ -71,9 +72,11 @@ public class GameController : MonoBehaviour {
 	public void PauseGame() {
 	//	Debug.LogError ("paused");
 		if (Time.timeScale == 1) {
+			pauseOverlay.SetActive(true);
 			Time.timeScale = 0;
 		} else {
 			Time.timeScale = 1;
+			pauseOverlay.SetActive(false);
 		}
 	}
 
