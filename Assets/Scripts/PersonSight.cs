@@ -29,8 +29,11 @@ public class PersonSight : MonoBehaviour {
     // Reference to Santa's state to know which state Santa is currently in. MIGHT NOT BE NEEDED
     private Animator santaAnim;
 
-	// Use this for initialization
-	void Start () {
+    // Layer to ignore during raycast
+    private int layerMask;
+
+    // Use this for initialization
+    void Start () {
         // initialize variables
         //size = GetComponent<Renderer>().size;
 
@@ -48,6 +51,10 @@ public class PersonSight : MonoBehaviour {
 
         // initially set vision to true
         checkVision = true;
+
+        // Ignore layer 2. Layer 2 is default layer provided by unity which is Ignore Raycast
+        layerMask = 1 << 2;
+        layerMask = ~layerMask;
     }
 	
 	// Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
@@ -99,7 +106,7 @@ public class PersonSight : MonoBehaviour {
                 // View of ray cast ground level transform.position
                 // Direction vector of ray cast is always normalized (0-1)
                 // Ray cast distance being the radius of the collider
-                if (Physics.Raycast(transform.position, direction.normalized, out hit, col.radius))
+                if (Physics.Raycast(transform.position, direction.normalized, out hit, col.radius, layerMask))
                 {
                     if (hit.collider.gameObject == santa)
                     {
