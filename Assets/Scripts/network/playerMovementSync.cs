@@ -40,7 +40,6 @@ public class playerMovementSync : NetworkBehaviour {
         if (isLocalPlayer)
         {
             CmdProvidePositionToServer(myTransform.position);
-
         }
     }
 }

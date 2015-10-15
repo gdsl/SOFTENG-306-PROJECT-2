@@ -9,7 +9,6 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
 {
     [SyncVar]
     bool isGameOver = false; //variable to flag if the game is over or not
-    private int counter = 1000;//temporary variable to emulate timer
     static public SilentNightMutilplayerGame multiplayerGameController;
     public GameObject cookieGenerator;
     private GameObject cookie = null;
@@ -30,6 +29,12 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         gameDuration = 600;
         //generate cookie when first start up
         generateCookie();
+
+        //initialise dynamic obstalce (people)
+        /*GameObject carl = GameObject.Find("Carl");
+        carl.GetComponent<PersonAnimation>().InitialiseSantaTransform();
+        carl.GetComponent<SleepingPersonAI>().InitialiseSantaTransform();
+         */
     }
 
     // Update is called once per frame
