@@ -9,6 +9,7 @@ public class SettingsController : MonoBehaviour {
 	public Slider brightnessSlider;
 	public InputField nameInput;
     public GameObject confirmationPanel;
+	public Toggle snowToggle;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,11 @@ public class SettingsController : MonoBehaviour {
 		soundEffectsVolumeSlider.value = PlayerPrefs.GetInt("soundEffectsVolume");
 		brightnessSlider.value = (float)(PlayerPrefs.GetInt("brightness") / 100.00);
 		nameInput.text = PlayerPrefs.GetString ("Name");
+		if (PlayerPrefs.GetInt ("snow") == 1) {
+			snowToggle.isOn = true;
+		} else {
+			snowToggle.isOn = false;
+		}
         confirmationPanel.SetActive(false);
 	}
 	
@@ -48,11 +54,20 @@ public class SettingsController : MonoBehaviour {
     {
         string name = PlayerPrefs.GetString("Name");
         PlayerPrefs.DeleteAll();
-        musicVolumeSlider.value = musicVolumeSlider.maxValue/2;
-        soundEffectsVolumeSlider.value = soundEffectsVolumeSlider.maxValue / 2;
-		brightnessSlider.value = brightnessSlider.maxValue / 2;
+        musicVolumeSlider.value = musicVolumeSlider.maxValue;
+        soundEffectsVolumeSlider.value = soundEffectsVolumeSlider.maxValue;
+		brightnessSlider.value = brightnessSlider.maxValue;
         PlayerPrefs.SetString("Name", name);
+		PlayerPrefs.SetInt ("snow", 1);
     }
+
+	public void SnowToggleChanged() {
+		if (snowToggle.isOn) {
+			PlayerPrefs.SetInt ("snow", 1);
+		} else {
+			PlayerPrefs.SetInt ("snow", 0);
+		}
+	}
 
     public void showConfirmation()
     {

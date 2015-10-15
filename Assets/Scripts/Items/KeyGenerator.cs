@@ -1,40 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CookieGenerator : MonoBehaviour {
+public class KeyGenerator : MonoBehaviour {
 
     public Vector3[] fixedPositions;
     public Vector3[] randomLocations;
-    public int cookieCount;
-    public GameObject cookie;
+    public int keyCount;
+    public GameObject key;
     private int remainingSize;
     private Vector3[] randomLocationsMod;
 
-    void Awake() {
-        generateCookie();
+    void Awake()
+    {
+        generateKey();
     }
 
-    public GameObject generateCookie()
+    public GameObject generateKey()
     {
-        GameObject generatedCookie=null;//cookie object generated
+        GameObject generatedKey = null;//key object generated
         for (int i = 0; i < fixedPositions.Length; i++)
         {
-            Instantiate(cookie, fixedPositions[i], Quaternion.identity);
+            Instantiate(key, fixedPositions[i], Quaternion.identity);
         }
 
 
-        if (cookieCount > randomLocations.Length)
+        if (keyCount > randomLocations.Length)
         {
-            cookieCount = randomLocations.Length;
+            keyCount = randomLocations.Length;
         }
 
         remainingSize = randomLocations.Length;
         randomLocationsMod = new Vector3[remainingSize];
-        for (int k=0; k < remainingSize; k++)//copy vector
+        for (int k = 0; k < remainingSize; k++)//copy vector
         {
             randomLocationsMod[k] = randomLocations[k];
         }
-        for (int i = 0; i < cookieCount; i++)
+        for (int i = 0; i < keyCount; i++)
         {
             int index = (int)(Random.value * remainingSize);
             Vector3 location = randomLocationsMod[index];
@@ -43,8 +44,8 @@ public class CookieGenerator : MonoBehaviour {
                 randomLocationsMod[j] = randomLocationsMod[j + 1];
             }
             remainingSize--;
-            generatedCookie =(GameObject) Instantiate(cookie, location, Quaternion.identity);
+            generatedKey = (GameObject)Instantiate(key, location, Quaternion.identity);
         }
-        return generatedCookie;
+        return generatedKey;
     }
 }

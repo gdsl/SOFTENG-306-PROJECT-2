@@ -16,7 +16,7 @@ public class SuspicionController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (santa.GetComponent<Rigidbody> ().velocity.magnitude > 0.2) {
+		if (santa.GetComponent<Rigidbody>().velocity.magnitude > 0.2) {
 			//Debug.Log(santa.GetComponent<Rigidbody>().velocity.magnitude);
 			IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody> ().velocity.magnitude/2);
 		} 
