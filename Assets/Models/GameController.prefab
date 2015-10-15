@@ -105,7 +105,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 449304}
   - 114: {fileID: 11485944}
-  - 114: {fileID: 11439458}
   - 114: {fileID: 11445574}
   - 82: {fileID: 8228674}
   m_Layer: 0
@@ -695,19 +694,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11439458
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d51fddd2636689f4fa3d0c29b6ed7247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cookieText: {fileID: 0}
-  keyText: {fileID: 0}
 --- !u!114 &11445574
 MonoBehaviour:
   m_ObjectHideFlags: 1

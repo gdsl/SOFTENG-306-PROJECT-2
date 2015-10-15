@@ -8,28 +8,43 @@ public class CookieGenerator : MonoBehaviour {
     public int cookieCount;
     public GameObject cookie;
     private int remainingSize;
+    private Vector3[] randomLocationsMod;
 
     void Awake() {
-        for (int i = 0; i < fixedPositions.Length; i++) {
+        generateCookie();
+    }
+
+    public GameObject generateCookie()
+    {
+        GameObject generatedCookie=null;//cookie object generated
+        for (int i = 0; i < fixedPositions.Length; i++)
+        {
             Instantiate(cookie, fixedPositions[i], Quaternion.identity);
         }
 
 
-            if (cookieCount > randomLocations.Length)
-            {
-                cookieCount = randomLocations.Length;
-            }
+        if (cookieCount > randomLocations.Length)
+        {
+            cookieCount = randomLocations.Length;
+        }
 
         remainingSize = randomLocations.Length;
-
-        for (int i = 0; i < cookieCount; i++) {
-            int index =(int) (Random.value * remainingSize);
-            Vector3 location = randomLocations[index];
-            for( int j = index; j < remainingSize -1; j++ ){
-                randomLocations[j] = randomLocations[j+1];
+        randomLocationsMod = new Vector3[remainingSize];
+        for (int k=0; k < remainingSize; k++)//copy vector
+        {
+            randomLocationsMod[k] = randomLocations[k];
+        }
+        for (int i = 0; i < cookieCount; i++)
+        {
+            int index = (int)(Random.value * remainingSize);
+            Vector3 location = randomLocationsMod[index];
+            for (int j = index; j < remainingSize - 1; j++)
+            {
+                randomLocationsMod[j] = randomLocationsMod[j + 1];
             }
             remainingSize--;
-            Instantiate(cookie, location, Quaternion.identity);
+            generatedCookie =(GameObject) Instantiate(cookie, location, Quaternion.identity);
         }
+        return generatedCookie;
     }
 }

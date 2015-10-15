@@ -10,10 +10,14 @@ public class playerMovementSync : NetworkBehaviour {
     [SerializeField]Transform myTransform; //the current transform of object script attached to
     [SerializeField]float lerpRate = 15;
 
+    void Update()
+    {
+        LerpPosition();
+    }
+
     void FixedUpdate()
     {
         TransmitPosition();
-        LerpPosition();
     }
 
     void LerpPosition()
