@@ -95,15 +95,29 @@ public class LevelEnd : MonoBehaviour {
 
     public void updateLevelInfo()
     {
-
-        if (stars > PlayerPrefs.GetInt("Level One Stars"))
+        if (PlayerPrefs.GetInt("To Be Loaded") == 4)
         {
-            PlayerPrefs.SetInt("Level One Stars", stars);
+            if (stars > PlayerPrefs.GetInt("Level One Stars"))
+            {
+                PlayerPrefs.SetInt("Level One Stars", stars);
+            }
+
+            if (score > PlayerPrefs.GetInt("Level One Score"))
+            {
+                PlayerPrefs.SetInt("Level One Score", score);
+            }
         }
-
-        if (score > PlayerPrefs.GetInt("Level One Score"))
+        else if (PlayerPrefs.GetInt("To Be Loaded") == 5)
         {
-            PlayerPrefs.SetInt("Level One Score", score);
+            if (stars > PlayerPrefs.GetInt("Level Two Stars"))
+            {
+                PlayerPrefs.SetInt("Level Two Stars", stars);
+            }
+
+            if (score > PlayerPrefs.GetInt("Level Two Score"))
+            {
+                PlayerPrefs.SetInt("Level Two Score", score);
+            }
         }
 
         GameObject scoreUploadController = GameObject.FindGameObjectWithTag("ScoreUploadController");
