@@ -38,8 +38,14 @@ public class PersonAI : MonoBehaviour
     void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
-        santa = GameObject.FindGameObjectWithTag("Santa").transform;
+        InitialiseSantaTransform();
         gameController = GetComponent<GameController>();
+    }
+
+    //method to initialise the santa's transform
+    public void InitialiseSantaTransform()
+    {
+        santa = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     /**

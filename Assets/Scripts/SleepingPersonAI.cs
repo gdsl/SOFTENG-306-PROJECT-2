@@ -25,6 +25,12 @@ public class SleepingPersonAI : MonoBehaviour
         personSight = GetComponent<PersonSight>();
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
+        InitialiseSantaTransform();
+    }
+
+    //method to initialise the santa's transform
+    public void InitialiseSantaTransform()
+    {
         santa = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

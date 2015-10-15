@@ -25,7 +25,7 @@ public class PersonAnimation : MonoBehaviour {
 
     void Awake()
     {
-        santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        InitialiseSantaTransform();
         personSight = GetComponent<PersonSight>();
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
@@ -37,6 +37,12 @@ public class PersonAnimation : MonoBehaviour {
 
         // Convert deadZone variable from degrees to radians
         deadZone *= Mathf.Deg2Rad;
+    }
+
+    //method to initialise the santa's transform
+    public void InitialiseSantaTransform()
+    {
+        santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
