@@ -5,6 +5,14 @@ public class KeyScript : Items {
     public int id;
 	public KeyPanelScript keyPanelScript;
 
+    void Awake()
+    {
+        if(keyPanelScript == null)
+        {
+            keyPanelScript = GameObject.Find("KeyPanel").GetComponent<KeyPanelScript>();
+        }
+    }
+
     //when the player collider with key trigger this event
     void OnTriggerEnter(Collider col)
     {
