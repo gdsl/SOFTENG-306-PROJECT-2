@@ -31,9 +31,10 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         generateCookie();
 
         //initialise dynamic obstalce (people)
-        GameObject carl = GameObject.Find("Carl");
+        /*GameObject carl = GameObject.Find("Carl");
         carl.GetComponent<PersonAnimation>().InitialiseSantaTransform();
         carl.GetComponent<SleepingPersonAI>().InitialiseSantaTransform();
+         */
     }
 
     // Update is called once per frame

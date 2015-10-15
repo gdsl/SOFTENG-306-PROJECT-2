@@ -42,7 +42,11 @@ public class PersonAnimation : MonoBehaviour {
     //method to initialise the santa's transform
     public void InitialiseSantaTransform()
     {
-        santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject queryChan = GameObject.FindGameObjectWithTag("Player");
+        if (queryChan != null)
+        {
+            santaTransform = queryChan.transform;
+        }
     }
 
     // Update is called once per frame

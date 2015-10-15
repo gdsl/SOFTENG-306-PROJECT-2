@@ -31,7 +31,11 @@ public class SleepingPersonAI : MonoBehaviour
     //method to initialise the santa's transform
     public void InitialiseSantaTransform()
     {
-        santa = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject queryChan = GameObject.FindGameObjectWithTag("Player");
+        if (queryChan != null)
+        {
+            santa = queryChan.transform;
+        }
     }
 
     // Update is called once per frame
