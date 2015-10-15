@@ -13,10 +13,11 @@ public class GameController : MonoBehaviour {
 	void Start () {
 
 		if (!PlayerPrefs.HasKey("musicVolume") || !PlayerPrefs.HasKey("soundEffectsVolume")
-		    || !PlayerPrefs.HasKey("brightness")) {
+		    || !PlayerPrefs.HasKey("brightness") || !PlayerPrefs.HasKey("snow")) {
 			PlayerPrefs.SetInt ("musicVolume", 1000);
 			PlayerPrefs.SetInt ("soundEffectsVolume", 1000);
 			PlayerPrefs.SetInt ("brightness", 100);
+			PlayerPrefs.SetInt ("snow", 1);
 		}
 
 		ResumeGame ();
@@ -25,6 +26,13 @@ public class GameController : MonoBehaviour {
 		Text hintText = GameObject.FindGameObjectWithTag("HintText").GetComponent<Text>();
 		hintText.gameObject.SetActive(false);
 		moonlight.intensity = (float)(PlayerPrefs.GetInt ("brightness") / 100.00);
+
+		//disable snow if needed
+		if (PlayerPrefs.GetInt ("snow") == 0) {
+			GameObject.FindGameObjectWithTag("Snow").GetComponent<ParticleSystem>().Clear();
+			GameObject.FindGameObjectWithTag("Snow").GetComponent<ParticleSystem>().enableEmission = false;
+		//	Debug.LogError("snow disabled");
+		}
 
         //stop the menu music playing
         MenuMusic menuMusic = MenuMusic.Instance;
