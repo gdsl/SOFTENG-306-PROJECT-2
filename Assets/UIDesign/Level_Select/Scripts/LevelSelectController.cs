@@ -112,7 +112,7 @@ public class LevelSelectController : MonoBehaviour, IBeginDragHandler, IEndDragH
         SetPagePositions();
         SetPage(startingPage);
         InitPageSelection();
-        SetPageSelection(startingPage);
+       // SetPageSelection(startingPage);
 
         // prev and next buttons
         if (nextButton)
