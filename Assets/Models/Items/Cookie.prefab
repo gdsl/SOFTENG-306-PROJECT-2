@@ -128,6 +128,7 @@ GameObject:
   - 4: {fileID: 483234}
   - 114: {fileID: 11438706}
   - 136: {fileID: 13630108}
+  - 114: {fileID: 11407872}
   m_Layer: 0
   m_Name: Cookie
   m_TagString: Untagged
@@ -727,6 +728,38 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11407872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 244
+    i1: 148
+    i2: 137
+    i3: 224
+    i4: 119
+    i5: 197
+    i6: 31
+    i7: 212
+    i8: 27
+    i9: 86
+    i10: 226
+    i11: 252
+    i12: 40
+    i13: 159
+    i14: 116
+    i15: 148
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &11438706
 MonoBehaviour:
   m_ObjectHideFlags: 1
