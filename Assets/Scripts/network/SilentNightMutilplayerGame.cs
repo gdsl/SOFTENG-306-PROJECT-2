@@ -2,16 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using System;
 
 public class SilentNightMutilplayerGame : NetworkBehaviour
 {
-    [SyncVar] 
-	bool isGameOver = false; //variable to flag if the game is over or not
+    [SyncVar]
+    bool isGameOver = false; //variable to flag if the game is over or not
     private int counter = 1000;//temporary variable to emulate timer
     static public SilentNightMutilplayerGame multiplayerGameController;
     public GameObject cookieGenerator;
-    private GameObject cookie=null;
-	// Initialise when first created
+    private GameObject cookie = null;
+
+
+    [SyncVar]
+    private float gameDuration = 60; //in seconds
+                                     // Initialise when first created
     void Awake()
     {
         multiplayerGameController = this;
@@ -21,33 +27,33 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     public override void OnStartServer()
     {
         //initialise count down timer
-        counter = 1000;
+        gameDuration = 60;
         //generate cookie when first start up
         generateCookie();
     }
 
-	// Update is called once per frame
+    // Update is called once per frame
     [ServerCallback]
-	void Update () {
+    void Update()
+    {
         if (isGameOver)
         {
             return;
             //do logic then shut down
         }
 
-        if (counter <= 0)
+        gameDuration -= Time.deltaTime;
+        if (gameDuration <= 0)
         {
             ExitGame();//exit game
         }
 
-        if(cookie==null)//if cookie collected regenerate
+        if (cookie == null)//if cookie collected regenerate
         {
             generateCookie();
         }
-        
-        counter--;
-        Debug.Log("Counter: "+counter);
-	}
+
+    }
 
     //method to shut down the server and client when game is done
     public void ExitGame()
@@ -64,7 +70,12 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
 
     private void generateCookie()
     {
-        cookie=cookieGenerator.GetComponent<CookieGenerator>().generateCookie();
+        cookie = cookieGenerator.GetComponent<CookieGenerator>().generateCookie();
         NetworkServer.Spawn(cookie);
+    }
+
+    public float GetTimeLeft()
+    {
+        return gameDuration;
     }
 }
