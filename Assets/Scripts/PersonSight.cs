@@ -14,8 +14,8 @@ public class PersonSight : MonoBehaviour {
     public float fieldOfViewAngle = 110f;
     public bool santaInSight;
 
-    // Size of the game object's mesh
-    //public Vector3 size;
+    // Criteria to check raycast
+    public bool checkVision;
 
     // Access to GameController script. This keeps track of the global last known location of Santa
     private GameController gameController;
@@ -45,6 +45,9 @@ public class PersonSight : MonoBehaviour {
         // Get reference to Santa
         santa = GameObject.FindWithTag("Player");
         santaAnim = santa.GetComponent<Animator>();
+
+        // initially set vision to true
+        checkVision = true;
     }
 	
 	// Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
@@ -69,7 +72,7 @@ public class PersonSight : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         // Check if the colliding object is santa
-        if (other.gameObject == santa)
+        if (other.gameObject == santa && checkVision == true)
         {
             // Satisfies first condition. Must check if it satisfies other condition
             // Initially default santaInSight to false
