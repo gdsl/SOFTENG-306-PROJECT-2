@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour {
 	public void RestartLevel() {
 	//	successScreen.SetActive (false);
 	//	failScreen.SetActive (false);
-		Application.LoadLevel(2);
+		Application.LoadLevel(PlayerPrefs.GetInt("To Be Loaded"));
 	//	ResumeGame ();
 	}
 

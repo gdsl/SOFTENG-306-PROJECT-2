@@ -83,6 +83,29 @@ public class LevelSelectController : MonoBehaviour, IBeginDragHandler, IEndDragH
             _horizontal = true;
         }
 
+        if(PlayerPrefs.GetInt("Level One Score") > 0)
+        {
+            if(PlayerPrefs.GetInt("Level Two Score") > 0)
+            {
+                if (PlayerPrefs.GetInt("Level Three Score") > 0)
+                {
+                    startingPage = 3;
+                }
+                else
+                {
+                    startingPage = 2;
+                }
+            }
+            else
+            {
+                startingPage = 1;
+            }
+        }
+        else
+        {
+            startingPage = 0;
+        }
+
         _lerp = false;
 
         // init
