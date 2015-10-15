@@ -10,15 +10,17 @@ public class FOV2DEyes : MonoBehaviour
 	public int quality = 4;
 	public int fovAngle = 90;
 	public float fovMaxDistance = 15;
-	public LayerMask cullingMask;
+	//public LayerMask cullingMask;
 	public List<RaycastHit> hits = new List<RaycastHit>();
 	
 	int numRays;
 	float currentAngle;
 	Vector3 direction;
 	RaycastHit hit;
-	
-	void Update()
+
+    private int layerMask;
+
+    void Update()
 	{
         // Get fov and fovMaxDistance values
         PersonSight personSight = GetComponent<PersonSight>();
@@ -38,8 +40,12 @@ public class FOV2DEyes : MonoBehaviour
 	
 	void Start() 
 	{
-		//InvokeRepeating("CastRays", 0, updateRate);
-	}
+        //InvokeRepeating("CastRays", 0, updateRate);
+        // Collide with everything except layer 2
+        layerMask = 1 << 2;
+        // invert
+        layerMask = ~layerMask;
+    }
 	
 	void CastRays()
 	{
@@ -53,7 +59,7 @@ public class FOV2DEyes : MonoBehaviour
 			direction = Quaternion.AngleAxis(currentAngle, transform.up) * transform.forward;
 			hit = new RaycastHit();
 			
-			if(Physics.Raycast(transform.position, direction, out hit, fovMaxDistance, cullingMask) == false)
+			if(Physics.Raycast(transform.position, direction, out hit, fovMaxDistance, layerMask) == false)
 			{
 				hit.point = transform.position + (direction * fovMaxDistance);
 			}

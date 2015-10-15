@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487640}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal)
-  m_TagString: Untagged
+  m_TagString: Transparent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ GameObject:
   - 95: {fileID: 9525388}
   - 136: {fileID: 13650886}
   - 54: {fileID: 5413894}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 453538}
   - 198: {fileID: 19808664}
   - 199: {fileID: 19938454}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 95: {fileID: 9504398}
   - 136: {fileID: 13615702}
   - 54: {fileID: 5461484}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466068}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446758}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (1)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - 33: {fileID: 3341574}
   - 23: {fileID: 2387262}
   - 65: {fileID: 6559260}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DoorPlank
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - 95: {fileID: 9500582}
   - 136: {fileID: 13695660}
   - 54: {fileID: 5468814}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - 33: {fileID: 3335020}
   - 23: {fileID: 2317952}
   - 65: {fileID: 6557994}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DoorPlank
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401838}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (2)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - 33: {fileID: 3330398}
   - 23: {fileID: 2337412}
   - 65: {fileID: 6571320}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DoorPlank
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -1728,7 +1728,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Transparent
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106008}
