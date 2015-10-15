@@ -574,7 +574,7 @@ Prefab:
     - target: {fileID: 11483938, guid: e6cdccbd4689406498a9fe603e53683b, type: 2}
       propertyPath: keyPanelScript
       value: 
-      objectReference: {fileID: 1991807185}
+      objectReference: {fileID: 529722680}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6cdccbd4689406498a9fe603e53683b, type: 2}
   m_IsPrefabParent: 0
@@ -4146,6 +4146,12 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300144, guid: 0b45fec3902dade49b80e32cb44370ee, type: 3}
+--- !u!114 &529722680 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11458198, guid: fd45fed90ee13e7448bb7154aec34774,
+    type: 2}
+  m_PrefabInternal: {fileID: 1032057343}
+  m_Script: {fileID: 11500000, guid: 638120db75fec404f89ae0c241a34bad, type: 3}
 --- !u!1 &533839124 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100130, guid: 0b45fec3902dade49b80e32cb44370ee, type: 3}
@@ -5602,7 +5608,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22431116, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 425548, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: m_LocalPosition.x
@@ -5646,20 +5652,25 @@ Prefab:
       objectReference: {fileID: 1391308803}
     - target: {fileID: 163990, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 122718, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 106140, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11458198, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: yellowKey
       value: 
       objectReference: {fileID: 21300000, guid: 74b995648d0061845bdeec1ccad048b8,
+        type: 3}
+    - target: {fileID: 11458198, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
+      propertyPath: redKey
+      value: 
+      objectReference: {fileID: 21300000, guid: 146d817c2f1672244b462bf8adb51976,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
