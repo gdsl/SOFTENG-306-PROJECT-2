@@ -46,8 +46,8 @@ public class SleepingPersonAI : MonoBehaviour
         {
             if (fovEyesScript.enabled == false)
             {
-                fovEyesScript.enabled = false;
-                fovConeScript.enabled = false;
+                fovEyesScript.enabled = true;
+                fovConeScript.enabled = true;
             }
             Pointing();
         }
@@ -55,8 +55,8 @@ public class SleepingPersonAI : MonoBehaviour
         {
             if (fovEyesScript.enabled == false)
             {
-                fovEyesScript.enabled = false;
-                fovConeScript.enabled = false;
+                fovEyesScript.enabled = true;
+                fovConeScript.enabled = true;
             }
             Suspicion();
         }
