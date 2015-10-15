@@ -40,8 +40,18 @@ public class PatrolPersonAI : MonoBehaviour
         suspicion = GetComponent<Suspicion>();
         personSight = GetComponent<PersonSight>();
         nav = GetComponent<NavMeshAgent>();
-        santa = GameObject.FindGameObjectWithTag("Player").transform;
+        InitialiseSantaTransform();
         gameController = GetComponent<GameController>();
+    }
+
+    //method to initialise the santa's transform
+    public void InitialiseSantaTransform()
+    {
+        GameObject queryChan = GameObject.FindGameObjectWithTag("Player");
+        if (queryChan != null)
+        {
+            santa = queryChan.transform;
+        }
     }
 
     /**

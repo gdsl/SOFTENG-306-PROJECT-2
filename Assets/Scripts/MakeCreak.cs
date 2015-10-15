@@ -15,7 +15,7 @@ public class MakeCreak : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject == player) {
+		if (other.gameObject.tag=="Player") {
             //play the creaky floorboard audio
             AudioSource creakyAudio = GameObject.FindGameObjectWithTag("CreakyAudio").GetComponent<AudioSource>();
             creakyAudio.Play();

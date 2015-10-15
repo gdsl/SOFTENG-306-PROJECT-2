@@ -38,10 +38,6 @@ public class LevelStatusController : MonoBehaviour {
     private void setPageLevelOne() {
         int levelOneStarsInt = PlayerPrefs.GetInt("Level One Stars");
 
-        levelTwoStars[0].enabled = false;
-        levelTwoStars[1].enabled = false;
-        levelTwoStars[2].enabled = false;
-
         if (levelOneStarsInt > 0)
         {
             levelOneStars[0].color = starCompleteColor;
