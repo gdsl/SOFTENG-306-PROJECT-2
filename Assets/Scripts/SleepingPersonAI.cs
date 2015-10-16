@@ -7,6 +7,7 @@ public class SleepingPersonAI : MonoBehaviour
     public float speed = 2f;
     public float waitTime = 3f;
     public Transform[] walkPoints;
+    public Transform refPoint;
 
     private SleepingScript sleepingScript;
     private PersonSight personSight;
@@ -15,7 +16,6 @@ public class SleepingPersonAI : MonoBehaviour
     private Transform santa;
     private float timer;
     private int wayPointIndex;
-    private bool direction;
 
     // Use this for initialization
     void Awake()
@@ -87,6 +87,10 @@ public class SleepingPersonAI : MonoBehaviour
                 else if (wayPointIndex == 0 && suspicion.suspicionCheck == false)
                 {
                     // Returned back to bed. Return to sleep
+                    Vector3 direction = refPoint.position - transform.position;
+                    // Angle between two values
+                    float angle = Vector3.Angle(direction, transform.forward);
+                    transform.Rotate(0, angle + 180, 0, Space.Self);
                     sleepingScript.sleeping = true;
                 }
 
