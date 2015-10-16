@@ -28,9 +28,9 @@ public class SleepWalkerAnimation : MonoBehaviour
     void Awake()
     {
         touchObject = this.transform.FindChild("SenseTouch").gameObject;
-
-        santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
         woken = touchObject.GetComponent<Woken>();
+        santaTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 

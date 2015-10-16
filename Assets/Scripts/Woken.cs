@@ -43,8 +43,6 @@ public class Woken : MonoBehaviour
         santa = GameObject.FindWithTag("Player");
         santaAnim = santa.GetComponent<Animator>();
 
-        Debug.Log("my parent is " + parentObject.ToString());
-
     }
 
     // Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input

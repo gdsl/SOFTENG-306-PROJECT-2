@@ -33,8 +33,6 @@ public class SleepingPersonAI : MonoBehaviour
         santa = GameObject.FindGameObjectWithTag("Player").transform;
         fovEyesScript = GetComponent<FOV2DEyes>();
         fovConeScript = GetComponent<FOV2DVisionCone>();
-        touchObject = this.transform.FindChild("SenseTouch").gameObject;
-        woken = touchObject.GetComponent<Woken>();
 
         touchObject = this.transform.FindChild("SenseTouch").gameObject;
         woken = touchObject.GetComponent<Woken>();

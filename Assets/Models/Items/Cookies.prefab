@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.78999996, y: -.769999981, z: 8.10000038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,11 +39,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcdcd055f1280747b561c9cb9665047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locations:
-  - {x: -6, y: .5, z: 4.61000013}
-  - {x: -6, y: .5, z: 4.11000013}
-  - {x: -6, y: .5, z: 2.5}
-  cookieCount: 2
+  fixedPositions:
+  - {x: 10, y: .5, z: 16.75}
+  - {x: 9.78999996, y: .5, z: 8.10000038}
+  - {x: 3, y: .5, z: 16.75}
+  randomLocations:
+  - {x: 1.82000005, y: .5, z: 14.8100004}
+  - {x: -.540000021, y: .5, z: -2.48000002}
+  cookieCount: 1
   cookie: {fileID: 137930, guid: f49489e077c51fd41b56e2fc289f7494, type: 2}
 --- !u!1001 &100100000
 Prefab:

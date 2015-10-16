@@ -11,12 +11,13 @@ GameObject:
   - 33: {fileID: 3357276}
   - 23: {fileID: 2391692}
   - 111: {fileID: 11166088}
-  - 64: {fileID: 6490046}
   - 54: {fileID: 5467240}
   - 114: {fileID: 11435762}
   - 114: {fileID: 11412506}
   - 82: {fileID: 8219872}
   - 114: {fileID: 11400944}
+  - 65: {fileID: 6515248}
+  - 64: {fileID: 6424164}
   m_Layer: 0
   m_Name: vase
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184488}
   m_LocalRotation: {x: 2.18556941e-08, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.72399998, y: .741999984, z: 5.13199997}
+  m_LocalPosition: {x: -6.4829998, y: .349999994, z: 4.296}
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +83,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6490046
+--- !u!64 &6424164
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,6 +95,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: c193f71410c97144dae9a0015d0cc80f, type: 3}
+--- !u!65 &6515248
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .858198762, y: 1.33259583, z: .858198822}
+  m_Center: {x: -.233452022, y: -.0398390889, z: 1.41536876e-16}
 --- !u!82 &8219872
 AudioSource:
   m_ObjectHideFlags: 1
@@ -109,7 +122,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -201,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbaaa19a05feabd48865effa7bc4a185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impact: {fileID: 0}
+  impact: {fileID: 8300000, guid: 48b60b8fda33645499ad83f4df4b56f9, type: 3}
 --- !u!114 &11435762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,13 +226,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyedObject: {fileID: 100054, guid: dd627652216616d4db41762f442101c2, type: 2}
+  suspicionController: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: impact
+      value: 
+      objectReference: {fileID: 8300000, guid: 48b60b8fda33645499ad83f4df4b56f9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184488}

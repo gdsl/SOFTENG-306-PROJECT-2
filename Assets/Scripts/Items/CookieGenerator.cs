@@ -8,6 +8,7 @@ public class CookieGenerator : MonoBehaviour {
     public int cookieCount;
     public GameObject cookie;
     private int remainingSize;
+    private Vector3[] randomLocationsMod;
 
     void Awake() {
         generateCookie();
@@ -28,14 +29,18 @@ public class CookieGenerator : MonoBehaviour {
         }
 
         remainingSize = randomLocations.Length;
-
+        randomLocationsMod = new Vector3[remainingSize];
+        for (int k=0; k < remainingSize; k++)//copy vector
+        {
+            randomLocationsMod[k] = randomLocations[k];
+        }
         for (int i = 0; i < cookieCount; i++)
         {
             int index = (int)(Random.value * remainingSize);
-            Vector3 location = randomLocations[index];
+            Vector3 location = randomLocationsMod[index];
             for (int j = index; j < remainingSize - 1; j++)
             {
-                randomLocations[j] = randomLocations[j + 1];
+                randomLocationsMod[j] = randomLocationsMod[j + 1];
             }
             remainingSize--;
             generatedCookie =(GameObject) Instantiate(cookie, location, Quaternion.identity);

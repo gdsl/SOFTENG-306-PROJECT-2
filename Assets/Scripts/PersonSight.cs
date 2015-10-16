@@ -14,8 +14,8 @@ public class PersonSight : MonoBehaviour {
     public float fieldOfViewAngle = 110f;
     public bool santaInSight;
 
-    // Size of the game object's mesh
-    //public Vector3 size;
+    // Criteria to check raycast
+    public bool checkVision;
 
     // Access to GameController script. This keeps track of the global last known location of Santa
     private GameController gameController;
@@ -29,8 +29,15 @@ public class PersonSight : MonoBehaviour {
     // Reference to Santa's state to know which state Santa is currently in. MIGHT NOT BE NEEDED
     private Animator santaAnim;
 
-	// Use this for initialization
-	void Start () {
+    // Layer to ignore during raycast
+    private int layerMask;
+
+    // ray cast positions
+    private Vector3 rayPos1;
+    private Vector3 rayPos2;
+
+    // Use this for initialization
+    void Awake () {
         // initialize variables
         //size = GetComponent<Renderer>().size;
 
@@ -45,6 +52,17 @@ public class PersonSight : MonoBehaviour {
         // Get reference to Santa
         santa = GameObject.FindWithTag("Player");
         santaAnim = santa.GetComponent<Animator>();
+
+        // initially set vision to true
+        checkVision = true;
+
+        // Ignore layer 2. Layer 2 is default layer provided by unity which is Ignore Raycast
+        layerMask = 1 << 2;
+        layerMask = ~layerMask;
+
+        // initialize ray position
+        // slightly above ground level
+        rayPos1 = new Vector3(0, 0.5f, 0);
     }
 	
 	// Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
@@ -69,7 +87,7 @@ public class PersonSight : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         // Check if the colliding object is santa
-        if (other.gameObject == santa)
+        if (other.gameObject == santa && checkVision == true)
         {
             // Satisfies first condition. Must check if it satisfies other condition
             // Initially default santaInSight to false
@@ -93,10 +111,22 @@ public class PersonSight : MonoBehaviour {
                 // Check if there is obstruction between santa and person which will hide santa
                 RaycastHit hit;
 
+                rayPos2 = new Vector3(0, nav.height * 0.8f);
+
+                // Two raycasts of person.
+                // REASON: Prevent crouching from being not visible
                 // View of ray cast ground level transform.position
                 // Direction vector of ray cast is always normalized (0-1)
                 // Ray cast distance being the radius of the collider
-                if (Physics.Raycast(transform.position, direction.normalized, out hit, col.radius))
+                if (Physics.Raycast(transform.position + rayPos1, direction.normalized, out hit, col.radius, layerMask))
+                {
+                    if (hit.collider.gameObject == santa)
+                    {
+                        santaInSight = true;
+                    }
+                }
+
+                if (Physics.Raycast(transform.position + rayPos2, direction.normalized, out hit, col.radius, layerMask))
                 {
                     if (hit.collider.gameObject == santa)
                     {
@@ -123,5 +153,15 @@ public class PersonSight : MonoBehaviour {
         yield return new WaitForSeconds(3.0f);
         SuspicionController slider = GameObject.FindGameObjectWithTag("SuspicionSlider").GetComponent<SuspicionController>();
         slider.IncreaseSuspicionByAmount(5000);
+    }
+
+    public Vector3 GetRayPos1()
+    {
+        return rayPos1;
+    }
+
+    public Vector3 GetRayPos2()
+    {
+        return rayPos2;
     }
 }
