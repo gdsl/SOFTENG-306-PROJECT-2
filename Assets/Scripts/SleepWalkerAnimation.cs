@@ -15,7 +15,6 @@ public class SleepWalkerAnimation : MonoBehaviour
 
     private GameObject touchObject;
 
-
     // Needed to guide person's movement
     private NavMeshAgent nav;
 

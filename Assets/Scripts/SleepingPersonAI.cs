@@ -19,6 +19,10 @@ public class SleepingPersonAI : MonoBehaviour
     private int wayPointIndex;
     private bool direction;
 
+    private Woken woken;
+    private GameObject touchObject;
+
+
     // Use this for initialization
     void Awake()
     {
@@ -30,6 +34,8 @@ public class SleepingPersonAI : MonoBehaviour
         santa = GameObject.FindGameObjectWithTag("Player").transform;
         fovEyesScript = GetComponent<FOV2DEyes>();
         fovConeScript = GetComponent<FOV2DVisionCone>();
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
 
     }
 
@@ -42,6 +48,12 @@ public class SleepingPersonAI : MonoBehaviour
             fovConeScript.enabled = false;
             Sleeping();
         }
+
+        else if (woken.woken)
+        {
+            Woken();
+        }
+
         else if (personSight.santaInSight)
         {
             if (fovEyesScript.enabled == false)
@@ -65,6 +77,12 @@ public class SleepingPersonAI : MonoBehaviour
     // Basically tells Nav Mesh Agent to stop at its spot
     void Sleeping()
     {
+        nav.Stop();
+    }
+
+    void Woken()
+    {
+        // Stop the character where it is
         nav.Stop();
     }
 

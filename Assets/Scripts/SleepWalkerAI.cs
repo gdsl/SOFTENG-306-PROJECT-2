@@ -30,7 +30,7 @@ public class SleepWalkerAI : MonoBehaviour {
     {
         if (woken.woken)
         {
-            // Santa is in sight. Point at santa
+            // Santa hits AI. Look around
             Woken();
         }
         else
@@ -39,7 +39,6 @@ public class SleepWalkerAI : MonoBehaviour {
             RandomMove();
         }
     }
-
 
     void Woken()
     {

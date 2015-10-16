@@ -50,12 +50,10 @@ public class Woken : MonoBehaviour
     // Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
     void Update()
     {
-
-
         // Call update to suspicion meter if santa is seen
         if (woken)
         {
-            // Set the animator parameter "SantaInSight" to whether if santa is currently in sight.
+            // Set the animator parameter "Woken" to whether if santa hits the AI.
             anim.SetBool("Woken", woken);
 
             StartCoroutine(PersonSeen());
@@ -70,14 +68,8 @@ public class Woken : MonoBehaviour
         // Check if the colliding object is santa
         if (other.gameObject == santa)
             {
-                // Satisfies first condition. Must check if it satisfies other condition
-                // Initially default santaInSight to false
-                Debug.Log("woken is true");
-
                 woken = true;
             }
-        
-
     }
 
     // When santa leaves person's radius
