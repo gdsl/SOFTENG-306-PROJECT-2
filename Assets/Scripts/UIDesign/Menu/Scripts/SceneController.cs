@@ -33,6 +33,14 @@ public class SceneController : MonoBehaviour {
         
     }
 
+	public void RemoveCanvas() {
+	//	Debug.LogError ("removing");
+		GameObject m_Canvas = GameObject.FindGameObjectWithTag("OfflineCanvas");
+		GameObject m_Canvas2 = GameObject.FindGameObjectWithTag("NetworkManager");
+		GameObject.Destroy (m_Canvas);
+		GameObject.Destroy (m_Canvas2);
+	}
+
     void OnLevelWasLoaded(int level)
     {
         if (level == 0)
