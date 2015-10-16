@@ -70,7 +70,7 @@ public class LevelStatusController : MonoBehaviour {
             levelTwoStars[0].color = starCompleteColor;
             if (levelTwoStarsInt > 1)
             {
-                levelOneStars[1].color = starCompleteColor;
+                levelTwoStars[1].color = starCompleteColor;
                 if (levelTwoStarsInt > 2)
                 {
                     levelTwoStars[2].color = starCompleteColor;
