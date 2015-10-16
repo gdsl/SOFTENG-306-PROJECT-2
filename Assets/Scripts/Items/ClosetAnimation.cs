@@ -58,10 +58,16 @@ public class ClosetAnimation : MonoBehaviour
     void Update()
     {
         // Set the open parameter.
-        animator1.SetBool(Animator.StringToHash("ClosetDoorOpen"), count > 0);
-        animator1.SetBool(Animator.StringToHash("DoorOpen"), count > 0);
-        animator2.SetBool(Animator.StringToHash("ClosetDoorOpen"), count > 0);
-        animator2.SetBool(Animator.StringToHash("DoorOpen"), count > 0);
+        if (this.tag == "Closet")
+        {
+            animator1.SetBool(Animator.StringToHash("ClosetDoorOpen"), count > 0);
+            animator2.SetBool(Animator.StringToHash("ClosetDoorOpen"), count > 0);
+        }
+        else
+        {
+            animator1.SetBool(Animator.StringToHash("DoorOpen"), count > 0);
+            animator2.SetBool(Animator.StringToHash("DoorOpen"), count > 0);
+        }
     }
 
     void OnTriggerExit(Collider other)

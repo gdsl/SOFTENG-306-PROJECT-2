@@ -54,8 +54,14 @@ public class DoorAnimation : MonoBehaviour {
     void Update()
     {
         // Set the open parameter.
+        if (this.tag == "Closet")
+        {
             animator.SetBool(Animator.StringToHash("ClosetDoorOpen"), count > 0);
+        }
+        else
+        {
             animator.SetBool(Animator.StringToHash("DoorOpen"), count > 0);
+        }
     }
 
     void OnTriggerExit(Collider other)
