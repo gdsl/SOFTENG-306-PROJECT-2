@@ -11,8 +11,8 @@ public class TestKey {
     public void getKey()
     {
         PlayerInventorySingle pi = new PlayerInventorySingle();
-        pi.gotKey(1);
-        Assert.That(pi.hasKey(1));//check after getting key inventory updates
+        pi.GotKey(1);
+        Assert.That(pi.HasKey(1));//check after getting key inventory updates
     }
 
     /**
@@ -22,6 +22,6 @@ public class TestKey {
     public void checkNoKey()
     {
         PlayerInventorySingle pi = new PlayerInventorySingle();
-        Assert.That(pi.hasKey(2) == false);//check dont have key will say inventory dont have
+        Assert.That(pi.HasKey(2) == false);//check dont have key will say inventory dont have
     }
 }

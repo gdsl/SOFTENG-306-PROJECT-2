@@ -10,11 +10,11 @@ using System;
 /// </summary>
 public class PlayerInventoryNetwork : PlayerInventory{
 
-    public override void setCookie()
+    public override void SetCookie()
     {
 		if (isLocalPlayer)//only update at player who got cookies
 	    {
-            cookieGuiUpdate();//show cookie count on gui
+            CookieGuiUpdate();//show cookie count on gui
 	    }
     }
 }

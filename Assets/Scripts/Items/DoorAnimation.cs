@@ -25,7 +25,7 @@ public class DoorAnimation : MonoBehaviour {
             if (isLocked)
             {
                 // ... if the player has the key...
-                if (playerInventory.hasKey(id))
+                if (playerInventory.HasKey(id))
                 {
                     // ... increase the count of triggering objects.
                     count++;

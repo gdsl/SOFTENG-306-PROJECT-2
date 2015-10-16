@@ -17,10 +17,10 @@ public class TestCookie
         UnityEngine.UI.Text st = gb.AddComponent<UnityEngine.UI.Text>();
         st.text = "Cookie:";
         PlayerInventorySingle pi = new PlayerInventorySingle();
-        pi.reset();
+        pi.Reset();
         pi.IncreaseCookieCount(); //check increase initially willl get 1 cookies
-        Assert.That(pi.getCookieCount() == 1);
+        Assert.That(pi.GetCookieCount() == 1);
         pi.IncreaseCookieCount(); //check increase again will +1 and not reset
-        Assert.That(pi.getCookieCount() == 2);
+        Assert.That(pi.GetCookieCount() == 2);
     }
 }

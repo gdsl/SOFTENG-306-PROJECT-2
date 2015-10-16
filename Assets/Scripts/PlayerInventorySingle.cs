@@ -10,8 +10,8 @@ using System;
 public class PlayerInventorySingle : PlayerInventory
 {
 
-    public override void setCookie()
+    public override void SetCookie()
     {
-        cookieGuiUpdate();//show cookie count on gui
+        CookieGuiUpdate();//show cookie count on gui
     }
 }

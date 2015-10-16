@@ -22,7 +22,7 @@ public class KeyScript : Items {
             AudioSource keyAudio = GameObject.FindGameObjectWithTag("KeyAudio").GetComponent<AudioSource>();
             keyAudio.Play();
             this.setPickedUp(); //set key to be picked up
-            col.gameObject.GetComponent<PlayerInventory>().gotKey(id);
+            col.gameObject.GetComponent<PlayerInventory>().GotKey(id);
 			keyPanelScript.updateKey(id);
         }
     }

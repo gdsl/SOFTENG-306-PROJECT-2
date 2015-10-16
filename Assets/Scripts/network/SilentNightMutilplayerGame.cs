@@ -99,12 +99,12 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     public void NotifyResult()
     {
         GameObject[] query = GameObject.FindGameObjectsWithTag("Player");
-        long countPlayer1 = query[0].GetComponent<PlayerInventory>().getCookieCount();
+        long countPlayer1 = query[0].GetComponent<PlayerInventory>().GetCookieCount();
         long countPlayer2=-1;//initialse as negative so will be lower
 
         if (query.Length > 1)
         {
-            countPlayer2 = query[1].GetComponent<PlayerInventory>().getCookieCount();
+            countPlayer2 = query[1].GetComponent<PlayerInventory>().GetCookieCount();
             if (countPlayer1 > countPlayer2)
             {
                 query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
