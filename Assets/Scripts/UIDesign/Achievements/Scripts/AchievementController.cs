@@ -17,6 +17,9 @@ public class AchievementController : MonoBehaviour {
     public const string FIRST_LEVEL_COMPLETE = "FIRST_LEVEL_COMPLETE";
     public const string TEN_COOKIES = "TEN_COOKIES";
     public const string STAY_BELOW = "STAY_BELOW";
+    public const string SPEED_RUNNER = "SPEED_RUNNER";
+    public const string EXPLORER = "EXPLORER";
+    public const string MULTIPLAYER_WIN = "MULTIPLAYER_WIN";
 	public const string PLACE_HOLDER = "PLACE_HOLDER";
     public const int locked = 1;
     public const int unlocked = 2;
@@ -35,9 +38,9 @@ public class AchievementController : MonoBehaviour {
         achievement.Add(FIRST_LEVEL_COMPLETE);
         achievement.Add(STAY_BELOW);
         achievement.Add(TEN_COOKIES);
-		achievement.Add (PLACE_HOLDER);
-		achievement.Add (PLACE_HOLDER);
-		achievement.Add (PLACE_HOLDER);
+		achievement.Add (SPEED_RUNNER);
+		achievement.Add (EXPLORER);
+		achievement.Add (MULTIPLAYER_WIN);
 
         //find all achievement images and store them to use later on
         lockedImage = GameObject.FindGameObjectsWithTag("LockedAchievement");
@@ -94,6 +97,9 @@ public class AchievementController : MonoBehaviour {
             PlayerPrefs.SetInt(TEN_COOKIES, locked);
             PlayerPrefs.SetInt(STAY_BELOW, locked);
 			PlayerPrefs.SetInt(PLACE_HOLDER, locked);
+            PlayerPrefs.SetInt(SPEED_RUNNER, unlocked);
+            PlayerPrefs.SetInt(EXPLORER, unlocked);
+            PlayerPrefs.SetInt(MULTIPLAYER_WIN, unlocked);
             PlayerPrefs.Save();
 
             foreach (GameObject image in lockedImage)
