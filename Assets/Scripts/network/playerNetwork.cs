@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class PlayerNetwork : NetworkBehaviour {
     private CameraController cc;
@@ -21,27 +22,24 @@ public class PlayerNetwork : NetworkBehaviour {
         }
 	}
 
+    //when game is over display results
     public void gameOver(string winner)
     {
-        RpcGameOver(winner);
-    }
-
-    [ClientRpc]
-    public void RpcGameOver(string winner)
-    {
-        int win = 0; //0 for win, 1 draw 2 lost
-        if (winner==gameObject.name)
+        if (isLocalPlayer)
         {
-            win = 0;
+            Text resultText = GameObject.Find("ResultText").GetComponent<Text>();
+            if (winner == gameObject.name)
+            {
+                resultText.text = "You won, Query Chan !!";
+            }
+            else if (winner == "draw")
+            {
+                resultText.text = "Query Chans got same number of cookie!!";
+            }
+            else
+            {
+                resultText.text = "You lost, Query Chan !!";
+            }
         }
-        else if (winner == "draw")
-        {
-            win = 1;
-        }
-        else
-        {
-            win = 2;
-        }
-        SilentNightMutilplayerGame.multiplayerGameController.DisplayResult(win);
     }
 }

@@ -6,6 +6,7 @@ public class KeyPanelScript : MonoBehaviour {
 
 	public Sprite redKey;
 	public Sprite yellowKey;
+	public Sprite orangeKey;
 	public Image image1;
 	public Image image2;
 	public Image image3;
@@ -33,6 +34,9 @@ public class KeyPanelScript : MonoBehaviour {
 		} else if (id == 2) {
 			image2.color = Color.white;
 			image2.sprite = yellowKey;
+		} else if (id == 3) {
+			image3.color = Color.white;
+			image3.sprite = orangeKey;
 		}
 	}
 }
