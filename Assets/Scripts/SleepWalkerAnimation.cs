@@ -13,8 +13,8 @@ public class SleepWalkerAnimation : MonoBehaviour
     // Reference to woken script
     private Woken woken;
 
+    // Reference to child object which contains touch sensing
     private GameObject touchObject;
-
 
     // Needed to guide person's movement
     private NavMeshAgent nav;

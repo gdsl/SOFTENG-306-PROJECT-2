@@ -19,6 +19,10 @@ public class SleepingPersonAI : MonoBehaviour
     private int wayPointIndex;
     private bool direction;
 
+    private GameObject touchObject;
+    private Woken woken;
+
+
     // Use this for initialization
     void Awake()
     {
@@ -31,6 +35,9 @@ public class SleepingPersonAI : MonoBehaviour
         fovEyesScript = GetComponent<FOV2DEyes>();
         fovConeScript = GetComponent<FOV2DVisionCone>();
 
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
+
     }
 
     // Update is called once per frame
@@ -41,6 +48,10 @@ public class SleepingPersonAI : MonoBehaviour
             fovEyesScript.enabled = false;
             fovConeScript.enabled = false;
             Sleeping();
+        }
+        else if (woken.woken)
+        {
+            Woken();
         }
         else if (personSight.santaInSight)
         {
@@ -69,6 +80,12 @@ public class SleepingPersonAI : MonoBehaviour
     }
 
     void Pointing()
+    {
+        // Stop the character where it is
+        nav.Stop();
+    }
+
+    void Woken()
     {
         // Stop the character where it is
         nav.Stop();
