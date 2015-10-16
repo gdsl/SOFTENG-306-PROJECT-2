@@ -64,7 +64,7 @@ GameObject:
   - 4: {fileID: 431324}
   - 198: {fileID: 19821484}
   - 199: {fileID: 19967494}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (5)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - 95: {fileID: 9502232}
   - 136: {fileID: 13664658}
   - 54: {fileID: 5450918}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478804}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495566}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (4)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - 95: {fileID: 9507644}
   - 136: {fileID: 13680278}
   - 54: {fileID: 5495106}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - 95: {fileID: 9593258}
   - 136: {fileID: 13684080}
   - 54: {fileID: 5457110}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - 4: {fileID: 415332}
   - 198: {fileID: 19825826}
   - 199: {fileID: 19955752}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (1)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - 95: {fileID: 9523920}
   - 136: {fileID: 13683984}
   - 54: {fileID: 5420588}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - 95: {fileID: 9580708}
   - 136: {fileID: 13693582}
   - 54: {fileID: 5405952}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - 95: {fileID: 9522438}
   - 136: {fileID: 13669196}
   - 54: {fileID: 5432536}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481062}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Doors(Normal)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - 4: {fileID: 467874}
   - 198: {fileID: 19894670}
   - 199: {fileID: 19956434}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412718}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (3)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - 4: {fileID: 408852}
   - 198: {fileID: 19808486}
   - 199: {fileID: 19903644}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487302}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door(Normal) (2)
   m_TagString: Transparent
   m_Icon: {fileID: 0}
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  id: 2
+  id: 3
 --- !u!114 &11456254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2526,7 +2526,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4278255615
+        rgba: 4278226687
       minMaxState: 0
     startSize:
       scalar: .100000001
