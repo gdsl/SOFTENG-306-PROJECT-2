@@ -5,11 +5,24 @@ public class Hit : MonoBehaviour {
 
 	public GameObject DestroyedObject;
 
+    private BoxCollider collider;
+
+    void Awake()
+    {
+        collider = GetComponent<BoxCollider>();
+        if (collider)
+        {
+            collider.center = transform.GetComponent<MeshFilter>().mesh.bounds.center;
+            collider.size = transform.GetComponent<MeshFilter>().mesh.bounds.size;
+        }
+    }
+
     // Updated so that it breaks on contact
 	
 	void OnCollisionEnter( Collision collision )
     {
-		if( collision.relativeVelocity.magnitude > 2f) {
+        Debug.Log(collision.relativeVelocity.magnitude);
+		if( collision.relativeVelocity.magnitude > 1f) {
 		    DestroyIt();
 		}
 	}
