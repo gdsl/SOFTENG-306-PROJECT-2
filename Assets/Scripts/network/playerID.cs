@@ -7,7 +7,7 @@ using UnityEngine.Networking;
  * http://forum.unity3d.com/threads/unity-5-unet-multiplayer-tutorials-making-a-basic-survival-co-op.325692/
  */
 
-public class playerID : NetworkBehaviour {
+public class PlayerID : NetworkBehaviour {
 
     [SyncVar]
     private string playerUniqueIdentity;
