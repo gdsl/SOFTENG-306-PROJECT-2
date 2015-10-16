@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class LevelEnd : MonoBehaviour {
 
@@ -66,10 +67,11 @@ public class LevelEnd : MonoBehaviour {
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
 		float.TryParse(timeText.text.Split(' ')[1], out time);
-		score = (int) (2500 - 0.5*suspicionSlider.value + cookies * 500 + 2500 - 50*time);
+		score = (int) (6000 - 0.5*suspicionSlider.value + cookies * 500 - 50*time);
 
-		if (score < 0) {
-			score = 0;
+		if (score < 300) {
+			System.Random rnd = new System.Random();
+			score = rnd.Next(100,500); //make the player feel a bit better
 		}
 
 		if (score > 3000) {
@@ -93,15 +95,29 @@ public class LevelEnd : MonoBehaviour {
 
     public void updateLevelInfo()
     {
-
-        if (stars > PlayerPrefs.GetInt("Level One Stars"))
+        if (PlayerPrefs.GetInt("To Be Loaded") == 4)
         {
-            PlayerPrefs.SetInt("Level One Stars", stars);
+            if (stars > PlayerPrefs.GetInt("Level One Stars"))
+            {
+                PlayerPrefs.SetInt("Level One Stars", stars);
+            }
+
+            if (score > PlayerPrefs.GetInt("Level One Score"))
+            {
+                PlayerPrefs.SetInt("Level One Score", score);
+            }
         }
-
-        if (score > PlayerPrefs.GetInt("Level One Score"))
+        else if (PlayerPrefs.GetInt("To Be Loaded") == 5)
         {
-            PlayerPrefs.SetInt("Level One Score", score);
+            if (stars > PlayerPrefs.GetInt("Level Two Stars"))
+            {
+                PlayerPrefs.SetInt("Level Two Stars", stars);
+            }
+
+            if (score > PlayerPrefs.GetInt("Level Two Score"))
+            {
+                PlayerPrefs.SetInt("Level Two Score", score);
+            }
         }
 
         GameObject scoreUploadController = GameObject.FindGameObjectWithTag("ScoreUploadController");
