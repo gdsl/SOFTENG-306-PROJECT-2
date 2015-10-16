@@ -97,9 +97,9 @@ public class AchievementController : MonoBehaviour {
             PlayerPrefs.SetInt(TEN_COOKIES, locked);
             PlayerPrefs.SetInt(STAY_BELOW, locked);
 			PlayerPrefs.SetInt(PLACE_HOLDER, locked);
-            PlayerPrefs.SetInt(SPEED_RUNNER, unlocked);
-            PlayerPrefs.SetInt(EXPLORER, unlocked);
-            PlayerPrefs.SetInt(MULTIPLAYER_WIN, unlocked);
+            PlayerPrefs.SetInt(SPEED_RUNNER, locked);
+            PlayerPrefs.SetInt(EXPLORER, locked);
+            PlayerPrefs.SetInt(MULTIPLAYER_WIN, locked);
             PlayerPrefs.Save();
 
             foreach (GameObject image in lockedImage)
