@@ -11,9 +11,10 @@ public class PlayerNetwork : NetworkBehaviour {
 	    if(isLocalPlayer){
             resultText = GameObject.Find("ResultText").GetComponent<Text>();
             GameObject cam = GameObject.Find("Main Camera");
+            GameObject camRef = GameObject.Find("CameraReference");
             GameObject sus = GameObject.Find("SuspicionSlider");
             cc=cam.GetComponent<CameraController>();
-            cc.transform.position = transform.position;
+            camRef.transform.position = transform.position;
             sus.GetComponent<SuspicionController>().santa=gameObject;
             cc.santa = gameObject;
             cc.InitialiseCamera();
@@ -33,6 +34,9 @@ public class PlayerNetwork : NetworkBehaviour {
             if (winner == gameObject.name)
             {
                 resultText.text = "You won, Query Chan !!";
+                GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
+                AchievementController controller = achievementController.GetComponent<AchievementController>();
+                controller.setAchievement(AchievementController.MULTIPLAYER_WIN);
             }
             else if (winner == "draw")
             {
