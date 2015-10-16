@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &432856
 Transform:
   m_ObjectHideFlags: 1
@@ -40,8 +40,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedPositions: []
-  randomLocations: []
-  cookieCount: 4
+  randomLocations:
+  - {x: 0, y: 0, z: 12.75}
+  - {x: 0, y: 0, z: -11.25}
+  - {x: 12.6000004, y: 0, z: -11.25}
+  - {x: 12.6000004, y: 0, z: 11.5}
+  - {x: 12.6000004, y: 0, z: 3}
+  - {x: -11, y: 0, z: 3}
+  - {x: -11, y: 0, z: 12}
+  - {x: -11, y: 0, z: -10}
+  cookieCount: 1
   cookie: {fileID: 122076, guid: 0bd4fdabfd8760646a1f5926887584e4, type: 2}
 --- !u!1001 &100100000
 Prefab:

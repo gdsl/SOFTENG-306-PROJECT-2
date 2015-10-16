@@ -47,10 +47,18 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
             //do logic then shut down
         }
 
-        gameDuration -= Time.deltaTime;
+        //check if timer pass zero if it does it stop at 0
+        if (gameDuration - Time.deltaTime<0)
+        {
+            gameDuration = 0;
+        }else{
+            gameDuration -= Time.deltaTime;
+        }
+        
         if (gameDuration <= 0)
         {
-            ExitGame();//exit game
+            //ExitGame();//exit game
+            //NetworkServer.
         }
 
         if (cookie == null)//if cookie collected regenerate
