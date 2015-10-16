@@ -50,10 +50,11 @@ public class Woken : MonoBehaviour
     // Update is called once per frame. Should call in this method information such as movement, triggering actions or responding to user input
     void Update()
     {
-        // Call update to suspicion meter if santa is seen
+
+        // Call update to suspicion meter if santa hits the AI
         if (woken)
         {
-            // Set the animator parameter "Woken" to whether if santa hits the AI.
+            // Set the animator parameter "Woken" to whether if santa has hit the AI.
             anim.SetBool("Woken", woken);
 
             StartCoroutine(PersonSeen());
@@ -81,7 +82,7 @@ public class Woken : MonoBehaviour
         }
     }
 
-    // Person seen. Trigger suspicion meter update
+    // Trigger suspicion meter update
     IEnumerator PersonSeen()
     {
         yield return new WaitForSeconds(3.0f);

@@ -53,8 +53,9 @@ public class PatrolPersonAI : MonoBehaviour
     /**
         Method called at each frame. Will call each of the below functions depending on current person "state"
         State checking has priority levels. Ordered from highest precedence to lowest
-        1. Pointing
-        2. Patrolling
+        1. Woken
+        2. Pointing
+        3. Patrolling
     */
 
     void Update()
@@ -69,7 +70,7 @@ public class PatrolPersonAI : MonoBehaviour
 
         if (woken.woken)
         {
-            // Santa is in sight. Point at santa
+            // Santa hits AI, AI looks around
             Woken();
         } else if (personSight.santaInSight)
         {

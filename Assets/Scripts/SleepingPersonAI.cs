@@ -22,7 +22,6 @@ public class SleepingPersonAI : MonoBehaviour
     private Woken woken;
     private GameObject touchObject;
 
-
     // Use this for initialization
     void Awake()
     {
@@ -34,6 +33,9 @@ public class SleepingPersonAI : MonoBehaviour
         santa = GameObject.FindGameObjectWithTag("Player").transform;
         fovEyesScript = GetComponent<FOV2DEyes>();
         fovConeScript = GetComponent<FOV2DVisionCone>();
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
+
         touchObject = this.transform.FindChild("SenseTouch").gameObject;
         woken = touchObject.GetComponent<Woken>();
 
@@ -53,7 +55,6 @@ public class SleepingPersonAI : MonoBehaviour
         {
             Woken();
         }
-
         else if (personSight.santaInSight)
         {
             if (fovEyesScript.enabled == false)
