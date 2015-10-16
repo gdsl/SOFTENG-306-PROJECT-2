@@ -18,7 +18,7 @@ public class SuspicionController : MonoBehaviour {
 	void Update () {
 		if (santa.GetComponent<Rigidbody>().velocity.magnitude > 0.2) {
 			//Debug.Log(santa.GetComponent<Rigidbody>().velocity.magnitude);
-			IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody> ().velocity.magnitude/2);
+			IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody> ().velocity.magnitude*2);
 		} 
 	}
 
@@ -27,6 +27,10 @@ public class SuspicionController : MonoBehaviour {
 	}
 
 	public void IncreaseSuspicionByAmount(float amount) {
+		if (failScreen.activeInHierarchy || successScreen.activeInHierarchy) {
+			return;
+		}
+		//Debug.LogError ("lol");
 		suspicionSlider.value = suspicionSlider.value + amount;
 		if (suspicionSlider.value >= suspicionSlider.maxValue) {
 
