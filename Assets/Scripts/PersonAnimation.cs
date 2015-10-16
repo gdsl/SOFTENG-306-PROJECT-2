@@ -87,7 +87,6 @@ public class PersonAnimation : MonoBehaviour {
         float speed = 0f;
         float angle = 0f;
 
-
         if (woken.woken)
         {
             // If santa is in sight, we want person to stop.

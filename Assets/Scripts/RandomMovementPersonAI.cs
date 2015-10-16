@@ -23,6 +23,9 @@ public class RandomMovementPersonAI : MonoBehaviour {
 
     private Vector3 startingPosition;
 
+    private Woken woken;
+    private GameObject touchObject;
+
     // Use this for initialization
     void Awake()
     {
@@ -31,6 +34,8 @@ public class RandomMovementPersonAI : MonoBehaviour {
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Player").transform;
         startingPosition = transform.position;
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
     }
 	
 	// Update is called once per frame
@@ -41,6 +46,10 @@ public class RandomMovementPersonAI : MonoBehaviour {
             // Santa is in sight. Point at santa
             Pointing();
         }
+        else if (woken.woken)
+        {
+            Woken();
+        }
         else if (suspicion.suspicionCheck)
         {
             Suspicion();
@@ -50,6 +59,12 @@ public class RandomMovementPersonAI : MonoBehaviour {
             // Santa is not in sight. Just randomly move area
             RandomMove();
         }
+    }
+
+    void Woken()
+    {
+        // Stop the character where it is
+        nav.Stop();
     }
 
     void Suspicion()
