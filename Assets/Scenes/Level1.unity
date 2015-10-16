@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .0333333351
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: a4af38f3b04170c4e8bb35ec579b4e1e, type: 2}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!4 &12665322 stripped
 Transform:
   m_PrefabParentObject: {fileID: 478152, guid: 513b38b5c70ef024eacee0c013f05cdb, type: 2}
@@ -447,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &264288357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,7 +463,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &264288358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,7 +1075,7 @@ GameObject:
   - 4: {fileID: 1867162106}
   m_Layer: 0
   m_Name: Closet
-  m_TagString: Untagged
+  m_TagString: Closet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,7 +1361,7 @@ GameObject:
   - 65: {fileID: 668714803}
   m_Layer: 0
   m_Name: ClosetTrigger
-  m_TagString: Untagged
+  m_TagString: Closet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7025,7 +7023,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1926820018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7043,7 +7041,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1926820019
 MonoBehaviour:
   m_ObjectHideFlags: 0
