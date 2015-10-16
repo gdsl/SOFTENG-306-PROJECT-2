@@ -21,6 +21,9 @@ public class SittingPersonAI : MonoBehaviour {
 
     private float originalFOV;
 
+    private Woken woken;
+    private GameObject touchObject;
+
     // Use this for initialization
     void Awake ()
     {
@@ -31,6 +34,9 @@ public class SittingPersonAI : MonoBehaviour {
         nav = GetComponent<NavMeshAgent>();
         santa = GameObject.FindGameObjectWithTag("Player").transform;
         originalFOV = personSight.fieldOfViewAngle;
+
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
     }
 	
 	// Update is called once per frame
@@ -44,6 +50,10 @@ public class SittingPersonAI : MonoBehaviour {
 	    if (personSight.santaInSight)
         {
             Pointing();
+        }
+        else if (woken.woken)
+        {
+            Woken();
         }
         else if(sittingScript.sitting)
         {
@@ -60,6 +70,12 @@ public class SittingPersonAI : MonoBehaviour {
     {
         // change fov to smaller since person is more "focused"
         personSight.fieldOfViewAngle = sittingFOV;
+        nav.Stop();
+    }
+
+    void Woken()
+    {
+        // Stop the character where it is
         nav.Stop();
     }
 

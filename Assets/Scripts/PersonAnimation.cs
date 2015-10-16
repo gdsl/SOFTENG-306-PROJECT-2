@@ -23,6 +23,12 @@ public class PersonAnimation : MonoBehaviour {
     // Reference to helper class 
     private AnimatorSetup animSetup;
 
+    // Reference to woken script
+    private Woken woken;
+
+    // Reference to child object which contains touch sensing
+    private GameObject touchObject;
+
     void Awake()
     {
         InitialiseSantaTransform();
@@ -30,6 +36,9 @@ public class PersonAnimation : MonoBehaviour {
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
 
         // Must make sure rotation of person is by the animator and not by the nav mesh agent
         nav.updateRotation = false;
@@ -78,7 +87,15 @@ public class PersonAnimation : MonoBehaviour {
         float speed = 0f;
         float angle = 0f;
 
-        if (suspicion.look)
+        if (woken.woken)
+        {
+            // If santa is in sight, we want person to stop.
+            speed = 0f;
+
+            // Angle difference between currently facing direction to where it should face (position of santa)
+            angle = FindAngle(transform.forward, santaTransform.position - transform.position, transform.up);
+        }
+        else if (suspicion.look)
         {
             speed = 0f;
             angle = FindAngle(transform.forward, nav.desiredVelocity, transform.up);

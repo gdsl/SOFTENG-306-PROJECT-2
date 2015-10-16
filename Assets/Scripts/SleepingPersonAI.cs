@@ -7,15 +7,20 @@ public class SleepingPersonAI : MonoBehaviour
     public float speed = 2f;
     public float waitTime = 3f;
     public Transform[] walkPoints;
-    public Transform refPoint;
 
     private SleepingScript sleepingScript;
     private PersonSight personSight;
     private Suspicion suspicion;
     private NavMeshAgent nav;
     private Transform santa;
+    private FOV2DEyes fovEyesScript;
+    private FOV2DVisionCone fovConeScript;
     private float timer;
     private int wayPointIndex;
+    private bool direction;
+
+    private Woken woken;
+    private GameObject touchObject;
 
     // Use this for initialization
     void Awake()
@@ -25,17 +30,13 @@ public class SleepingPersonAI : MonoBehaviour
         personSight = GetComponent<PersonSight>();
         suspicion = GetComponent<Suspicion>();
         nav = GetComponent<NavMeshAgent>();
-        InitialiseSantaTransform();
-    }
+        santa = GameObject.FindGameObjectWithTag("Player").transform;
+        fovEyesScript = GetComponent<FOV2DEyes>();
+        fovConeScript = GetComponent<FOV2DVisionCone>();
 
-    //method to initialise the santa's transform
-    public void InitialiseSantaTransform()
-    {
-        GameObject queryChan = GameObject.FindGameObjectWithTag("Player");
-        if (queryChan != null)
-        {
-            santa = queryChan.transform;
-        }
+        touchObject = this.transform.FindChild("SenseTouch").gameObject;
+        woken = touchObject.GetComponent<Woken>();
+
     }
 
     // Update is called once per frame
@@ -43,14 +44,31 @@ public class SleepingPersonAI : MonoBehaviour
     {
         if (sleepingScript.sleeping)
         {
+            fovEyesScript.enabled = false;
+            fovConeScript.enabled = false;
             Sleeping();
+        }
+
+        else if (woken.woken)
+        {
+            Woken();
         }
         else if (personSight.santaInSight)
         {
+            if (fovEyesScript.enabled == false)
+            {
+                fovEyesScript.enabled = true;
+                fovConeScript.enabled = true;
+            }
             Pointing();
         }
         else
         {
+            if (fovEyesScript.enabled == false)
+            {
+                fovEyesScript.enabled = true;
+                fovConeScript.enabled = true;
+            }
             Suspicion();
         }
     }
@@ -58,6 +76,12 @@ public class SleepingPersonAI : MonoBehaviour
     // Basically tells Nav Mesh Agent to stop at its spot
     void Sleeping()
     {
+        nav.Stop();
+    }
+
+    void Woken()
+    {
+        // Stop the character where it is
         nav.Stop();
     }
 
@@ -87,10 +111,6 @@ public class SleepingPersonAI : MonoBehaviour
                 else if (wayPointIndex == 0 && suspicion.suspicionCheck == false)
                 {
                     // Returned back to bed. Return to sleep
-                    Vector3 direction = refPoint.position - transform.position;
-                    // Angle between two values
-                    float angle = Vector3.Angle(direction, transform.forward);
-                    transform.Rotate(0, angle + 180, 0, Space.Self);
                     sleepingScript.sleeping = true;
                 }
 
