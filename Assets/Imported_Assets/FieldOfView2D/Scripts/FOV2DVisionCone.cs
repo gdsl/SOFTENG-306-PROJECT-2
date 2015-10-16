@@ -76,7 +76,7 @@ public class FOV2DVisionCone : MonoBehaviour
 			}
 		}
 		
-		newVertices[0] = Vector3.zero;
+		newVertices[0] = Vector3.zero + transform.up;
 		for (i = 1; i <= hits.Count; i++)
 		{
 			newVertices[i] = transform.InverseTransformPoint(hits[i-1].point);
