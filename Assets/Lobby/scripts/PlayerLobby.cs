@@ -63,8 +63,9 @@ public class PlayerLobby : NetworkLobbyPlayer
 		// this spreads the player canvas panels out across the screen
 		var screenWidth = playerCanvas.pixelRect.width;
 		screenWidth -= 200; // border padding
-		var playerWidth = screenWidth / (lobby.maxPlayers-1);
-		return -(screenWidth / 2) + slot * playerWidth;
+	//	var playerWidth = screenWidth / (lobby.maxPlayers-1);
+		var playerWidth = screenWidth / (4-1);
+		return -(screenWidth / 2) + (slot+1) * playerWidth;
 	}
 
 	public override void OnStartLocalPlayer()

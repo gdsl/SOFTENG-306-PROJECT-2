@@ -12,7 +12,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     static public SilentNightMutilplayerGame multiplayerGameController;
     public GameObject cookieGenerator;
     private GameObject cookie = null;
-
+    public Text resultText;
 
     [SyncVar]
     private float gameDuration = 60; //in seconds
@@ -25,8 +25,9 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     //when server start up
     public override void OnStartServer()
     {
-        //initialise count down timer
-        gameDuration = 600;
+        //initialise count down timer  
+        gameDuration = 60;  
+
         //generate cookie when first start up
         generateCookie();
 
@@ -48,7 +49,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         }
 
         //check if timer pass zero if it does it stop at 0
-        if (gameDuration - Time.deltaTime<0)
+        if ((gameDuration - Time.deltaTime)<0)
         {
             gameDuration = 0;
         }else{
@@ -59,6 +60,8 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         {
             //ExitGame();//exit game
             //NetworkServer.
+            isGameOver = true;
+            NotifyResult();
         }
 
         if (cookie == null)//if cookie collected regenerate
@@ -90,5 +93,46 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     public float GetTimeLeft()
     {
         return gameDuration;
+    }
+
+    //Method to notify client which player won
+    public void NotifyResult()
+    {
+        GameObject[] query = GameObject.FindGameObjectsWithTag("Player");
+        long countPlayer1 = query[0].GetComponent<PlayerInventory>().getCookieCount();
+        long countPlayer2 = query[1].GetComponent<PlayerInventory>().getCookieCount();
+
+        if (countPlayer1 > countPlayer2)
+        {
+            query[0].GetComponent<PlayerNetwork>().gameOver(query[0].name);
+            query[1].GetComponent<PlayerNetwork>().gameOver(query[0].name);
+        }
+        else if (countPlayer1 == countPlayer2)
+        {
+            query[0].GetComponent<PlayerNetwork>().gameOver("draw");
+            query[1].GetComponent<PlayerNetwork>().gameOver("draw");
+        }
+        else
+        {
+            query[0].GetComponent<PlayerNetwork>().gameOver(query[1].name);
+            query[1].GetComponent<PlayerNetwork>().gameOver(query[1].name);
+        }
+    }
+
+    //Method to display result of the game
+    public void DisplayResult(int win)
+    {
+        if (win==0)
+        {
+            resultText.text = "You won, Query Chan !!";
+        }
+        else if (win==1)
+        {
+            resultText.text = "Query Chans got same number of cookie!!";
+        }
+        else
+        {
+            resultText.text = "You lost, Query Chan !!";
+        }
     }
 }
