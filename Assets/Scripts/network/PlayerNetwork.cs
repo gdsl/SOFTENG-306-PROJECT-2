@@ -29,7 +29,8 @@ public class PlayerNetwork : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
-            //GameObject resultScreen = GameObject.Find("ResultScreen");
+            //Set screen active
+            SilentNightMutilplayerGame.multiplayerGameController.resultScreen.SetActive(true);
             //resultScreen.SetActive(true);
             Text resultText = GameObject.Find("ResultText").GetComponent<Text>() ;
             if (winner == gameObject.name)

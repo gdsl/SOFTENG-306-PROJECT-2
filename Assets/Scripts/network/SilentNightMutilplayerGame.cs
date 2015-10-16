@@ -61,7 +61,6 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
             //ExitGame();//exit game
             //NetworkServer.
             isGameOver = true;
-            resultScreen.SetActive(true);
             NotifyResult();
         }
 
