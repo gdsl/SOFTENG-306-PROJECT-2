@@ -25,6 +25,9 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     //when server start up
     public override void OnStartServer()
     {
+        //initialise count down timer  
+        gameDuration = 60;  
+
         //generate cookie when first start up
         generateCookie();
 
@@ -46,7 +49,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         }
 
         //check if timer pass zero if it does it stop at 0
-        if (gameDuration - Time.deltaTime<0)
+        if ((gameDuration - Time.deltaTime)<0)
         {
             gameDuration = 0;
         }else{
