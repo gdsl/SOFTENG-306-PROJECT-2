@@ -35,6 +35,9 @@ public class PlayerNetwork : NetworkBehaviour {
             if (winner == gameObject.name)
             {
                 resultText.text = "You won, Query Chan !!";
+                GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
+                AchievementController controller = achievementController.GetComponent<AchievementController>();
+                controller.setAchievement(AchievementController.MULTIPLAYER_WIN);
             }
             else if (winner == "draw")
             {

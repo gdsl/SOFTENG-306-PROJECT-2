@@ -26,8 +26,6 @@ public class PersonSight : MonoBehaviour {
 
     // Reference to Santa
     private GameObject santa;
-    // Reference to Santa's state to know which state Santa is currently in. MIGHT NOT BE NEEDED
-    private Animator santaAnim;
 
     // Layer to ignore during raycast
     private int layerMask;
@@ -51,7 +49,6 @@ public class PersonSight : MonoBehaviour {
 
         // Get reference to Santa
         santa = GameObject.FindWithTag("Player");
-        santaAnim = santa.GetComponent<Animator>();
 
         // initially set vision to true
         checkVision = true;
