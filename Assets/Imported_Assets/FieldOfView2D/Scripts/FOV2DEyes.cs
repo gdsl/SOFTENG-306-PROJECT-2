@@ -46,7 +46,7 @@ public class FOV2DEyes : MonoBehaviour
         collider = GetComponent<SphereCollider>();
 
         yOffset = personSight.GetRayPos1();
-        
+
         // Collide with everything except layer 2
         layerMask = 1 << 2;
         // invert

@@ -6,6 +6,7 @@ public class SittingPersonAI : MonoBehaviour {
     public float speed = 2f;
     public float waitTime = 3f;
     public Transform[] walkPoints;
+    public Transform refPoint;
 
     public float sittingFOV = 80f;
 
@@ -35,6 +36,11 @@ public class SittingPersonAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (suspicion.suspicionCheck || personSight.santaInSight)
+        {
+            sittingScript.sitting = false;
+        }
+
 	    if (personSight.santaInSight)
         {
             Pointing();
@@ -80,11 +86,16 @@ public class SittingPersonAI : MonoBehaviour {
 
                 if (wayPointIndex == walkPoints.Length - 1)
                 {
+                    Debug.Log("hit");
                     suspicion.suspicionCheck = false;
                     suspicion.look = true;
                 }
                 else if (wayPointIndex == 0 && suspicion.suspicionCheck == false)
                 {
+                    Vector3 direction = refPoint.position - transform.position;
+                    // Angle between two values
+                    float angle = Vector3.Angle(direction, transform.forward);
+                    transform.Rotate(0, angle + 180, 0, Space.Self);
                     // Returned back to bed. Return to sleep
                     sittingScript.sitting = true;
                 }
