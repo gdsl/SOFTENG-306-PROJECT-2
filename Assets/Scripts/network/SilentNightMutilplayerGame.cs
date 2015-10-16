@@ -25,7 +25,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     public override void OnStartServer()
     {
         //initialise count down timer  
-        gameDuration = 60;  
+        gameDuration = 10;  
 
         //generate cookie when first start up
         generateCookie();
@@ -106,23 +106,24 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
             countPlayer2 = query[1].GetComponent<PlayerInventory>().getCookieCount();
             if (countPlayer1 > countPlayer2)
             {
-                query[0].GetComponent<PlayerNetwork>().gameOver(query[0].name);
-                query[1].GetComponent<PlayerNetwork>().gameOver(query[0].name);
+                query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
+                query[1].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
+
             }
             else if (countPlayer1 == countPlayer2)
             {
-                query[0].GetComponent<PlayerNetwork>().gameOver("draw");
-                query[1].GetComponent<PlayerNetwork>().gameOver("draw");
+                query[0].GetComponent<PlayerNetwork>().RpcGameOver("draw");
+                query[1].GetComponent<PlayerNetwork>().RpcGameOver("draw");
             }
             else
             {
-                query[0].GetComponent<PlayerNetwork>().gameOver(query[1].name);
-                query[1].GetComponent<PlayerNetwork>().gameOver(query[1].name);
+                query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[1].name);
+                query[1].GetComponent<PlayerNetwork>().RpcGameOver(query[1].name);
             }
         }
         else
         {
-            query[0].GetComponent<PlayerNetwork>().gameOver(query[0].name);
+            query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
         }
     }
 }

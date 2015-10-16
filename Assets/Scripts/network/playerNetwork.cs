@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerNetwork : NetworkBehaviour {
     private CameraController cc;
+    private Text resultText;
 	// Use this for initialization
 	void Start () {
 	    if(isLocalPlayer){
+            resultText = GameObject.Find("ResultText").GetComponent<Text>();
             GameObject cam = GameObject.Find("Main Camera");
             GameObject sus = GameObject.Find("SuspicionSlider");
             cc=cam.GetComponent<CameraController>();
@@ -23,11 +25,11 @@ public class PlayerNetwork : NetworkBehaviour {
 	}
 
     //when game is over display results
-    public void gameOver(string winner)
+    [ClientRpc]
+    public void RpcGameOver(string winner)
     {
         if (isLocalPlayer)
         {
-            Text resultText = GameObject.Find("ResultText").GetComponent<Text>();
             if (winner == gameObject.name)
             {
                 resultText.text = "You won, Query Chan !!";
