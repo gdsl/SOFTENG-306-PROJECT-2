@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerNetwork : NetworkBehaviour {
     private CameraController cc;
-    private Text resultText;
 	// Use this for initialization
 	void Start () {
 	    if(isLocalPlayer){
-            resultText = GameObject.Find("ResultText").GetComponent<Text>();
             GameObject cam = GameObject.Find("Main Camera");
             GameObject camRef = GameObject.Find("CameraReference");
             GameObject sus = GameObject.Find("SuspicionSlider");
@@ -31,6 +29,9 @@ public class PlayerNetwork : NetworkBehaviour {
     {
         if (isLocalPlayer)
         {
+            //GameObject resultScreen = GameObject.Find("ResultScreen");
+            //resultScreen.SetActive(true);
+            Text resultText = GameObject.Find("ResultText").GetComponent<Text>() ;
             if (winner == gameObject.name)
             {
                 resultText.text = "You won, Query Chan !!";
@@ -46,6 +47,10 @@ public class PlayerNetwork : NetworkBehaviour {
             {
                 resultText.text = "You lost, Query Chan !!";
             }
+
+            GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+            GameController gameControllerScript = gameController.GetComponent<GameController>();
+            gameControllerScript.StopGame();
         }
     }
 }

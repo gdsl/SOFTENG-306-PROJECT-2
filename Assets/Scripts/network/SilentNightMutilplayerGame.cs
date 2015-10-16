@@ -12,6 +12,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     static public SilentNightMutilplayerGame multiplayerGameController;
     public GameObject cookieGenerator;
     private GameObject cookie = null;
+    public GameObject resultScreen;
 
     [SyncVar]
     private float gameDuration = 60; //in seconds
@@ -60,6 +61,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
             //ExitGame();//exit game
             //NetworkServer.
             isGameOver = true;
+            resultScreen.SetActive(true);
             NotifyResult();
         }
 

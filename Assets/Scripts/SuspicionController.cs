@@ -27,7 +27,7 @@ public class SuspicionController : MonoBehaviour {
 	}
 
 	public void IncreaseSuspicionByAmount(float amount) {
-		if (failScreen.activeInHierarchy || successScreen.activeInHierarchy) {
+		if (failScreen.activeInHierarchy || successScreen.activeInHierarchy || Time.deltaTime == 0) {
 			return;
 		}
 		//Debug.LogError ("lol");
