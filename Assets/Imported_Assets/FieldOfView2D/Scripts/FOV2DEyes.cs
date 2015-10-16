@@ -19,17 +19,18 @@ public class FOV2DEyes : MonoBehaviour
 	RaycastHit hit;
 
     private int layerMask;
+    private PersonSight personSight;
+    private SphereCollider collider;
+    private Vector3 yOffset;
 
     void Update()
 	{
         // Get fov and fovMaxDistance values
-        PersonSight personSight = GetComponent<PersonSight>();
         if (personSight)
         {
             fovAngle = (int)personSight.fieldOfViewAngle;
         }
 
-        SphereCollider collider = GetComponent<SphereCollider>();
         if (collider)
         {
             fovMaxDistance = collider.radius;
@@ -41,6 +42,11 @@ public class FOV2DEyes : MonoBehaviour
 	void Start() 
 	{
         //InvokeRepeating("CastRays", 0, updateRate);
+        personSight = GetComponent<PersonSight>();
+        collider = GetComponent<SphereCollider>();
+
+        yOffset = personSight.GetRayPos1();
+        
         // Collide with everything except layer 2
         layerMask = 1 << 2;
         // invert
@@ -59,9 +65,9 @@ public class FOV2DEyes : MonoBehaviour
 			direction = Quaternion.AngleAxis(currentAngle, transform.up) * transform.forward;
 			hit = new RaycastHit();
 			
-			if(Physics.Raycast(transform.position + transform.up, direction, out hit, fovMaxDistance, layerMask) == false)
+			if(Physics.Raycast(transform.position + yOffset, direction, out hit, fovMaxDistance, layerMask) == false)
 			{
-				hit.point = transform.position + transform.up + (direction * fovMaxDistance);
+				hit.point = transform.position + yOffset + (direction * fovMaxDistance);
 			}
 			
 			hits.Add(hit);
@@ -79,9 +85,13 @@ public class FOV2DEyes : MonoBehaviour
 			foreach (RaycastHit hit in hits)
 			{
 				Gizmos.DrawSphere(hit.point, 0.04f);
-				Gizmos.DrawLine(transform.position + transform.up, hit.point);
+				Gizmos.DrawLine(transform.position + yOffset, hit.point);
 			}
 		}
 	}
 	
+    public Vector3 GetYOffset()
+    {
+        return yOffset;
+    }
 }
