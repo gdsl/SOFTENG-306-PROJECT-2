@@ -40,12 +40,14 @@ public class LevelEnd : MonoBehaviour {
 
             GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
             AchievementController controller = achievementController.GetComponent<AchievementController>();
-            if (suspicionSlider.value <= suspicionSlider.maxValue/2)
+            if (suspicionSlider.value <= suspicionSlider.maxValue/2 && Application.loadedLevel == 4)
             {
                 controller.setAchievement(AchievementController.STAY_BELOW);
             }
 
-            controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
+            float time = 0;
+            float.TryParse(timeText.text.Split(' ')[1], out time);
+            if (Application.loadedLevel == 4) controller.setAchievement(AchievementController.FIRST_LEVEL_COMPLETE);
 
 			GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
 			GameController gameControllerScript = gameController.GetComponent<GameController>();
@@ -57,7 +59,10 @@ public class LevelEnd : MonoBehaviour {
             int totalCookies = currentCookie + cookies;
             if (totalCookies >= 10) controller.setAchievement(AchievementController.TEN_COOKIES);
             PlayerPrefs.SetInt(AchievementController.COOKIE_COUNT, totalCookies);
-          
+
+            if (Application.loadedLevel == 5 && time <= 120) controller.setAchievement(AchievementController.SPEED_RUNNER);
+            if (Application.loadedLevel == 5 && cookies == 4) controller.setAchievement(AchievementController.EXPLORER);
+
             updateLevelInfo();
         }
     }

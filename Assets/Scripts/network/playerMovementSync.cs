@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class playerMovementSync : NetworkBehaviour {
+public class PlayerMovementSync : NetworkBehaviour {
 
     [SyncVar] //server automatically apply to all client
     private Vector3 pos; //position of movement
