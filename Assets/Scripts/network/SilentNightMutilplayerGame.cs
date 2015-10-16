@@ -125,6 +125,9 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         if (win==0)
         {
             resultText.text = "You won, Query Chan !!";
+            GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
+            AchievementController controller = achievementController.GetComponent<AchievementController>();
+            if (controller != null )controller.setAchievement(AchievementController.MULTIPLAYER_WIN);
         }
         else if (win==1)
         {
