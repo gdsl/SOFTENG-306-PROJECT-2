@@ -63,6 +63,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
             GameObject[] query = GameObject.FindGameObjectsWithTag("Player");
             long countPlayer1 =query[0].GetComponent<PlayerInventory>().getCookieCount();
             long countPlayer2 = query[1].GetComponent<PlayerInventory>().getCookieCount();
+           
             if(countPlayer1>countPlayer2){
                 resultText.text = query[0].name+ " Won";
             }else if(countPlayer1==countPlayer2){

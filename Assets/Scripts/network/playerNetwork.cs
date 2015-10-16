@@ -18,7 +18,6 @@ public class playerNetwork : NetworkBehaviour {
             //isoCamera.enabled = true;
             //isoCamera.cameraComponent
             //GetComponent<CharacterController>().enabled = true;
-            Debug.Log(Network.player.ToString());
         }
 	}
 }
