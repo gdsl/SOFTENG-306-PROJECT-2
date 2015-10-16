@@ -4,6 +4,7 @@ using System.Collections;
 public class Hit : MonoBehaviour {
 
 	public GameObject DestroyedObject;
+	public SuspicionController suspicionController;
 
     private BoxCollider collider;
 
@@ -36,5 +37,8 @@ public class Hit : MonoBehaviour {
         // Alert enemies
         AlertEnemy alert = GetComponent<AlertEnemy>();
         alert.Alert();
+
+		//raise suspicion
+		suspicionController.IncreaseSuspicionByAmount (1000);
 	}
 }

@@ -11,9 +11,10 @@ public class PlayerNetwork : NetworkBehaviour {
 	    if(isLocalPlayer){
             resultText = GameObject.Find("ResultText").GetComponent<Text>();
             GameObject cam = GameObject.Find("Main Camera");
+            GameObject camRef = GameObject.Find("CameraReference");
             GameObject sus = GameObject.Find("SuspicionSlider");
             cc=cam.GetComponent<CameraController>();
-            cc.transform.position = transform.position;
+            camRef.transform.position = transform.position;
             sus.GetComponent<SuspicionController>().santa=gameObject;
             cc.santa = gameObject;
             cc.InitialiseCamera();
