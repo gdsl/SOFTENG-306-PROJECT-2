@@ -38,6 +38,7 @@ public class SuspicionControllerNetwork : NetworkBehaviour
         suspicionSlider.value = suspicionSlider.value + amount;
         if (suspicionSlider.value >= suspicionSlider.maxValue)
         {
+            Handheld.Vibrate(); 
             suspicionSlider.value = 0;
             santa.transform.position = NetworkManager.singleton.GetStartPosition().position;
             //GetComponent<NetworkTransform>().SetDirtyBit(1);
