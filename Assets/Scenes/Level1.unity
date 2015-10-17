@@ -7396,6 +7396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raysGizmosEnabled: 1
+  updateRate: .0199999996
   quality: 4
   fovAngle: 110
   fovMaxDistance: 5
@@ -8737,6 +8738,10 @@ Prefab:
       propertyPath: suspicionSlider
       value: 
       objectReference: {fileID: 367886967}
+    - target: {fileID: 11430078, guid: 21c1dd04e6e4c2f458fdef8b76b83f6b, type: 2}
+      propertyPath: threeStarScore
+      value: 5000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21c1dd04e6e4c2f458fdef8b76b83f6b, type: 2}
   m_IsPrefabParent: 0

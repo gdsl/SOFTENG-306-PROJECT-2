@@ -11,6 +11,7 @@ public class LevelEnd : MonoBehaviour {
 	public Text cookieText;
 	public Text timeText;
 	public Slider suspicionSlider;
+	public int threeStarScore;
 
 	private int stars;
 	private int score;
@@ -72,16 +73,16 @@ public class LevelEnd : MonoBehaviour {
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
 		float.TryParse(timeText.text.Split(' ')[1], out time);
-		score = (int) (6000 - 0.25*suspicionSlider.value + cookies * 500 - 30*time);
+		score = (int) (6000 - 0.5*suspicionSlider.value + cookies * 500 - 30*time);
 
 		if (score < 300) {
 			System.Random rnd = new System.Random();
 			score = rnd.Next(100,500); //make the player feel a bit better
 		}
 
-		if (score > 3000) {
+		if (score > threeStarScore) {
 			stars = 3;
-		} else if (score > 2000) {
+		} else if (score > threeStarScore/2) {
 			stars = 2;
 		} else {
 			stars = 1; 
