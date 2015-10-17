@@ -44,6 +44,7 @@ public class SuspicionControllerNetwork : MonoBehaviour {
             if (!successScreen.active)
             {
                 santa.GetComponent<PlayerNetwork>().MaxSuspicion();
+                suspicionSlider.value = 0;
             }
         }
     }

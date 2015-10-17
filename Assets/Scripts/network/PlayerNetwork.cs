@@ -13,7 +13,7 @@ public class PlayerNetwork : NetworkBehaviour {
             GameObject sus = GameObject.Find("SuspicionSlider");
             cc=cam.GetComponent<CameraController>();
             camRef.transform.position = transform.position;
-            sus.GetComponent<SuspicionController>().santa=gameObject;
+            sus.GetComponent<SuspicionControllerNetwork>().santa=gameObject;
             cc.santa = gameObject;
             cc.InitialiseCamera();
             cc.enabled = true;
@@ -60,6 +60,6 @@ public class PlayerNetwork : NetworkBehaviour {
     public void MaxSuspicion()
     {
         transform.position = NetworkManager.singleton.GetStartPosition().position;
-        gameObject.GetComponent<PlayerInventory>().ResetCookie();
+        gameObject.GetComponent<PlayerInventory>().SetCookieCount(0);
     }
 }

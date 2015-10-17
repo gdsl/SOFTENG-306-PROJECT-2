@@ -25,6 +25,7 @@ public abstract class PlayerInventory : NetworkBehaviour
     public void SetCookieCount(long count)
     {
         cookieCount = count;
+        SetCookie();
     }
 
     //method to increase the players cookie count by 1
