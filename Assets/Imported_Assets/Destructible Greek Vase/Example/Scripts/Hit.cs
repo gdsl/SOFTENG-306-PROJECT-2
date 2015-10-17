@@ -22,8 +22,7 @@ public class Hit : MonoBehaviour {
 	
 	void OnCollisionEnter( Collision collision )
     {
-        Debug.Log(collision.relativeVelocity.magnitude);
-		if( collision.relativeVelocity.magnitude > 1f) {
+		if( collision.relativeVelocity.magnitude > 1f && collision.gameObject.tag == "Player") {
 		    DestroyIt();
 		}
 	}
