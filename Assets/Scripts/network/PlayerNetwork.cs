@@ -24,6 +24,7 @@ public class PlayerNetwork : NetworkBehaviour {
 	}
 
     //when game is over display results
+    [ClientCallback]
     [ClientRpc]
     public void RpcGameOver(string winner)
     {
