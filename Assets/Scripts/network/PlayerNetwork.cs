@@ -55,12 +55,4 @@ public class PlayerNetwork : NetworkBehaviour {
             gameControllerScript.StopGame();
         }
     }
-
-    [ServerCallback]
-    public void MaxSuspicion()
-    {
-        gameObject.transform.position = NetworkManager.singleton.GetStartPosition().position;
-        GetComponent<NetworkTransform>().SetDirtyBit(1);
-        gameObject.GetComponent<PlayerInventory>().SetCookieCount(0);
-    }
 }

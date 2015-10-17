@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class SuspicionControllerNetwork : MonoBehaviour {
+public class SuspicionControllerNetwork : NetworkBehaviour
+{
     public GameObject santa;
     public Slider suspicionSlider;
-    public GameObject failScreen;
-    public GameObject successScreen;
-    public Text failText;
 
     // Use this for initialization
     void Start()
@@ -21,7 +20,7 @@ public class SuspicionControllerNetwork : MonoBehaviour {
         if (santa.GetComponent<Rigidbody>().velocity.magnitude > 0.2)
         {
             //Debug.Log(santa.GetComponent<Rigidbody>().velocity.magnitude);
-            IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody>().velocity.magnitude);
+            IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody>().velocity.magnitude/3);
         }
     }
 
@@ -32,7 +31,7 @@ public class SuspicionControllerNetwork : MonoBehaviour {
 
     public void IncreaseSuspicionByAmount(float amount)
     {
-        if (failScreen.activeInHierarchy || successScreen.activeInHierarchy || Time.deltaTime == 0)
+        if (Time.deltaTime == 0)
         {
             return;
         }
@@ -40,16 +39,10 @@ public class SuspicionControllerNetwork : MonoBehaviour {
         suspicionSlider.value = suspicionSlider.value + amount;
         if (suspicionSlider.value >= suspicionSlider.maxValue)
         {
-
-            if (!successScreen.active)
-            {
-                //santa.GetComponent<PlayerNetwork>().MaxSuspicion();
-                suspicionSlider.value = 0;
-                Vector3 pos= new Vector3(0,0,0);
-                santa.transform.position = pos;
-                //GetComponent<NetworkTransform>().SetDirtyBit(1);
-                santa.GetComponent<PlayerInventory>().SetCookieCount(0);
-            }
+            suspicionSlider.value = 0;
+            santa.transform.position = NetworkManager.singleton.GetStartPosition().position;
+            //GetComponent<NetworkTransform>().SetDirtyBit(1);
+            santa.GetComponent<PlayerInventory>().SetCookieCount(0);
         }
     }
 
