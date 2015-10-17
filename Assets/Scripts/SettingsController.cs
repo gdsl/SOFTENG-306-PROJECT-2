@@ -63,8 +63,9 @@ public class SettingsController : MonoBehaviour {
         musicVolumeSlider.value = musicVolumeSlider.maxValue;
         soundEffectsVolumeSlider.value = soundEffectsVolumeSlider.maxValue;
 		brightnessSlider.value = brightnessSlider.maxValue;
+		snowToggle.isOn = true;
+		vibrateToggle.isOn = true;
         PlayerPrefs.SetString("Name", name);
-		PlayerPrefs.SetInt ("snow", 1);
     }
 
 	public void SnowToggleChanged() {
