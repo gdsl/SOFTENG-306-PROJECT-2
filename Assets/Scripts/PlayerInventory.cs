@@ -25,6 +25,7 @@ public abstract class PlayerInventory : NetworkBehaviour
     public void SetCookieCount(long count)
     {
         cookieCount = count;
+        SetCookie();
     }
 
     //method to increase the players cookie count by 1
@@ -58,7 +59,7 @@ public abstract class PlayerInventory : NetworkBehaviour
     }
 
     //method to reset the players inventory
-    public void Reset()
+    public void ResetCookie()
     {
         cookieCount = 0;
         cookieText = GameObject.Find("CookieText").GetComponent<Text>();
