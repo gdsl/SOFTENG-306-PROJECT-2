@@ -8,6 +8,7 @@ public class PlayerNetwork : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
 	    if(isLocalPlayer){
+            gameObject.transform.position = NetworkManager.singleton.GetStartPosition().position;
             GameObject cam = GameObject.Find("Main Camera");
             GameObject camRef = GameObject.Find("CameraReference");
             GameObject sus = GameObject.Find("SuspicionSlider");
