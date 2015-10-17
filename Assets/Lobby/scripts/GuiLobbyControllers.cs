@@ -368,7 +368,7 @@ public class ExitToLobbyCanvasControl : CanvasControl
 				var playerLobby = player as PlayerLobby;
 				if (playerLobby)
 				{
-					Debug.LogError("called");
+		//			Debug.LogError("called");
 					playerLobby.CmdExitToLobby();
 				}
 			}
