@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 469622}
   - 198: {fileID: 19887444}
   - 199: {fileID: 19921846}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 492646}
   - 198: {fileID: 19883750}
   - 199: {fileID: 19992302}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 421006}
   - 198: {fileID: 19831652}
   - 199: {fileID: 19917572}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 429162}
   - 33: {fileID: 3385414}
   - 23: {fileID: 2363440}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 411320}
   - 198: {fileID: 19852746}
   - 199: {fileID: 19987078}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 406088}
   - 108: {fileID: 10825254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - 4: {fileID: 439324}
   - 33: {fileID: 3301746}
   - 23: {fileID: 2353672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - 4: {fileID: 483234}
   - 114: {fileID: 11438706}
   - 136: {fileID: 13630108}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cookie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - 4: {fileID: 403096}
   - 33: {fileID: 3375436}
   - 23: {fileID: 2377658}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - 4: {fileID: 443328}
   - 33: {fileID: 3307492}
   - 23: {fileID: 2326210}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - 4: {fileID: 410602}
   - 198: {fileID: 19811744}
   - 199: {fileID: 19978072}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - 4: {fileID: 401620}
   - 198: {fileID: 19846550}
   - 199: {fileID: 19965772}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - 4: {fileID: 470094}
   - 33: {fileID: 3364726}
   - 23: {fileID: 2348300}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - 4: {fileID: 499378}
   - 33: {fileID: 3341114}
   - 23: {fileID: 2391266}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - 4: {fileID: 442016}
   - 33: {fileID: 3308166}
   - 23: {fileID: 2389160}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CookiePart (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - 4: {fileID: 445568}
   - 198: {fileID: 19814642}
   - 199: {fileID: 19990716}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8349,6 +8349,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SendInterval
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RenderMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

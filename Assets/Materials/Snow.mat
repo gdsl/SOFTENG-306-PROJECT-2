@@ -26,14 +26,28 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: c17df648fd6df2640894b485d76ad664, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DetailNormalMap
         second:
-          m_Texture: {fileID: 2800000, guid: c17df648fd6df2640894b485d76ad664, type: 3}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -42,13 +56,6 @@ Material:
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 75, y: 75}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ParallaxMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -66,14 +73,56 @@ Material:
           m_Offset: {x: 4, y: 0}
       data:
         first:
-          name: _OcclusionMap
+          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MetallicGlossMap
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _FrontTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BackTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _LeftTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RightTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _UpTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DownTex
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -93,6 +142,10 @@ Material:
         second: .5
       data:
         first:
+          name: _Shininess
+        second: .078125
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -102,7 +155,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .330000013
+        second: .630999982
       data:
         first:
           name: _BumpScale
@@ -126,7 +179,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0
+        second: .229000002
     m_Colors:
       data:
         first:
@@ -136,3 +189,7 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: .977941155, b: .977941155, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
