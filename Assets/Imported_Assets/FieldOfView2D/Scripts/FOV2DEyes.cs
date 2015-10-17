@@ -6,7 +6,7 @@ using System.Linq;
 public class FOV2DEyes : MonoBehaviour
 {
 	public bool raysGizmosEnabled;
-	//public float updateRate = 0.02f;
+	public float updateRate = 0.02f;
 	public int quality = 4;
 	public int fovAngle = 90;
 	public float fovMaxDistance = 15;
@@ -36,10 +36,10 @@ public class FOV2DEyes : MonoBehaviour
             fovMaxDistance = collider.radius;
         }
 
-		CastRays();
+        //CastRays();
 	}
 	
-	void Start() 
+	IEnumerator Start() 
 	{
         //InvokeRepeating("CastRays", 0, updateRate);
         personSight = GetComponent<PersonSight>();
@@ -51,8 +51,21 @@ public class FOV2DEyes : MonoBehaviour
         layerMask = 1 << 2;
         // invert
         layerMask = ~layerMask;
+        yield return StartCoroutine("WaitAndPrint");
     }
-	
+
+    IEnumerator WaitAndPrint()
+    {
+        // suspend execution for 5 seconds
+        while (true)
+        {
+
+            CastRays();
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+    }
+
 	void CastRays()
 	{
 		numRays = fovAngle * quality;
