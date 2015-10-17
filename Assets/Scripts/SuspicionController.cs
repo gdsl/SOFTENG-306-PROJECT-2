@@ -35,6 +35,7 @@ public class SuspicionController : MonoBehaviour {
 		if (suspicionSlider.value >= suspicionSlider.maxValue) {
 
 			if (!successScreen.active) {
+                Handheld.Vibrate(); 
 				GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
 				GameController gameControllerScript = gameController.GetComponent<GameController>();
 				gameControllerScript.StopGame();
