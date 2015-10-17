@@ -20,7 +20,7 @@ public class SuspicionControllerNetwork : NetworkBehaviour
         if (santa.GetComponent<Rigidbody>().velocity.magnitude > 0.2)
         {
             //Debug.Log(santa.GetComponent<Rigidbody>().velocity.magnitude);
-            IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody>().velocity.magnitude/3);
+            IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody>().velocity.magnitude);
         }
     }
 
@@ -35,10 +35,10 @@ public class SuspicionControllerNetwork : NetworkBehaviour
         {
             return;
         }
-        //Debug.LogError ("lol");
         suspicionSlider.value = suspicionSlider.value + amount;
         if (suspicionSlider.value >= suspicionSlider.maxValue)
         {
+            Handheld.Vibrate(); 
             suspicionSlider.value = 0;
             santa.transform.position = NetworkManager.singleton.GetStartPosition().position;
             //GetComponent<NetworkTransform>().SetDirtyBit(1);

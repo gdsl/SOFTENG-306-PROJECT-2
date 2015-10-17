@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour {
 			PlayerPrefs.SetInt ("soundEffectsVolume", 1000);
 			PlayerPrefs.SetInt ("brightness", 100);
 			PlayerPrefs.SetInt ("snow", 1);
+			PlayerPrefs.SetInt ("vibrate", 1);
 		}
 
 		ResumeGame ();
