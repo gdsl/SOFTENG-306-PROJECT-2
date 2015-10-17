@@ -35,7 +35,7 @@ public class PlayerID : NetworkBehaviour {
         }
     }
 
-    [Client]
+    [ClientCallback]
     void GetNetIdentity()
     {   
         //create the ID for the player
