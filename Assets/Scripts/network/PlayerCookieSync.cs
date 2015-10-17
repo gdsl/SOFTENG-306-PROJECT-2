@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class PlayerCookieSync : NetworkBehaviour {
 
-    void FixUpdate()
+    void FixedUpdate()
     {
         TransmitCookie();
     }
