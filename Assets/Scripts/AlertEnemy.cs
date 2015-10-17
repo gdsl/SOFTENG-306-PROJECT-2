@@ -10,18 +10,22 @@ public class AlertEnemy : MonoBehaviour {
     public void Alert()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-
-        foreach (Collider collider in hitColliders)
+        if (hitColliders.Length > 0)
         {
-            if (collider.gameObject.tag == "Enemy")
+            foreach (Collider collider in hitColliders)
             {
-                SleepingScript script = collider.gameObject.GetComponent<SleepingScript>();
-                Suspicion suspicion = collider.gameObject.GetComponent<Suspicion>();
-                if (script != null)
+                if (collider.gameObject.tag == "Enemy")
                 {
-                    script.sleeping = false;
+                    Debug.Log(collider.name);
+                    SleepingScript script = collider.gameObject.GetComponent<SleepingScript>();
+                    Suspicion suspicion = collider.gameObject.GetComponent<Suspicion>();
+                    if (script != null && suspicion != null)
+                    {
+                        script.sleeping = false;
+                        suspicion.suspicionCheck = true;
+                    }
+
                 }
-                suspicion.suspicionCheck = true;
             }
         }
     }

@@ -22,23 +22,24 @@ public class Hit : MonoBehaviour {
 	
 	void OnCollisionEnter( Collision collision )
     {
-        Debug.Log(collision.relativeVelocity.magnitude);
 		if( collision.relativeVelocity.magnitude > 1f) {
 		    DestroyIt();
 		}
 	}
 	
 	void DestroyIt(){
-		if(DestroyedObject) {
-			Instantiate(DestroyedObject, transform.position, transform.rotation);
-		}
-		Destroy(gameObject);
 
         // Alert enemies
         AlertEnemy alert = GetComponent<AlertEnemy>();
         alert.Alert();
 
-		//raise suspicion
-		suspicionController.IncreaseSuspicionByAmount (1000);
+        //raise suspicion
+        suspicionController.IncreaseSuspicionByAmount(1000);
+
+		if(DestroyedObject) {
+			Instantiate(DestroyedObject, transform.position, transform.rotation);
+            DestroyedObject.AddComponent<DestroyAfter>();
+		}
+		Destroy(gameObject);
 	}
 }
