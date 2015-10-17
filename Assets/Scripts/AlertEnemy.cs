@@ -19,9 +19,12 @@ public class AlertEnemy : MonoBehaviour {
                     Debug.Log(collider.name);
                     SleepingScript script = collider.gameObject.GetComponent<SleepingScript>();
                     Suspicion suspicion = collider.gameObject.GetComponent<Suspicion>();
-                    if (script != null && suspicion != null)
+                    if (script != null)
                     {
-                        script.sleeping = false;
+                        script.sleeping = false;                        
+                    }
+                    if (suspicion != null)
+                    {
                         suspicion.suspicionCheck = true;
                     }
 
