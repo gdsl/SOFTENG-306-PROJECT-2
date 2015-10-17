@@ -59,7 +59,7 @@ public class PlayerNetwork : NetworkBehaviour {
     [Server]
     public void MaxSuspicion()
     {
-        transform.position = NetworkManager.singleton.GetStartPosition().position;
+        gameObject.transform.position = NetworkManager.singleton.GetStartPosition().position;
         gameObject.GetComponent<PlayerInventory>().SetCookieCount(0);
     }
 }
