@@ -56,9 +56,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkPort: 7777
+  m_ServerBindToIP: 0
+  m_ServerBindAddress: 
   m_NetworkAddress: localhost
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
+  m_ScriptCRCCheck: 1
   m_SendPeerInfo: 0
   m_MaxDelay: .00999999978
   m_LogLevel: 2
@@ -101,8 +104,9 @@ MonoBehaviour:
   matchName: 64656661756c74
   matchSize: 4
   m_ShowLobbyGUI: 0
-  m_MaxPlayers: 2
-  m_MaxPlayersPerConnection: 2
+  m_MaxPlayers: 4
+  m_MaxPlayersPerConnection: 4
+  m_MinPlayers: 0
   m_LobbyPlayerPrefab: {fileID: 11474776, guid: 62c72f652ef24ed49b8a640aff045011,
     type: 2}
   m_GamePlayerPrefab: {fileID: 121892, guid: c2a511db5b6ae874ba58f440c558534d, type: 2}
