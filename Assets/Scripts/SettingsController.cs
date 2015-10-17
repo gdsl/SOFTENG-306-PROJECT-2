@@ -10,6 +10,7 @@ public class SettingsController : MonoBehaviour {
 	public InputField nameInput;
     public GameObject confirmationPanel;
 	public Toggle snowToggle;
+	public Toggle vibrateToggle;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,11 @@ public class SettingsController : MonoBehaviour {
 			snowToggle.isOn = true;
 		} else {
 			snowToggle.isOn = false;
+		}
+		if (PlayerPrefs.GetInt ("vibrate") == 1) {
+			vibrateToggle.isOn = true;
+		} else {
+			vibrateToggle.isOn = false;
 		}
         confirmationPanel.SetActive(false);
 	}
@@ -66,6 +72,14 @@ public class SettingsController : MonoBehaviour {
 			PlayerPrefs.SetInt ("snow", 1);
 		} else {
 			PlayerPrefs.SetInt ("snow", 0);
+		}
+	}
+
+	public void VibrateToggleChanged() {
+		if (vibrateToggle.isOn) {
+			PlayerPrefs.SetInt ("vibrate", 1);
+		} else {
+			PlayerPrefs.SetInt ("vibrate", 0);
 		}
 	}
 
