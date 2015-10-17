@@ -58,7 +58,7 @@ public abstract class PlayerInventory : NetworkBehaviour
     }
 
     //method to reset the players inventory
-    public void Reset()
+    public void ResetCookie()
     {
         cookieCount = 0;
         cookieText = GameObject.Find("CookieText").GetComponent<Text>();
