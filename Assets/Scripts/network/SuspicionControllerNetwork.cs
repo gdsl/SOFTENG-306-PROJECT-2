@@ -43,8 +43,12 @@ public class SuspicionControllerNetwork : MonoBehaviour {
 
             if (!successScreen.active)
             {
-                santa.GetComponent<PlayerNetwork>().MaxSuspicion();
+                //santa.GetComponent<PlayerNetwork>().MaxSuspicion();
                 suspicionSlider.value = 0;
+                Vector3 pos= new Vector3(0,0,0);
+                santa.transform.position = pos;
+                //GetComponent<NetworkTransform>().SetDirtyBit(1);
+                santa.GetComponent<PlayerInventory>().SetCookieCount(0);
             }
         }
     }
