@@ -8178,7 +8178,11 @@ Prefab:
       objectReference: {fileID: 1391308803}
     - target: {fileID: 2028490, guid: a645846c912659a40b7a9b6df6e557be, type: 2}
       propertyPath: m_RenderingPath
-      value: 2
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028490, guid: a645846c912659a40b7a9b6df6e557be, type: 2}
+      propertyPath: m_ClearFlags
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a645846c912659a40b7a9b6df6e557be, type: 2}
