@@ -7,6 +7,7 @@ public class Hit : MonoBehaviour {
 	public SuspicionController suspicionController;
 
     private BoxCollider collider;
+    private AlertEnemy alert;
 
     void Awake()
     {
@@ -16,6 +17,7 @@ public class Hit : MonoBehaviour {
             collider.center = transform.GetComponent<MeshFilter>().mesh.bounds.center;
             collider.size = transform.GetComponent<MeshFilter>().mesh.bounds.size;
         }
+        alert = GetComponent<AlertEnemy>();
     }
 
     // Updated so that it breaks on contact
@@ -30,15 +32,15 @@ public class Hit : MonoBehaviour {
 	void DestroyIt(){
 
         // Alert enemies
-        AlertEnemy alert = GetComponent<AlertEnemy>();
-        alert.Alert();
+        if (alert != null)
+            alert.Alert();
 
         //raise suspicion
-        suspicionController.IncreaseSuspicionByAmount(1000);
+        if (suspicionController != null)
+            suspicionController.IncreaseSuspicionByAmount(1000);
 
 		if(DestroyedObject) {
 			Instantiate(DestroyedObject, transform.position, transform.rotation);
-            DestroyedObject.AddComponent<DestroyAfter>();
 		}
 		Destroy(gameObject);
 	}
