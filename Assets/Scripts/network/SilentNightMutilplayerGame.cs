@@ -98,33 +98,45 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     //Method to notify client which player won
     public void NotifyResult()
     {
-        GameObject[] query = GameObject.FindGameObjectsWithTag("Player");
-        long countPlayer1 = query[0].GetComponent<PlayerInventory>().GetCookieCount();
-        long countPlayer2=-1;//initialse as negative so will be lower
+        GameObject[] querys = GameObject.FindGameObjectsWithTag("Player");
 
-        if (query.Length > 1)
+        if (querys.Length > 0)
         {
-            countPlayer2 = query[1].GetComponent<PlayerInventory>().GetCookieCount();
-            if (countPlayer1 > countPlayer2)
+            //sort query base on cookiecount
+            Array.Sort(querys, delegate(GameObject query1, GameObject query2)
             {
-                query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
-                query[1].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
-
+                return query1.GetComponent<PlayerInventory>().GetCookieCount().CompareTo(query2.GetComponent<PlayerInventory>().GetCookieCount());
+            });
+            Array.Reverse(querys);
+            //check if its there is draw
+            int drawpos = 0;
+            for (int i = 0; i < querys.Length; i++)
+            {
+                if (querys[0].GetComponent<PlayerInventory>().GetCookieCount() == querys[i].GetComponent<PlayerInventory>().GetCookieCount())
+                {
+                    drawpos = i;
+                }
             }
-            else if (countPlayer1 == countPlayer2)
+
+            //publish result to clients for winners
+            if (drawpos == 0)
             {
-                query[0].GetComponent<PlayerNetwork>().RpcGameOver("draw");
-                query[1].GetComponent<PlayerNetwork>().RpcGameOver("draw");
+                querys[0].GetComponent<PlayerNetwork>().RpcGameOver(querys[0].name);
             }
             else
             {
-                query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[1].name);
-                query[1].GetComponent<PlayerNetwork>().RpcGameOver(query[1].name);
+                //publish result to clients for draws
+                for (int j = 0; j < drawpos + 1; j++)
+                {
+                    querys[j].GetComponent<PlayerNetwork>().RpcGameOver("draw");
+                }
             }
-        }
-        else
-        {
-            query[0].GetComponent<PlayerNetwork>().RpcGameOver(query[0].name);
+
+            //publish result to clients for losers
+            for (int k = drawpos + 1; k < querys.Length; k++)
+            {
+                querys[k].GetComponent<PlayerNetwork>().RpcGameOver(querys[0].name);
+            }
         }
     }
 }
