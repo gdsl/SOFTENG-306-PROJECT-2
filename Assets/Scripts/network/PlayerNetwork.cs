@@ -14,7 +14,7 @@ public class PlayerNetwork : NetworkBehaviour {
             GameObject sus = GameObject.Find("SuspicionSlider");
             cc=cam.GetComponent<CameraController>();
             camRef.transform.position = transform.position;
-            gameObject.GetComponent<SuspicionControllerNetwork>().santa = gameObject;
+            GetComponent<SuspicionControllerNetwork>().santa = gameObject;
             GetComponent<SuspicionControllerNetwork>().suspicionSlider = sus.GetComponent<Slider>();
             cc.santa = gameObject;
             cc.InitialiseCamera();

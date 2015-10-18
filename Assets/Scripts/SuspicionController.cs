@@ -17,10 +17,14 @@ public class SuspicionController : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (santa.GetComponent<Rigidbody>().velocity.magnitude > 0.2) {
-			//Debug.Log(santa.GetComponent<Rigidbody>().velocity.magnitude);
-			IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody> ().velocity.magnitude);
-		} 
+        if (santa != null)
+        {
+            if (santa.GetComponent<Rigidbody>().velocity.magnitude > 0.2)
+            {
+                //Debug.Log(santa.GetComponent<Rigidbody>().velocity.magnitude);
+                IncreaseSuspicionByAmount(santa.GetComponent<Rigidbody>().velocity.magnitude);
+            }
+        }
 	}
 
 	void IncreaseSuspicion() {
