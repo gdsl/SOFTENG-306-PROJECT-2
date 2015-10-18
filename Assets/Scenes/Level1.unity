@@ -957,31 +957,31 @@ Prefab:
     - target: {fileID: 2331454, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d2f4d4f1e4d528244ad3275a7c433ead, type: 2}
+      objectReference: {fileID: 2100000, guid: 21d8dd0dc766a9c4582b257b9e1493f8, type: 2}
     - target: {fileID: 2364762, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: abfdd04084679fb47ad22e67974045c4, type: 2}
+      objectReference: {fileID: 2100000, guid: 21d8dd0dc766a9c4582b257b9e1493f8, type: 2}
     - target: {fileID: 2316196, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: abfdd04084679fb47ad22e67974045c4, type: 2}
+      objectReference: {fileID: 2100000, guid: 21d8dd0dc766a9c4582b257b9e1493f8, type: 2}
     - target: {fileID: 2399366, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d2f4d4f1e4d528244ad3275a7c433ead, type: 2}
+      objectReference: {fileID: 2100000, guid: 21d8dd0dc766a9c4582b257b9e1493f8, type: 2}
     - target: {fileID: 2347758, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d2f4d4f1e4d528244ad3275a7c433ead, type: 2}
+      objectReference: {fileID: 2100000, guid: 21d8dd0dc766a9c4582b257b9e1493f8, type: 2}
     - target: {fileID: 2306062, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d2f4d4f1e4d528244ad3275a7c433ead, type: 2}
+      objectReference: {fileID: 2100000, guid: 21d8dd0dc766a9c4582b257b9e1493f8, type: 2}
     - target: {fileID: 2392624, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 076d872c303f8544984bf1f2461af1fe, type: 2}
+      objectReference: {fileID: 2100000, guid: abfdd04084679fb47ad22e67974045c4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 966aaa84963ccdb48996f6ed01ef2a82, type: 2}
   m_IsPrefabParent: 0
@@ -1160,7 +1160,7 @@ Prefab:
       objectReference: {fileID: 1491568260}
     - target: {fileID: 22431116, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd45fed90ee13e7448bb7154aec34774, type: 2}
@@ -2164,7 +2164,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: abfdd04084679fb47ad22e67974045c4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -7041,6 +7041,18 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 153294, guid: fd8baa0b42cfd524a9e45e61d7f3d1d5, type: 2}
   m_PrefabInternal: {fileID: 1273634446}
+--- !u!65 &1273634448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273634447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2.5, z: 1}
+  m_Center: {x: -.400000006, y: 1.5, z: 0}
 --- !u!4 &1273688361 stripped
 Transform:
   m_PrefabParentObject: {fileID: 451298, guid: fd8baa0b42cfd524a9e45e61d7f3d1d5, type: 2}
@@ -7243,7 +7255,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: abfdd04084679fb47ad22e67974045c4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -9179,7 +9191,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: abfdd04084679fb47ad22e67974045c4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
