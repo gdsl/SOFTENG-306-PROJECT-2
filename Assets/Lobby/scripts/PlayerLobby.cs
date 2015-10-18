@@ -64,8 +64,8 @@ public class PlayerLobby : NetworkLobbyPlayer
 		var screenWidth = playerCanvas.pixelRect.width;
 		screenWidth -= 200; // border padding
 	//	var playerWidth = screenWidth / (lobby.maxPlayers-1);
-		var playerWidth = screenWidth / (4-1);
-		return -(screenWidth / 2) + (slot+1) * playerWidth;
+		var playerWidth = screenWidth / (6-1);
+		return -(screenWidth / 4) + (slot+1) * playerWidth;
 	}
 
 	public override void OnStartLocalPlayer()
