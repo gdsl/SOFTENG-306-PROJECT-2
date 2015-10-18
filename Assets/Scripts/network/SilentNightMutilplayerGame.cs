@@ -25,6 +25,13 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
     //when server start up
     public override void OnStartServer()
     {
+        //stop the menu music playing
+        MenuMusic menuMusic = MenuMusic.Instance;
+        if (menuMusic != null)
+        {
+            Destroy(menuMusic.gameObject);
+        }
+
         //initialise count down timer  
         gameDuration = 60;  
 
