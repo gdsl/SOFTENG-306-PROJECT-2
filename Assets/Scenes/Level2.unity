@@ -2074,7 +2074,7 @@ GameObject:
   - 4: {fileID: 75205254}
   - 33: {fileID: 75205256}
   - 23: {fileID: 75205255}
-  - 64: {fileID: 75205257}
+  - 65: {fileID: 75205257}
   m_Layer: 0
   m_Name: bed
   m_TagString: Untagged
@@ -2129,8 +2129,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75205253}
   m_Mesh: {fileID: 4300000, guid: b095c2b719c293746a411f957db5f82a, type: 2}
---- !u!64 &75205257
-MeshCollider:
+--- !u!65 &75205257
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2139,8 +2139,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: b095c2b719c293746a411f957db5f82a, type: 2}
+  m_Size: {x: 2.24148846, y: 2.2172358, z: .921103239}
+  m_Center: {x: .0021828427, y: -2.39661574e-07, z: .023036927}
 --- !u!1 &88263370
 GameObject:
   m_ObjectHideFlags: 0
@@ -7000,7 +7000,7 @@ GameObject:
   - 4: {fileID: 434061502}
   - 33: {fileID: 434061504}
   - 23: {fileID: 434061503}
-  - 64: {fileID: 434061505}
+  - 65: {fileID: 434061505}
   m_Layer: 0
   m_Name: cylinder_002
   m_TagString: Untagged
@@ -7054,8 +7054,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 434061501}
   m_Mesh: {fileID: 4300000, guid: 3d09de5860f83d84db42dff394f8ffbd, type: 2}
---- !u!64 &434061505
-MeshCollider:
+--- !u!65 &434061505
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -7064,8 +7064,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 3d09de5860f83d84db42dff394f8ffbd, type: 2}
+  m_Size: {x: .731249809, y: .439596057, z: .898725927}
+  m_Center: {x: -1.38334703, y: -.793242395, z: -.0342301354}
 --- !u!1 &436314892
 GameObject:
   m_ObjectHideFlags: 0
@@ -16059,7 +16059,7 @@ GameObject:
   - 4: {fileID: 1457220434}
   - 33: {fileID: 1457220436}
   - 23: {fileID: 1457220435}
-  - 64: {fileID: 1457220437}
+  - 65: {fileID: 1457220437}
   m_Layer: 0
   m_Name: cylinder
   m_TagString: Untagged
@@ -16112,8 +16112,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1457220433}
   m_Mesh: {fileID: 4300000, guid: 408a21eff6628af4e9aa69aaf3a40294, type: 2}
---- !u!64 &1457220437
-MeshCollider:
+--- !u!65 &1457220437
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -16122,8 +16122,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 408a21eff6628af4e9aa69aaf3a40294, type: 2}
+  m_Size: {x: .596294343, y: .420788139, z: .890806496}
+  m_Center: {x: 1.45082259, y: -.795085251, z: -.0302658081}
 --- !u!1001 &1460725496
 Prefab:
   m_ObjectHideFlags: 0
@@ -16810,8 +16810,8 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 135918, guid: a851eff9fbbed7d46baec18ebff2e0fd, type: 2}
   m_PrefabInternal: {fileID: 1168132920}
---- !u!64 &1493384047
-MeshCollider:
+--- !u!65 &1493384047
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -16820,8 +16820,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 7fc4f1ae771c82248a8194f137ffd698, type: 3}
+  m_Size: {x: 1.17999995, y: .380000144, z: 1.04999995}
+  m_Center: {x: 0, y: 2.57194074e-07, z: .524999976}
 --- !u!1001 &1494460889
 Prefab:
   m_ObjectHideFlags: 0
@@ -20505,6 +20505,22 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1741091496}
+--- !u!1 &1754823250 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 169096, guid: 4c3c9cd97a0035b4a84b9a13607d9660, type: 2}
+  m_PrefabInternal: {fileID: 1195086365}
+--- !u!65 &1754823251
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754823250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.3436241, y: 10.0603771, z: 1.29580367}
+  m_Center: {x: 0, y: 5.03018856, z: .345713347}
 --- !u!1 &1757829632
 GameObject:
   m_ObjectHideFlags: 0
