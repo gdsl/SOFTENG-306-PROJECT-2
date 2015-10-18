@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class SuspicionController : MonoBehaviour {
+public class SuspicionController : NetworkBehaviour {
 	public GameObject santa;
 	public Slider suspicionSlider;
 	public GameObject failScreen;
@@ -26,7 +27,7 @@ public class SuspicionController : MonoBehaviour {
 		IncreaseSuspicionByAmount (1);
 	}
 
-	public void IncreaseSuspicionByAmount(float amount) {
+	public virtual void IncreaseSuspicionByAmount(float amount) {
 		if (failScreen.activeInHierarchy || successScreen.activeInHierarchy || Time.deltaTime == 0) {
 			return;
 		}

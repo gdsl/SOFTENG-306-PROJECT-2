@@ -18,6 +18,8 @@ public class PlayerNetwork : NetworkBehaviour {
             cc.santa = gameObject;
             cc.InitialiseCamera();
             cc.enabled = true;
+            //set creaky board santa
+
             //isoCamera.enabled = true;
             //isoCamera.cameraComponent
             //GetComponent<CharacterController>().enabled = true;
