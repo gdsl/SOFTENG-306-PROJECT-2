@@ -74,7 +74,7 @@ public class PlayerLobby : NetworkLobbyPlayer
 	//	var playerWidth = screenWidth / (lobby.maxPlayers-1);
 		var playerWidth = screenWidth / (6-1);
 	//	Debug.LogError ("slot" + slot);
-		return -(screenWidth / 4) - 200 + (slot%6) * playerWidth;
+		return -(screenWidth / 4) - 150 + (slot%6) * playerWidth;
 	}
 
 	public override void OnStartLocalPlayer()
