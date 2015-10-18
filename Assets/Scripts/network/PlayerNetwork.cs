@@ -14,7 +14,8 @@ public class PlayerNetwork : NetworkBehaviour {
             GameObject sus = GameObject.Find("SuspicionSlider");
             cc=cam.GetComponent<CameraController>();
             camRef.transform.position = transform.position;
-            sus.GetComponent<SuspicionControllerNetwork>().santa=gameObject;
+            gameObject.GetComponent<SuspicionControllerNetwork>().santa = gameObject;
+            GetComponent<SuspicionControllerNetwork>().suspicionSlider = sus.GetComponent<Slider>();
             cc.santa = gameObject;
             cc.InitialiseCamera();
             cc.enabled = true;
@@ -39,18 +40,18 @@ public class PlayerNetwork : NetworkBehaviour {
             Text resultText = GameObject.Find("ResultText").GetComponent<Text>() ;
             if (winner == gameObject.name)
             {
-                resultText.text = "You won, Query Chan !!";
+                resultText.text = "Congratulations, You Won!";
                 GameObject achievementController = GameObject.FindGameObjectWithTag("AchievementController");
                 AchievementController controller = achievementController.GetComponent<AchievementController>();
                 controller.setAchievement(AchievementController.MULTIPLAYER_WIN);
             }
             else if (winner == "draw")
             {
-                resultText.text = "Query Chans got same number of cookie!!";
+                resultText.text = "It's a tie!";
             }
             else
             {
-                resultText.text = "You lost, Query Chan !!";
+                resultText.text = "Sorry, You Lost!";
             }
 
             GameObject gameController = GameObject.FindGameObjectWithTag("GameController");

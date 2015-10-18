@@ -27,7 +27,10 @@ public class GameController : MonoBehaviour {
 		successScreen.SetActive (false);
 		Text hintText = GameObject.FindGameObjectWithTag("HintText").GetComponent<Text>();
 		hintText.gameObject.SetActive(false);
-		moonlight.intensity = (float)(PlayerPrefs.GetInt ("brightness") / 100.00);
+        if (moonlight != null)
+        {
+            moonlight.intensity = (float)(PlayerPrefs.GetInt("brightness") / 100.00);
+        }
 
 		//disable snow if needed
 		if (PlayerPrefs.GetInt ("snow") == 0) {
