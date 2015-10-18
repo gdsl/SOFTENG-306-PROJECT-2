@@ -61,6 +61,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 m_MoveSpeedMultiplier = 1.5f;
             }
+            else if (CrossPlatformInputManager.GetButton("Crouch")) 
+            {
+                m_MoveSpeedMultiplier = 1.5f;
+            }
             else
             {
                 m_MoveSpeedMultiplier = 0.5f;

@@ -9,11 +9,21 @@ public class NameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    if (PlayerPrefs.GetString("Name").Length > 0)
-        {
-            img.SetActive(false);
-            Debug.Log(PlayerPrefs.GetString("Name"));
-        }
+		if (!PlayerPrefs.HasKey("Name") || !PlayerPrefs.HasKey("musicVolume") || !PlayerPrefs.HasKey("soundEffectsVolume")
+		    || !PlayerPrefs.HasKey("brightness") || !PlayerPrefs.HasKey("snow")) {
+
+			PlayerPrefs.SetInt ("musicVolume", 1000);
+			PlayerPrefs.SetInt ("soundEffectsVolume", 1000);
+			PlayerPrefs.SetInt ("brightness", 100);
+			PlayerPrefs.SetInt ("snow", 1);
+			PlayerPrefs.SetInt ("vibrate", 1);
+			img.SetActive(true);
+		}
+//	    if (PlayerPrefs.GetString("Name").Length > 0)
+//        {
+//            img.SetActive(false);
+//            Debug.Log(PlayerPrefs.GetString("Name"));
+//        }
 	}
 	
 	// Update is called once per frame
