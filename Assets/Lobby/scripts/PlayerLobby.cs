@@ -32,10 +32,8 @@ public class PlayerLobby : NetworkLobbyPlayer
 		var hooks = playerCanvas.GetComponent<PlayerCanvasHooks>();
 		int height = 100;
 
-		if (slot > 5) {
+		if (slot > 3) {
 			height = -120;
-		} else if (slot > 11) {
-			height = -340;
 		}
 
 		hooks.panelPos.localPosition = new Vector3(GetPlayerPos(lobbyPlayer.slot), height, 0);
@@ -72,9 +70,9 @@ public class PlayerLobby : NetworkLobbyPlayer
 		var screenWidth = playerCanvas.pixelRect.width;
 		screenWidth -= 200; // border padding
 	//	var playerWidth = screenWidth / (lobby.maxPlayers-1);
-		var playerWidth = screenWidth / (6-1);
+		var playerWidth = 150;
 	//	Debug.LogError ("slot" + slot);
-		return -(screenWidth / 4) - 150 + (slot%6) * playerWidth;
+		return -(screenWidth / 4) + (slot%4) * playerWidth;
 	}
 
 	public override void OnStartLocalPlayer()
@@ -89,10 +87,8 @@ public class PlayerLobby : NetworkLobbyPlayer
 		var hooks = playerCanvas.GetComponent<PlayerCanvasHooks>();
 		int height = 100;
 
-		if (slot > 5) {
+		if (slot > 3) {
 			height = -120;
-		} else if (slot > 11) {
-			height = -340;
 		}
 
 		hooks.panelPos.localPosition = new Vector3(GetPlayerPos(lobbyPlayer.slot), height, 0);
