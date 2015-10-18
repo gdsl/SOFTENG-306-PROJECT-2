@@ -15,14 +15,15 @@ public class TestSleepWalker
         GameObject SleepWalker = GameObject.Instantiate(Resources.Load("Victoria")) as GameObject;
         GameObject touchObject = SleepWalker.transform.FindChild("SenseTouch").gameObject;
         Woken woken = touchObject.GetComponent<Woken>();
-        SleepWalkerAI sleepwalkerAI = SleepWalker.GetComponent<SleepWalkerAI>();
-
         GameObject santa = GameObject.Instantiate(Resources.Load("QueryChan")) as GameObject;
-        
+
+        // Test that they are not woken
         Assert.That(woken.woken == false);
 
+        // Collision with santa and Michael
         woken.OnTriggerStay(santa.GetComponent<CapsuleCollider>()); // Unsure if this is proper practice as we have to make the ontrigger function public
 
+        // Assert that they are woken
         Assert.That(woken.woken == true);
     }
 }
