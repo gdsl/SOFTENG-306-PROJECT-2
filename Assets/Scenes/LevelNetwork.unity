@@ -343,7 +343,15 @@ Prefab:
       objectReference: {fileID: 1581828450}
     - target: {fileID: 22404526, guid: 526ad4ba382103742966f3772cd4bf98, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22407914, guid: 526ad4ba382103742966f3772cd4bf98, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 22407914, guid: 526ad4ba382103742966f3772cd4bf98, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11458770, guid: 526ad4ba382103742966f3772cd4bf98, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
