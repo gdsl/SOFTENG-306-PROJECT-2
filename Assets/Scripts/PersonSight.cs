@@ -127,6 +127,7 @@ public class PersonSight : MonoBehaviour {
                     }
                 }
 
+                // Raycast position at height 0.8 of current height
                 if (Physics.Raycast(transform.position + rayPos2, direction.normalized, out hit, col.radius, layerMask))
                 {
                     //if (hit.collider.gameObject == santa)
