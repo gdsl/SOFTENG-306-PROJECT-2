@@ -16,16 +16,19 @@ public class KeyPanelScript : MonoBehaviour {
 //	public Sprite blueKey;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		
 	}
 
-	public void updateKey(int id) {
+	public void UpdateKey(int id) 
+    {
 		//Debug.LogError ("key found: " + id);
 
 		if (id == 1) {

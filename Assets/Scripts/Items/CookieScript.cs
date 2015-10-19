@@ -7,7 +7,8 @@ public class CookieScript : Items {
 	private Text cookieText;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		cookieText = GameObject.FindWithTag("CookieText").GetComponent<Text>() as Text;
 	}
 

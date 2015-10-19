@@ -26,7 +26,7 @@ public class TestScore
         le.timeText=st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(6000,le.getScore());
+        Assert.AreEqual(6000,le.GetScore());
     }
 
     /**
@@ -48,7 +48,7 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(6500, le.getScore());
+        Assert.AreEqual(6500, le.GetScore());
     }
 
     /**
@@ -70,7 +70,7 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(4200, le.getScore());
+        Assert.AreEqual(4200, le.GetScore());
     }
 
     /**
@@ -92,7 +92,7 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(5999, le.getScore());
+        Assert.AreEqual(5999, le.GetScore());
     }
 
     /**
@@ -115,7 +115,7 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(3500, le.getScore());
+        Assert.AreEqual(3500, le.GetScore());
     }
 
     /**
@@ -138,7 +138,7 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(3500, le.getScore());
+        Assert.AreEqual(3500, le.GetScore());
     }
 
     /**
@@ -162,7 +162,7 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(2500, le.getScore());
+        Assert.AreEqual(2500, le.GetScore());
     }
 
     /**
@@ -186,6 +186,6 @@ public class TestScore
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(4500, le.getScore());
+        Assert.AreEqual(4500, le.GetScore());
     }
 }

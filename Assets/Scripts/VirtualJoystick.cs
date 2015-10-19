@@ -12,12 +12,14 @@ public class VirtualJoystick : MonoBehaviour {
     bool isMovingFinger = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Input.touchCount == 1)
         {
             Touch touch = Input.touches[0];

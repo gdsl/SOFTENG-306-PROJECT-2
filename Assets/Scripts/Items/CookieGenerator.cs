@@ -10,7 +10,8 @@ public class CookieGenerator : MonoBehaviour {
     private int remainingSize;
     private Vector3[] randomLocationsMod;
 
-    void Awake() {
+    void Awake() 
+    {
         generateCookie();
     }
 

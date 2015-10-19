@@ -12,7 +12,8 @@ public class AudioController : MonoBehaviour {
 	private AudioSource backgroundAudio;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		highSuspicionAudio = GameObject.FindGameObjectWithTag("HighSuspicionAudio").GetComponent<AudioSource>();
 		keyAudio = GameObject.FindGameObjectWithTag("KeyAudio").GetComponent<AudioSource>();
 		cookieAudio = GameObject.FindGameObjectWithTag("EatCookieAudio").GetComponent<AudioSource>();
@@ -23,7 +24,8 @@ public class AudioController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		//background and high suspicion is music
 		backgroundAudio.volume = (float)PlayerPrefs.GetInt("musicVolume")/1000;
 		highSuspicionAudio.volume = (float)PlayerPrefs.GetInt("musicVolume")/1000;

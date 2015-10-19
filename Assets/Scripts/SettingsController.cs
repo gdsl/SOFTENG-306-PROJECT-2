@@ -13,10 +13,11 @@ public class SettingsController : MonoBehaviour {
 	public Toggle vibrateToggle;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		if (!PlayerPrefs.HasKey("musicVolume") || !PlayerPrefs.HasKey("soundEffectsVolume")
 			|| !PlayerPrefs.HasKey("brightness")) {
-			resetData();
+			ResetData();
 		}
 		musicVolumeSlider.value = PlayerPrefs.GetInt("musicVolume");
 		soundEffectsVolumeSlider.value = PlayerPrefs.GetInt("soundEffectsVolume");
@@ -40,23 +41,27 @@ public class SettingsController : MonoBehaviour {
 	
 	}
 
-	public void MusicVolumeChanged() {
+	public void MusicVolumeChanged() 
+    {
 		PlayerPrefs.SetInt ("musicVolume", (int)musicVolumeSlider.value);
 	}
 
-	public void SoundEffectsVolumeChanged() {
+	public void SoundEffectsVolumeChanged()
+    {
 		PlayerPrefs.SetInt ("soundEffectsVolume", (int)soundEffectsVolumeSlider.value);
 	}
 
-	public void BrightnessChanged() {
+	public void BrightnessChanged() 
+    {
 		PlayerPrefs.SetInt ("brightness", (int)(100*brightnessSlider.value));
 	}
 
-	public void NameTextChanged() {
+	public void NameTextChanged() 
+    {
 		PlayerPrefs.SetString ("Name", nameInput.text);
 	}
 
-    public void resetData()
+    public void ResetData()
     {
         string name = PlayerPrefs.GetString("Name");
         PlayerPrefs.DeleteAll();
@@ -84,12 +89,12 @@ public class SettingsController : MonoBehaviour {
 		}
 	}
 
-    public void showConfirmation()
+    public void ShowConfirmation()
     {
         confirmationPanel.SetActive(true);
     }
 
-    public void hideConfirmation()
+    public void HideConfirmation()
     {
         confirmationPanel.SetActive(false);
     }

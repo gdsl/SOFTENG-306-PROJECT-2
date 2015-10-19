@@ -23,7 +23,7 @@ public class KeyScript : Items {
             keyAudio.Play();
             this.setPickedUp(); //set key to be picked up
             col.gameObject.GetComponent<PlayerInventory>().GotKey(id);
-			keyPanelScript.updateKey(id);
+			keyPanelScript.UpdateKey(id);
         }
     }
 }
