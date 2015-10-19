@@ -33,7 +33,7 @@ public class SilentNightMutilplayerGame : NetworkBehaviour
         }
 
         //initialise count down timer  
-        gameDuration = 120;  
+        gameDuration = 90;  
 
         //generate cookie when first start up
         generateCookie();
