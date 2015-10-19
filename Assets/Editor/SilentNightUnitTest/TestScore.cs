@@ -11,7 +11,7 @@ public class TestScore
      * Test to if the base score is 5000
      */
     [Test]
-    public void testBaseScore()
+    public void TestBaseScore()
     {
         LevelEnd le = new LevelEnd();
         GameObject gb = new GameObject("stest");
@@ -33,7 +33,7 @@ public class TestScore
      * Test to see if the get a cookie increase point by 500
      */
     [Test]
-    public void testCookieScore()
+    public void TestCookieScore()
     {
         LevelEnd le = new LevelEnd();
         GameObject gb = new GameObject("stest");
@@ -55,7 +55,7 @@ public class TestScore
      * Test to see if the time decrease score by its amount
      */
     [Test]
-    public void testTimeScore()
+    public void TestTimeScore()
     {
         LevelEnd le = new LevelEnd();
         GameObject gb = new GameObject("stest");
@@ -77,7 +77,7 @@ public class TestScore
     * Test base slider increment values
     */
     [Test]
-    public void testSlider()
+    public void TestSlider()
     {
         LevelEnd le = new LevelEnd();
         GameObject gb = new GameObject("stest");
@@ -99,7 +99,7 @@ public class TestScore
     * Test max slider increment values effect on score
     */
     [Test]
-    public void testSliderMax()
+    public void TestSliderMax()
     {
         LevelEnd le = new LevelEnd();
         GameObject gb = new GameObject("stest");
@@ -122,7 +122,7 @@ public class TestScore
      * Test over max slider increment values effect on score should be cap by max
      */
     [Test]
-    public void testSliderOverMax()
+    public void TestSliderOverMax()
     {
         LevelEnd le = new LevelEnd();
         GameObject gb = new GameObject("stest");
@@ -145,7 +145,7 @@ public class TestScore
      * Test combination of the effect of all 3 factor (time cookie slider) on score
      */
     [Test]
-    public void testCombineFactors()
+    public void TestCombineFactors()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -169,7 +169,7 @@ public class TestScore
      * Test under max slider increment values effect on score should the slider value
      */
     [Test]
-    public void testSliderUnderMax()
+    public void TestSliderUnderMax()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;

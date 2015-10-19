@@ -10,7 +10,7 @@ public class TestStar
      * Test to see if score is 2500 it is still 1 star for level 1
      */
     [Test]
-    public void testBoundryOneStarLevelOne()
+    public void TestBoundryOneStarLevelOne()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -35,7 +35,7 @@ public class TestStar
      * Test to see if score is less than 2500 it is 1 star for level 1
      */
     [Test]
-    public void testOneStarLevelOne()
+    public void TestOneStarLevelOne()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -60,7 +60,7 @@ public class TestStar
     * Test to see if score is 5000 it is still 2 star for level 1
     */
     [Test]
-    public void testBoundryTwoStarLevelOne()
+    public void TestBoundryTwoStarLevelOne()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -85,7 +85,7 @@ public class TestStar
      * Test to see if score is 2500-5000 (exclusive) it is 2 star for level 1
      */
     [Test]
-    public void testTwostarLevelOne()
+    public void TestTwostarLevelOne()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -109,7 +109,7 @@ public class TestStar
    * Test to see if score is 5001 it is still 3 star for level 1
    */
     [Test]
-    public void testBoundryThreeStarLevelOne()
+    public void TestBoundryThreeStarLevelOne()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -134,7 +134,7 @@ public class TestStar
      * Test to see if score is >5001 (exclusive) it is 3 star for level 1
      */
     [Test]
-    public void testThreeStarLevelOne()
+    public void TestThreeStarLevelOne()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 5000;
@@ -159,7 +159,7 @@ public class TestStar
      * Test to see if score is 1500 it is still 1 star for level 2
      */
     [Test]
-    public void testBoundryOneStarLevelTwo()
+    public void TestBoundryOneStarLevelTwo()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 3000;
@@ -184,7 +184,7 @@ public class TestStar
      * Test to see if score is less than 1500 it is 1 star for level 2
      */
     [Test]
-    public void testOneStarLevelTwo()
+    public void TestOneStarLevelTwo()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 3000;
@@ -209,7 +209,7 @@ public class TestStar
     * Test to see if score is 3000 it is still 2 star for level 2
     */
     [Test]
-    public void testBoundryTwoStarLevelTwo()
+    public void TestBoundryTwoStarLevelTwo()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 3000;
@@ -234,7 +234,7 @@ public class TestStar
      * Test to see if score is 1500-3000 (exclusive) it is 2 star for level 2
      */
     [Test]
-    public void testTwostarLevelTwo()
+    public void TestTwostarLevelTwo()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 3000;
@@ -258,7 +258,7 @@ public class TestStar
    * Test to see if score is 3001 it is still 3 star for level 2
    */
     [Test]
-    public void testBoundryThreeStarLevelTwo()
+    public void TestBoundryThreeStarLevelTwo()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 3000;
@@ -283,7 +283,7 @@ public class TestStar
      * Test to see if score is >3001 (exclusive) it is 3 star for level 2
      */
     [Test]
-    public void testThreeStarLevelTwo()
+    public void TestThreeStarLevelTwo()
     {
         LevelEnd le = new LevelEnd();
         le.threeStarScore = 3000;
