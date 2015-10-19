@@ -18,7 +18,8 @@ public class TutorialController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		Vector3 santaPos = santa.transform.position;
 		Vector3 lockedDoorPos = lockedDoor.transform.position;
 		Vector3 creakyFloorBoardPos = creakyFloorBoard.transform.position;
@@ -41,16 +42,19 @@ public class TutorialController : MonoBehaviour {
 		}
 	}
 
-	private void ShowHint(string s) {
+	private void ShowHint(string s)
+    {
 		hintText.text = s;
 		hintText.gameObject.SetActive (true);
 	}
 
-	private void HideHint() {
+	private void HideHint() 
+    {
 		hintText.gameObject.SetActive (false);
 	}
 
-	private float Distance(float x1, float y1, float x2, float y2) {
+	private float Distance(float x1, float y1, float x2, float y2) 
+    {
 		return Mathf.Sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
 	}
 

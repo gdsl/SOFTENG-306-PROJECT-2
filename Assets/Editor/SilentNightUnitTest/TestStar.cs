@@ -27,8 +27,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(2500, le.getScore());
-        Assert.AreEqual(1, le.getStar());
+        Assert.AreEqual(2500, le.GetScore());
+        Assert.AreEqual(1, le.GetStar());
     }
 
     /**
@@ -52,8 +52,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(2400, le.getScore());
-        Assert.AreEqual(1, le.getStar());
+        Assert.AreEqual(2400, le.GetScore());
+        Assert.AreEqual(1, le.GetStar());
     }
 
     /**
@@ -77,8 +77,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(5000, le.getScore());
-        Assert.AreEqual(2, le.getStar());
+        Assert.AreEqual(5000, le.GetScore());
+        Assert.AreEqual(2, le.GetStar());
     }
 
     /**
@@ -101,8 +101,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(3000, le.getScore());
-        Assert.AreEqual(2, le.getStar());
+        Assert.AreEqual(3000, le.GetScore());
+        Assert.AreEqual(2, le.GetStar());
     }
 
     /**
@@ -126,8 +126,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(5001, le.getScore());
-        Assert.AreEqual(3, le.getStar());
+        Assert.AreEqual(5001, le.GetScore());
+        Assert.AreEqual(3, le.GetStar());
     }
 
     /**
@@ -150,8 +150,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(6200, le.getScore());
-        Assert.AreEqual(3, le.getStar());
+        Assert.AreEqual(6200, le.GetScore());
+        Assert.AreEqual(3, le.GetStar());
     }
 
     //Level two
@@ -176,8 +176,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(1500, le.getScore());
-        Assert.AreEqual(1, le.getStar());
+        Assert.AreEqual(1500, le.GetScore());
+        Assert.AreEqual(1, le.GetStar());
     }
 
     /**
@@ -201,8 +201,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(1000, le.getScore());
-        Assert.AreEqual(1, le.getStar());
+        Assert.AreEqual(1000, le.GetScore());
+        Assert.AreEqual(1, le.GetStar());
     }
 
     /**
@@ -226,8 +226,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(3000, le.getScore());
-        Assert.AreEqual(2, le.getStar());
+        Assert.AreEqual(3000, le.GetScore());
+        Assert.AreEqual(2, le.GetStar());
     }
 
     /**
@@ -250,8 +250,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(2700, le.getScore());
-        Assert.AreEqual(2, le.getStar());
+        Assert.AreEqual(2700, le.GetScore());
+        Assert.AreEqual(2, le.GetStar());
     }
 
     /**
@@ -275,8 +275,8 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(3001, le.getScore());
-        Assert.AreEqual(3, le.getStar());
+        Assert.AreEqual(3001, le.GetScore());
+        Assert.AreEqual(3, le.GetStar());
     }
 
     /**
@@ -299,7 +299,7 @@ public class TestStar
         le.timeText = st;
         le.suspicionSlider = suspicionSlider;
         le.CalculateScore();
-        Assert.AreEqual(4500, le.getScore());
-        Assert.AreEqual(3, le.getStar());
+        Assert.AreEqual(4500, le.GetScore());
+        Assert.AreEqual(3, le.GetStar());
     }
 }

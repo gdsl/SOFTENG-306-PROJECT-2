@@ -16,23 +16,25 @@ public class ScoreUploadController : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         uploadScreen.SetActive(false);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 
         loading.transform.Rotate(new Vector3(0, 0, -45) * Time.deltaTime);
         
 	}
 
-    internal void setScore(int finishedScore)
+    internal void SetScore(int finishedScore)
     {
         score = finishedScore;
     }
 
-    public void upload()
+    public void Upload()
     {
         string url = "https://microsoft-apiapp77eee8f5a1b34710aa0e56c4970c119d.azurewebsites.net/api/Score";
 

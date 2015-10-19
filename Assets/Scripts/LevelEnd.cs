@@ -65,11 +65,12 @@ public class LevelEnd : MonoBehaviour {
             if (Application.loadedLevel == 5 && time <= 120) controller.setAchievement(AchievementController.SPEED_RUNNER);
             if (Application.loadedLevel == 5 && cookies == 4) controller.setAchievement(AchievementController.EXPLORER);
 
-            updateLevelInfo();
+            UpdateLevelInfo();
         }
     }
 
-	public void CalculateScore() {
+	public void CalculateScore() 
+    {
 		int cookies = 0;
 		int.TryParse(cookieText.text.Split(' ')[1], out cookies);
 		float time = 0;
@@ -90,17 +91,17 @@ public class LevelEnd : MonoBehaviour {
 		}
 	}
 
-    public int getStar()
+    public int GetStar()
     {
         return stars;
     }
 
-    public int getScore()
+    public int GetScore()
     {
         return score;
     }
 
-    public void updateLevelInfo()
+    public void UpdateLevelInfo()
     {
         if (PlayerPrefs.GetInt("To Be Loaded") == 4)
         {
@@ -129,6 +130,6 @@ public class LevelEnd : MonoBehaviour {
 
         GameObject scoreUploadController = GameObject.FindGameObjectWithTag("ScoreUploadController");
         ScoreUploadController controller = scoreUploadController.GetComponent<ScoreUploadController>();
-        controller.setScore(score);
+        controller.SetScore(score);
     }
 }

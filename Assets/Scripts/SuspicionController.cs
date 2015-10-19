@@ -27,11 +27,13 @@ public class SuspicionController : NetworkBehaviour {
         }
 	}
 
-	void IncreaseSuspicion() {
+	void IncreaseSuspicion() 
+    {
 		IncreaseSuspicionByAmount (1);
 	}
 
-	public virtual void IncreaseSuspicionByAmount(float amount) {
+	public virtual void IncreaseSuspicionByAmount(float amount) 
+    {
 		if (failScreen.activeInHierarchy || successScreen.activeInHierarchy || Time.deltaTime == 0) {
 			return;
 		}
