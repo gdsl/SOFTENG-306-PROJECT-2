@@ -8023,6 +8023,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1408429915}
+  - {fileID: 1224799408}
   m_Father: {fileID: 1432115795}
   m_RootOrder: 1
 --- !u!1 &619967871
@@ -13453,6 +13454,33 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1211210397}
+--- !u!1 &1224799407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1224799408}
+  m_Layer: 0
+  m_Name: suspicionPoint_002
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 18
+  m_IsActive: 1
+--- !u!4 &1224799408
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1224799407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.92000008, y: 0, z: 8.28999996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 594461609}
+  m_RootOrder: 1
 --- !u!1 &1228324630
 GameObject:
   m_ObjectHideFlags: 0
@@ -16811,6 +16839,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1432115795}
     m_Modifications:
+    - target: {fileID: 11483718, guid: f6412bff6c4dbd146848891c69e93137, type: 2}
+      propertyPath: suspicionWayPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 428586, guid: f6412bff6c4dbd146848891c69e93137, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.17000008
@@ -17623,6 +17655,10 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 11483718, guid: f6412bff6c4dbd146848891c69e93137, type: 2}
+      propertyPath: suspicionWayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1224799408}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6412bff6c4dbd146848891c69e93137, type: 2}
   m_IsPrefabParent: 0
