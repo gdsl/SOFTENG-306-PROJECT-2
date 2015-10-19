@@ -89,12 +89,12 @@ public class SettingsController : MonoBehaviour {
 		}
 	}
 
-    public void showConfirmation()
+    public void ShowConfirmation()
     {
         confirmationPanel.SetActive(true);
     }
 
-    public void hideConfirmation()
+    public void HideConfirmation()
     {
         confirmationPanel.SetActive(false);
     }
