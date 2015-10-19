@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &194822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 444612}
+  - 114: {fileID: 11451860}
+  m_Layer: 0
+  m_Name: CookiesNetworkTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &444612
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11451860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcdcd055f1280747b561c9cb9665047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedPositions: []
+  randomLocations:
+  - {x: -3, y: 0, z: 6}
+  - {x: 5, y: 0, z: 6}
+  - {x: -3, y: 0, z: 4}
+  - {x: 5, y: 0, z: -7.5}
+  - {x: -5, y: 0, z: -7.5}
+  cookieCount: 1
+  cookie: {fileID: 122076, guid: 0bd4fdabfd8760646a1f5926887584e4, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.data[0].x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.data[0].z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.data[1].x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.data[1].z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.data[2].x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fixedPositions.Array.data[2].z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[3].x
+      value: 12.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[3].z
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[4].x
+      value: 12.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[4].z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[5].x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[5].z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[6].x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[6].z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[7].x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: randomLocations.Array.data[7].z
+      value: -10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 194822}
+  m_IsPrefabParent: 1
