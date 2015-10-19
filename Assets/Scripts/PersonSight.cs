@@ -122,8 +122,8 @@ public class PersonSight : MonoBehaviour {
                 {
                     //if (hit.collider.gameObject == santa)
                     if (hit.collider.gameObject.tag == "Player")
-                        {
-                            santaInSight = true;
+                    {
+                        santaInSight = true;
                     }
                 }
 
@@ -131,8 +131,8 @@ public class PersonSight : MonoBehaviour {
                 {
                     //if (hit.collider.gameObject == santa)
                     if (hit.collider.gameObject.tag == "Player")
-                        {
-                            santaInSight = true;
+                    {
+                        santaInSight = true;
                     }
                 }
             }
