@@ -35,7 +35,7 @@ public class PersonSight : MonoBehaviour {
     private Vector3 rayPos2;
 
     // Use this for initialization
-    void Awake () {
+    public void Awake () {
         // initialize variables
         //size = GetComponent<Renderer>().size;
 
@@ -81,10 +81,13 @@ public class PersonSight : MonoBehaviour {
 
     // Satisfies if the colliding game object is Santa.
     // Called automatically when colliders touching the trigger
-    void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         // Check if the colliding object is santa
-        if (other.gameObject == santa && checkVision == true)
+
+        // if (other.gameObject == santa && checkVision == true)
+
+        if (other.gameObject.tag == "Player" && checkVision == true)
         {
             // Satisfies first condition. Must check if it satisfies other condition
             // Initially default santaInSight to false
@@ -117,17 +120,19 @@ public class PersonSight : MonoBehaviour {
                 // Ray cast distance being the radius of the collider
                 if (Physics.Raycast(transform.position + rayPos1, direction.normalized, out hit, col.radius, layerMask))
                 {
-                    if (hit.collider.gameObject == santa)
-                    {
-                        santaInSight = true;
+                    //if (hit.collider.gameObject == santa)
+                    if (hit.collider.gameObject.tag == "Player")
+                        {
+                            santaInSight = true;
                     }
                 }
 
                 if (Physics.Raycast(transform.position + rayPos2, direction.normalized, out hit, col.radius, layerMask))
                 {
-                    if (hit.collider.gameObject == santa)
-                    {
-                        santaInSight = true;
+                    //if (hit.collider.gameObject == santa)
+                    if (hit.collider.gameObject.tag == "Player")
+                        {
+                            santaInSight = true;
                     }
                 }
             }
