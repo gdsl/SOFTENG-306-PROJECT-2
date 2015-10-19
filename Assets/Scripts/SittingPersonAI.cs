@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+    AI script for Sitting people. Switches animation between sitting and suspicion checking
+*/
 public class SittingPersonAI : MonoBehaviour {
 
     public float speed = 2f;

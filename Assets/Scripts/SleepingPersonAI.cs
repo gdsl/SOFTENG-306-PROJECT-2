@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+    AI script for SleepingPeople in game world. Toggles between sleeping and suspicion checking animation states. FOV updates based
+    on sleeping status
+*/
 public class SleepingPersonAI : MonoBehaviour
 {
 
@@ -42,6 +46,7 @@ public class SleepingPersonAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Sleeping people should not show FOV mesh. Toggle FOVEyeScript based on sleeping status
         if (sleepingScript.sleeping)
         {
             fovEyesScript.enabled = false;

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+  Script for RandomMovementPeople to control their movement in the gameworld. The destination is generated in random
+*/
 public class RandomMovementPersonAI : MonoBehaviour {
 
     public float walkRadius = 5f;
