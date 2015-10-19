@@ -50,6 +50,9 @@ public class SuspicionController : NetworkBehaviour {
 
 			//	failText.text = "You have woken up everybody! \nCops are on their way";
 				failScreen.SetActive(true);
+
+				Button pauseButton = GameObject.FindGameObjectWithTag("PauseButton").GetComponent<Button>();
+				pauseButton.enabled = false;
 			}
 		}
 	}

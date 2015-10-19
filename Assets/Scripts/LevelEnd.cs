@@ -28,7 +28,8 @@ public class LevelEnd : MonoBehaviour {
             winAudio.Play();
             Debug.Log("Delivered present to tree");
 
-
+			Button pauseButton = GameObject.FindGameObjectWithTag("PauseButton").GetComponent<Button>();
+			pauseButton.enabled = false;
 
             //Application.LoadLevel("EndLevel");
 			CalculateScore();
