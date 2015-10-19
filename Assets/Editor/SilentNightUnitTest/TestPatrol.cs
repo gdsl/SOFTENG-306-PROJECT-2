@@ -22,7 +22,7 @@ public class TestPatrol
         Assert.That(woken.woken == false);
 
         // Collision with santa and Michael
-        woken.OnTriggerStay(santa.GetComponent<CapsuleCollider>()); // Unsure if this is proper practice as we have to make the ontrigger function public
+        woken.OnTriggerStay(santa.GetComponent<CapsuleCollider>());
 
         // Assert that they are woken
         Assert.That(woken.woken == true);
@@ -39,7 +39,7 @@ public class TestPatrol
         PersonSight personSight = patrolAI.GetComponent<PersonSight>();
 
         // Setup the sight
-        personSight.Awake(); // Again unsure if this is ok, as we have to change this to public too
+        personSight.Awake();
 
         // Assert that patrol AI cannot see santa
         Assert.That(personSight.santaInSight == false);
@@ -48,7 +48,7 @@ public class TestPatrol
         GameObject santa = GameObject.Instantiate(Resources.Load("QueryChan"), new Vector3(-5, 0, -3), Quaternion.Euler(0, 0, 0)) as GameObject;
 
         // Create collision between santa and patrol AI
-        personSight.OnTriggerStay(santa.GetComponent<CapsuleCollider>()); // Unsure if this is proper practice as we have to make the ontrigger function public
+        personSight.OnTriggerStay(santa.GetComponent<CapsuleCollider>());
 
         // Assert that patrol AI has seen santa
         Assert.That(personSight.santaInSight == true);

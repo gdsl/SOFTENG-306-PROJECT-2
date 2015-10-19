@@ -21,7 +21,7 @@ public class TestSleepWalker
         Assert.That(woken.woken == false);
 
         // Collision with santa and Michael
-        woken.OnTriggerStay(santa.GetComponent<CapsuleCollider>()); // Unsure if this is proper practice as we have to make the ontrigger function public
+        woken.OnTriggerStay(santa.GetComponent<CapsuleCollider>());
 
         // Assert that they are woken
         Assert.That(woken.woken == true);
