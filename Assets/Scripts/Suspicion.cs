@@ -10,10 +10,10 @@ public class Suspicion : MonoBehaviour {
     private Animator anim;
 
 	// Use this for initialization
-	void Start () {
-        // initally values false
-        look = false;
-        suspicionCheck = false;
+	void Awake () {
+        //// initally values false
+        //look = false;
+        //suspicionCheck = false;
 
         anim = GetComponent<Animator>();
 	}

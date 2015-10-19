@@ -62,17 +62,18 @@ public class Woken : MonoBehaviour
 
     // Satisfies if the colliding game object is Santa.
     // Called automatically when colliders touching the trigger
-    void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-        // Check if the colliding object is santa
-        if (other.gameObject == santa)
-            {
-                woken = true;
-            }
+
+        if (other.gameObject.tag == "Player")
+            //if (other.gameObject == santa)
+        {
+            woken = true;
+        }
     }
 
     // When santa leaves person's radius
-    void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.gameObject == santa)
         {

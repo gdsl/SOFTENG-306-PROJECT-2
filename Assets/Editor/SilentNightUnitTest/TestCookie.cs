@@ -11,7 +11,7 @@ public class TestCookie
      * Test to see when a cookie count increase is increase by 1
      */
     [Test]
-    public void getCookie()
+    public void TestGetCookie()
     {
         GameObject gb = new GameObject("CookieText");
         UnityEngine.UI.Text st = gb.AddComponent<UnityEngine.UI.Text>();
