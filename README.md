@@ -2,13 +2,16 @@
 
 Santa Simulation Game for SE306 project 2.  
 Android game created using Unity.  
+The aim of the game is to act as Santa's helper and deliver presents to the christmas tree without being detected or raising suspicion. There are traps to avoid, hiding places, and cookies to collect!  
+Created by UGSOFT, 2015.  
+Authors: Guyver, Wesley, John, Chang Kon, Chuan, Kevin, Jay, Nikhil, and Jared.  
   
 Build Instructions:  
 - Create an empty folder called SantaStealth
 - git init
 - git remote add origin https://github.com/gdsl/SOFTENG-306-PROJECT-2
 - git fetch
-- git checkout master/nightly (or "git checkout PROTOTYPE" for prototype version)
+- git checkout master/nightly (or "git checkout FINAL" for final version)
   
 To run on Unity
 - open existing project
