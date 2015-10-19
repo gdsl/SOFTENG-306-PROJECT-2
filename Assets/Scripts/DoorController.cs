@@ -16,7 +16,8 @@ public class DoorController : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter (Collision col) {
+    void OnCollisionEnter (Collision col) 
+    {
         Quaternion rotation = Quaternion.Euler(0f, 110f, 0f);
         Quaternion current = transform.localRotation;
         transform.localRotation = Quaternion.Euler(0f, 110f, 0f);

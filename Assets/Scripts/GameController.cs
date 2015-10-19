@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour {
 	public GameObject pauseOverlay;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 
 		if (!PlayerPrefs.HasKey("musicVolume") || !PlayerPrefs.HasKey("soundEffectsVolume")
 		    || !PlayerPrefs.HasKey("brightness") || !PlayerPrefs.HasKey("snow")) {

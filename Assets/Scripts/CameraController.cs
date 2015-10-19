@@ -11,7 +11,8 @@ public class CameraController : MonoBehaviour {
     private Dictionary<Transform, Color> transparentObjects;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         InitialiseCamera();
 	}
 
@@ -22,7 +23,8 @@ public class CameraController : MonoBehaviour {
     }
 
 
-    void LateUpdate() {
+    void LateUpdate()
+    {
         transform.position = santa.transform.position + offset;
 
         // transparent objects
